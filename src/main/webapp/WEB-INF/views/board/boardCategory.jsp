@@ -360,10 +360,10 @@
 			});
 		}
 		//댓글 많은 순 정렬
-		const commentsort=()=>{
+		const commentsort=(cPage)=>{
 			$.ajax({
 				url:"${path}/board/commentSort.do",
-				data:{category:"${category}"},
+				data:{category:"${category}",cPage:cPage},
 				dataType:"json",
 				success:data=>{
 					$(".board").remove();

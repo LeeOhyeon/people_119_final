@@ -67,14 +67,17 @@ public class BoardController {
 		
 		
 		
-		List<Board> list=service.newboardList(); //전체리스트
-		List<Board> free=service.freeList();
-		List<Board> leave=service.leaveList();
-		List<Board> turnover=service.turnoverList();
-		List<Board> qa=service.qaList();
-		List<Board> ready=service.readyList();
+		List<BoardTotal> list=service.totalBoardList();
+		List<BoardTotal> free=service.freeList();
+		List<BoardTotal> leave=service.leaveList();
+		List<BoardTotal> turnover=service.turnoverList();
+		List<BoardTotal> qa=service.qaList();
+		List<BoardTotal> ready=service.readyList();
 		
-		List<Board> hot=service.hotList();
+		List<BoardTotal> hot=service.hotList();
+		
+		System.out.println(hot);
+		
 		
 		int count=service.boardListCount();
 //		log.debug("{}"+list);

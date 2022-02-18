@@ -75,7 +75,14 @@
             <c:if test="${not empty list}">
             	<c:forEach var="h" items="${hot}" begin="0" end="4">
 		            <div>
-		              <a href="${path}/board/selectBoard.do?boardNo=${h.boardNo}" class="whole-color"><c:out value="${h.boardTitle}"/></a>
+			            <div class="content-container">
+			              <a href="${path}/board/selectBoard.do?boardNo=${h.boardNo}" class="whole-color"><c:out value="${h.boardTitle}"/></a>
+			            </div>
+			            <div class="parse">
+			              <span class="comment"><i class="fas fa-comment"></i>&nbsp;${h.commentCount}</span>
+			              <span class="view"><i class="fas fa-eye"></i>&nbsp;${h.boardView}</span>
+			              <span class="like"><i class="fas fa-thumbs-up"></i>&nbsp;${h.likeCount}</span>
+			            </div>
 		            </div>
             	</c:forEach>
             </c:if>
@@ -109,7 +116,13 @@
                 <div class="whole-contents">
                   <c:if test="${not empty list}">
             		<c:forEach var="l" items="${list}" begin="0" end="4">
-                 	 <div><a href="${path}/board/selectBoard.do?boardNo=${l.boardNo}" class="whole-color"><c:out value="${l.boardTitle}"/></a></div>
+                 	 	<div>
+                 	 		<div class="content-container"><a href="${path}/board/selectBoard.do?boardNo=${l.boardNo}" class="whole-color"><c:out value="${l.boardTitle}"/></a></div>
+                 	 		<div class="parse">
+					              <span class="comment"><i class="fas fa-comment"></i>&nbsp;${l.commentCount}</span>					             
+					              <span class="like"><i class="fas fa-thumbs-up"></i>&nbsp;${l.likeCount}</span>
+				            </div>                 		
+                 	 	</div>                 	 	
                   	</c:forEach>
                   </c:if>
                 </div>
@@ -125,7 +138,13 @@
                 </div>
                  <div class="ready-contents">               
             		<c:forEach var="r" items="${ready}" begin="0" end="4">        		
-         					<div><a href="${path}/board/selectBoard.do?boardNo=${r.boardNo}" class="whole-color"><c:out value="${r.boardTitle}"/></a></div>
+         					<div>
+         						<div class="content-container"><a href="${path}/board/selectBoard.do?boardNo=${r.boardNo}" class="whole-color"><c:out value="${r.boardTitle}"/></a></div>
+	         					<div class="parse">
+					              <span class="comment"><i class="fas fa-comment"></i>&nbsp;${r.commentCount}</span>					             
+					              <span class="like"><i class="fas fa-thumbs-up"></i>&nbsp;${r.likeCount}</span>
+				            	</div>
+         					</div>	
             		</c:forEach>
              	 </div>
               </div>
@@ -142,7 +161,13 @@
                 </div>
                 <div class="turnover-contents">                 
             		<c:forEach var="t" items="${turnover}" begin="0" end="4">            			
-                 			 <div><a href="${path}/board/selectBoard.do?boardNo=${t.boardNo}"  class="whole-color"><c:out value="${t.boardTitle}"/></a></div>
+                 			 <div>
+                 			 	<div class="content-container"><a href="${path}/board/selectBoard.do?boardNo=${t.boardNo}"  class="whole-color"><c:out value="${t.boardTitle}"/></a></div>
+								 <div class="parse">
+					              <span class="comment"><i class="fas fa-comment"></i>&nbsp;${t.commentCount}</span>				 
+					              <span class="like"><i class="fas fa-thumbs-up"></i>&nbsp;${t.likeCount}</span>
+				            	</div>
+			            	</div>					
 					</c:forEach>
              	 </div>
               </div>
@@ -157,9 +182,13 @@
                 </div>
                 <div class="leave-contents">                 
             		<c:forEach var="e" items="${leave}" begin="0" end="4">
-            			
-                 			 <div><a href="${path}/board/selectBoard.do?boardNo=${e.boardNo}"  class="whole-color"><c:out value="${e.boardTitle}"/></a></div>
-                  		
+            			<div>
+	            		 	<div class="content-container"><a href="${path}/board/selectBoard.do?boardNo=${e.boardNo}"  class="whole-color"><c:out value="${e.boardTitle}"/></a></div>
+	                  		<div class="parse">
+						       <span class="comment"><i class="fas fa-comment"></i>&nbsp;${e.commentCount}</span>				 
+						       <span class="like"><i class="fas fa-thumbs-up"></i>&nbsp;${e.likeCount}</span>
+					        </div>
+            			</div>              
                   	</c:forEach>
              	 </div>
               </div>
@@ -176,9 +205,13 @@
                 </div>
                 <div class="free-contents">                 
             		<c:forEach var="f" items="${free}" begin="0" end="4">
-            			
-                 			 <div><a href="${path}/board/selectBoard.do?boardNo=${f.boardNo}" class="whole-color"><c:out value="${f.boardTitle}"/></a></div>
-                  		
+            			<div>
+            				<div class="content-container"><a href="${path}/board/selectBoard.do?boardNo=${f.boardNo}" class="whole-color"><c:out value="${f.boardTitle}"/></a></div>
+            				<div class="parse">
+						       <span class="comment"><i class="fas fa-comment"></i>&nbsp;${f.commentCount}</span>				 
+						       <span class="like"><i class="fas fa-thumbs-up"></i>&nbsp;${f.likeCount}</span>
+					        </div>
+            			</div>                 			             
                   	</c:forEach>
              	 </div>
               </div>
@@ -193,9 +226,13 @@
                 </div>
                 <div class="qa-contents">                 
             		<c:forEach var="q" items="${qa}" begin="0" end="4">
-            			
-                 			 <div><a href="${path}/board/selectBoard.do?boardNo=${q.boardNo}" class="whole-color"><c:out value="${q.boardTitle}"/></a></div>
-                 
+            			<div>
+            				<div class="content-container"><a href="${path}/board/selectBoard.do?boardNo=${q.boardNo}" class="whole-color"><c:out value="${q.boardTitle}"/></a></div>
+            				<div class="parse">
+						       <span class="comment"><i class="fas fa-comment"></i>&nbsp;${q.commentCount}</span>				 
+						       <span class="like"><i class="fas fa-thumbs-up"></i>&nbsp;${q.likeCount}</span>
+					        </div>            			
+            			</div>          		                 		                 
                   	</c:forEach>
              	 </div>
               </div>

@@ -32,31 +32,31 @@ public class BoardDaoImpl implements BoardDao {
 	}
 
 	@Override
-	public List<Board> freeList(SqlSessionTemplate session) {
+	public List<BoardTotal> freeList(SqlSessionTemplate session) {
 		// TODO Auto-generated method stub
 		return session.selectList("board.selectfreeList");
 	}
 
 	@Override
-	public List<Board> leaveList(SqlSessionTemplate session) {
+	public List<BoardTotal> leaveList(SqlSessionTemplate session) {
 		// TODO Auto-generated method stub
 		return session.selectList("board.selectleaveList");
 	}
 
 	@Override
-	public List<Board> qaList(SqlSessionTemplate session) {
+	public List<BoardTotal> qaList(SqlSessionTemplate session) {
 		// TODO Auto-generated method stub
 		return session.selectList("board.selectqaList");
 	}
 
 	@Override
-	public List<Board> readyList(SqlSessionTemplate session) {
+	public List<BoardTotal> readyList(SqlSessionTemplate session) {
 		// TODO Auto-generated method stub
 		return session.selectList("board.selectreadyList");
 	}
 
 	@Override
-	public List<Board> turnoverList(SqlSessionTemplate session) {
+	public List<BoardTotal> turnoverList(SqlSessionTemplate session) {
 		// TODO Auto-generated method stub
 		return session.selectList("board.selectturnoverList");
 	}
@@ -117,7 +117,7 @@ public class BoardDaoImpl implements BoardDao {
 	}
 
 	@Override
-	public List<Board> hotList(SqlSessionTemplate session) {
+	public List<BoardTotal> hotList(SqlSessionTemplate session) {
 		// TODO Auto-generated method stub
 		return session.selectList("board.hotList");
 	}
@@ -242,8 +242,11 @@ public class BoardDaoImpl implements BoardDao {
 	public List<Board> newboardList(SqlSessionTemplate session) {
 		return session.selectList("board.newboardList");
 	}
-	
-	
-	
-	
+
+	@Override
+	public List<BoardTotal> totalBoardList(SqlSessionTemplate session) {
+		// TODO Auto-generated method stub
+		return session.selectList("board.totalBoardList");
+	}
+		
 }

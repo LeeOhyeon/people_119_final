@@ -39,7 +39,7 @@
         </div>
         <div class="select-box">
           <div class="enrollInterview">
-             <button type="button" class="btn btn-primary" onclick="location.assign('${path}/interview/interviewEnrollView.do?memberId=${loginMember.memberId}');" style="width:150px">후기 등록하기</button>
+             <button type="button" class="btn btn-primary" onclick="insertBtn();" style="width:150px">후기 등록하기</button>
          </div>
          <div class="findInterview">
          	 <input type="text" class="find" placeholder="회사명으로 검색">
@@ -175,6 +175,18 @@
     <script>
     const memberId="${loginMember.memberId}";  
   
+    
+	    const insertBtn=()=>{
+		   	 if(memberId!="") {
+		   		 location.assign('${path}/interview/interviewEnrollView.do?memberId='+memberId);	 
+		   	 }else{
+		   		 alert("후기 등록은 회원만 이용가능합니다");
+		   		 return;
+		   	 }	 
+	    }
+    
+ 
+    
       const toggle=(e)=>{
     	  if(memberId=="") {
     		  alert("로그인 후 이용가능한 서비스입니다");
@@ -188,7 +200,13 @@
       const detailInfo=(e)=>{
     	  let btn=$(e);
     	  const num=$(btn.parents(".company-container")).attr("id");
-    	  location.assign("${path}/interview/selectInterview.do?interviewReviewNo="+num);
+    	  if(memberId!="") {
+    		  location.assign("${path}/interview/selectInterview.do?interviewReviewNo="+num);  
+    	  }else{
+    		  alert("후기 조회는 회원만 이용가능합니다");
+ 	   		  return;
+    	  }
+    	  
       }
       
      const findStr=()=>{
