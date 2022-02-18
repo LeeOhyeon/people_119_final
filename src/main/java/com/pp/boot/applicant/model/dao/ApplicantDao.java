@@ -18,4 +18,6 @@ public interface ApplicantDao {
 	// 지원 공고 개수 확인
 	int countApply(SqlSessionTemplate session, String memberId);
 
+	// 지원 취소
+	int deleteApply(SqlSessionTemplate session, Map param);
 }

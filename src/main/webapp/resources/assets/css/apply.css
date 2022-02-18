@@ -44,4 +44,13 @@
     margin-top:50px;
 }
 
+h2{
+	margin-bottom: 0px;
+}
+
+div.content{
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
 

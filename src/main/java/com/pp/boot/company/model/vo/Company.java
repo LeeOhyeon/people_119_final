@@ -34,7 +34,10 @@ public class Company {
 	
 	// 기업 이미지 파일
 	private String favicon;
-	private String companyImage; //
+	private String companyImage;
+	
+	// 기업 정보 조회수
+	
 	
 	
 }

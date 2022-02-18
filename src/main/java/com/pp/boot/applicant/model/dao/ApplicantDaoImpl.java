@@ -29,4 +29,9 @@ public class ApplicantDaoImpl implements ApplicantDao {
 		return session.selectOne("applicant.countApply", memberId);
 	}
 	
+	// 지원 취소
+	@Override
+	public int deleteApply(SqlSessionTemplate session, Map param) {
+		return session.delete("applicant.deleteApply", param);
+	}
 }

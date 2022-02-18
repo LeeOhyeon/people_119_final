@@ -15,4 +15,7 @@ public interface ApplicantService {
 	
 	// 지원 공고 개수 확인
 	int countApply(String memberId);
+	
+	// 지원 취소
+	int deleteApply(Map param);
 }

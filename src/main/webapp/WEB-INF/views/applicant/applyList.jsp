@@ -15,7 +15,7 @@
 			<div class="d-flex justify-content-between align-items-center">
 				<h2>입사지원 현황</h2>
 				<ol>
-					<li><a href="index.html">Home</a></li>
+					<li><a href="${path }">Home</a></li>
 					<li>입사지원 현황</li>
 				</ol>
 			</div>
@@ -34,13 +34,13 @@
             <p><strong><c:out value="전체 ${total }건"/></strong></p>
           </div>
           <div class="apply-group">
-            <div class="apply-yn">
+            <!-- <div class="apply-yn">
               <select class="form-select" aria-label="Default select example" style="width:120px">
                 <option selected>열람여부</option>
                 <option value="">열람</option>
                 <option value="">미열람</option>
               </select>
-            </div>
+            </div> -->
             <div class=apply-input>
               <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="search" aria-label="Recipient's username"
@@ -63,16 +63,19 @@
 		        <div class="apply-info">
 		          <div class="apply-info-title">
 		              <c:forEach var="o" items="${al.offer }">
-			            <div>
-			              <h2><strong><c:out value="${o.offerTitle }"/></strong></h2>
+		              	<div class="content">
+		              		<h4><c:out value="${o.companyName }"/></h4>
+		              	</div>
+			            <div class="content">
+			              <h2><strong><a href="${path }/offer/offerView.do?offerNo=${o.offerNo}"><c:out value="${o.offerTitle }"/></a></strong></h2>
 			            </div>
-			            <div>
+			            <div class="content">
 			              <c:set var="techArr" value="${fn:split(o.tech, ',') }"/>
 			              <c:forEach var="t" items="${techArr }">
 			              	<span><c:out value="${t } "/></span>
 		              	  </c:forEach>
 			            </div>
-			            <div>
+			            <div class="content">
 			              <p class="condition"><c:out value="${o.location } / ${o.carrer }"/></p>
 			            </div>
 		              </c:forEach>
@@ -82,7 +85,10 @@
 		              <h4><strong>알람여부</strong></h4>
 		            </div>
 		            <div class="apply-btn">
-		              <button type="button" class="btn btn-light" style="width:170px" onclick="deleteApply();">지원취소</button>
+		              <button type="button" class="btn btn-light" style="width:170px" 
+		              	onclick="if(confirm('정말 지원을 취소하시겠습니까?')) {
+		              				location.assign('${path}/applicant/deleteApply.do?offerNo=${al.offerNo }&&memberId=${loginMember.memberId }')
+		              			}">지원취소</button>
 		            </div>
 		          </div>
 		        </div>
@@ -92,14 +98,7 @@
     </section>
     
     <script>
-    	const deleteApply=()=>{
-    		let reply = confirm("정말 지원을 취소하시겠습니까?");
-    		console.log(reply);
-    		if(reply == true) {
-    			console.log("good");
-    			location.href="${path}/applicant/deleteApply.do";
-    		}
-    	}
+    
     </script>
     
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
