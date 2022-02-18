@@ -21,6 +21,10 @@ public interface InterviewDao {
 
 	InterviewReview selectInterview(SqlSessionTemplate session, int interviewReviewNo);
 
+	int deleteInterview(SqlSessionTemplate session, int interviewReviewNo);
+
+	int interviewUpdate(SqlSessionTemplate session, InterviewReview ir);
+
 	
 
 }
