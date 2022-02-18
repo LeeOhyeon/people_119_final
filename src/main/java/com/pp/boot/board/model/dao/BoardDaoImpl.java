@@ -97,7 +97,11 @@ public class BoardDaoImpl implements BoardDao {
 	@Override
 	public int enrollBoard(SqlSessionTemplate session, Board b) {
 		// TODO Auto-generated method stub
-		return session.insert("board.enrollBoard",b);
+		session.insert("board.enrollBoard",b);
+		
+		int boardNo=b.getBoardNo();
+		
+		return boardNo;
 	}
 
 	@Override

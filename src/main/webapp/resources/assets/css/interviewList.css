@@ -44,7 +44,7 @@
     margin-right:15px;
 }
 .select-box{
-    display:flex;
+    width:1000px;
 }
 .title{
     display:flex;
@@ -96,5 +96,12 @@
 }
 .companyName{
 	cursor:pointer;
+}
+.enrollInterview{
+	display:inline-block;
+}
+.findInterview{
+	display:inline;
+	float:right;
 }
 

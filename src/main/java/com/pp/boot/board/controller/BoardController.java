@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -188,16 +189,24 @@ public class BoardController {
 		return mv;
 	}
 	@RequestMapping("/enrollBoard.do")
-	public ModelAndView enrollBoard(String category,String memberId,String boardTitle,String boardContent,ModelAndView mv) {
+	public String enrollBoard(String category,String memberId,String boardTitle,String boardContent,Model model) {
 		
 		Board b=Board.builder().memberId(memberId).boardTitle(boardTitle).boardContent(boardContent).category(category).build();
 		
 		int result=service.enrollBoard(b);
 		
-	
-		mv.setViewName("redirect:/");
-			
-		return mv;
+		String msg = "";
+		String loc = "";
+		if(result>0) {
+			  msg ="게시글 등록이 완료되었습니다.";
+			  loc ="selectBoard.do?boardNo="+result;	 
+		}
+		 
+		model.addAttribute("msg",msg);
+		model.addAttribute("loc",loc);
+		 
+		return "common/msg"; 
+		
 	}
 	@RequestMapping("/boardLike.do")
 	@ResponseBody

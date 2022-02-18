@@ -113,7 +113,7 @@
 						const board=$("<div class='board'>");
 						const boardTitle=$("<div class='boardTitle' id='"+data["list"][i]["boardNo"]+"'>");
 						const boardNo=$("<a href='${path}/board/selectBoard.do?boardNo="+data["list"][i]["boardNo"]+"' id='board-Title'><strong>"+data["list"][i]["boardTitle"]+"</strong></a>");
-						const boardContent=$("<div class='boardContent'>"+data["list"][i]["boardContent"]+"</div>");
+						//const boardContent=$("<div class='boardContent'>"+data["list"][i]["boardContent"]+"</div>");
 
 						const boardSort=$("<div class='boardSort'>");
 						
@@ -153,7 +153,7 @@
 						.append(viewContainer).append(enrolldate).append(boardWriter);
 						
 						boardTitle.append(boardNo);
-						board.append(boardTitle).append(boardContent).append(boardSort);
+						board.append(boardTitle).append(boardSort);
 
 						$(".boardContainer").append(board); 
 					}
@@ -180,7 +180,7 @@
 						const board=$("<div class='board'>");
 						const boardTitle=$("<div class='boardTitle' id='"+data["list"][i]["boardNo"]+"'>");
 						const boardNo=$("<a href='${path}/board/selectBoard.do?boardNo="+data["list"][i]["boardNo"]+"' id='board-Title'><strong>"+data["list"][i]["boardTitle"]+"</strong></a>");
-						const boardContent=$("<div class='boardContent'>"+data["list"][i]["boardContent"]+"</div>");
+						//const boardContent=$("<div class='boardContent'>"+data["list"][i]["boardContent"]+"</div>");
 
 						const boardSort=$("<div class='boardSort'>");
 						
@@ -220,7 +220,7 @@
 						.append(viewContainer).append(enrolldate).append(boardWriter);
 						
 						boardTitle.append(boardNo);
-						board.append(boardTitle).append(boardContent).append(boardSort);
+						board.append(boardTitle).append(boardSort);
 
 						$(".boardContainer").append(board); 
 					}
@@ -246,7 +246,7 @@
 						const board=$("<div class='board'>");
 						const boardTitle=$("<div class='boardTitle' id='"+data["list"][i]["boardNo"]+"'>");
 						const boardNo=$("<a href='${path}/board/selectBoard.do?boardNo="+data["list"][i]["boardNo"]+"' id='board-Title'><strong>"+data["list"][i]["boardTitle"]+"</strong></a>");
-						const boardContent=$("<div class='boardContent'>"+data["list"][i]["boardContent"]+"</div>");
+						//const boardContent=$("<div class='boardContent'>"+data["list"][i]["boardContent"]+"</div>");
 
 						const boardSort=$("<div class='boardSort'>");
 						
@@ -286,7 +286,7 @@
 						.append(viewContainer).append(enrolldate).append(boardWriter);
 						
 						boardTitle.append(boardNo);
-						board.append(boardTitle).append(boardContent).append(boardSort);
+						board.append(boardTitle).append(boardSort);
 
 						$(".boardContainer").append(board); 
 					}
@@ -311,7 +311,7 @@
 						const board=$("<div class='board'>");
 						const boardTitle=$("<div class='boardTitle' id='"+data["list"][i]["boardNo"]+"'>");
 						const boardNo=$("<a href='${path}/board/selectBoard.do?boardNo="+data["list"][i]["boardNo"]+"' id='board-Title'><strong>"+data["list"][i]["boardTitle"]+"</strong></a>");
-						const boardContent=$("<div class='boardContent'>"+data["list"][i]["boardContent"]+"</div>");
+						//const boardContent=$("<div class='boardContent'>"+data["list"][i]["boardContent"]+"</div>");
 
 						const boardSort=$("<div class='boardSort'>");
 						
@@ -351,7 +351,7 @@
 						.append(viewContainer).append(enrolldate).append(boardWriter);
 						
 						boardTitle.append(boardNo);
-						board.append(boardTitle).append(boardContent).append(boardSort);
+						board.append(boardTitle).append(boardSort);
 
 						$(".boardContainer").append(board); 
 					}
@@ -376,7 +376,7 @@
 						const board=$("<div class='board'>");
 						const boardTitle=$("<div class='boardTitle' id='"+data["list"][i]["boardNo"]+"'>");
 						const boardNo=$("<a href='${path}/board/selectBoard.do?boardNo="+data["list"][i]["boardNo"]+"' id='board-Title'><strong>"+data["list"][i]["boardTitle"]+"</strong></a>");
-						const boardContent=$("<div class='boardContent'>"+data["list"][i]["boardContent"]+"</div>");
+						//const boardContent=$("<div class='boardContent'>"+data["list"][i]["boardContent"]+"</div>");
 
 						const boardSort=$("<div class='boardSort'>");
 						
@@ -384,6 +384,7 @@
 						boardLikeContainer.html(data["list"][i]["likeCount"]);
 						const boardLike=$("<span class='board-like'>");
 						const thumbs=$("<i class='fas fa-thumbs-up'>");
+						
 
 						const commentContainer=$("<div class='boardComment'>");
 						commentContainer.html(data["list"][i]["commentCount"]);
@@ -416,7 +417,7 @@
 						.append(viewContainer).append(enrolldate).append(boardWriter);
 						
 						boardTitle.append(boardNo);
-						board.append(boardTitle).append(boardContent).append(boardSort);
+						board.append(boardTitle).append(boardSort);
 
 						$(".boardContainer").append(board); 
 					}
