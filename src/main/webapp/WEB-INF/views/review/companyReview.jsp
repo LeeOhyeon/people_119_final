@@ -14,10 +14,10 @@
 		<div class="container">
 
 			<div class="d-flex justify-content-between align-items-center">
-				<h2>제목</h2>
+				<h2>기업리뷰 상세보기</h2>
 				<ol>
-					<li><a href="index.html">Home</a></li>
-					<li>제목</li>
+					<li><a href="${path }">Home</a></li>
+					<li>기업리뷰 상세보기</li>
 				</ol>
 			</div>
 

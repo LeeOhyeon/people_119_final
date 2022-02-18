@@ -188,15 +188,12 @@ public class CompanyController {
 		// 회사 이름으로 검색하기
 		@RequestMapping("searchList.do")
 		@ResponseBody
-		public String searchCompanyList(@RequestParam String search, Model model) {
+		public List<Company> searchCompanyList(@RequestParam String search) {
 //			log.debug("{}" + search);
-			
 			List<Company> list = service.selectSearchCompanyList(search);
 //			log.debug("{}" + list);
 			
-			model.addAttribute("searchList", list);
-			
-			return "review/companyList";
+			return list;
 		}
 }
 
