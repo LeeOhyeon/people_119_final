@@ -1,0 +1,104 @@
+.link-tab{
+	border-right: black 1px solid;
+}
+.mypage-container{
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+}
+.link-tab{
+    width: 22%;
+}
+.update-info-container{
+    width: 78%;
+}
+.link-tab-ul li{
+list-style: none;
+font-size: 20px;
+color: gray;
+}
+.link-tab-ul li>a{
+    text-decoration: none;
+    color: gray;
+}
+.link-tab-li{
+    height: 50px;
+    margin-top: 30px;
+}
+.resume-link a{
+    font-size: 16px;
+}
+.info-update{
+    width: 100%;
+    display: flex;
+}
+.info_image{
+    width: 20%;
+}
+.member_info_container{
+    width: 80%;
+}
+.gender-btn{
+   float: right;
+}
+.gender-info{
+    display: inline-block;
+}
+.select_gender{
+    display: inline-block;
+}
+.form-check{
+    display: inline-block;
+}
+.member_info{
+    margin-bottom: 15px;
+}
+.info-title{
+    font-size: 30px;
+    font-weight: bolder;
+}
+.info-subtitle{
+	font-size: 15px;
+	font-weight: bolder;
+	margin-bottom: 10px;
+}
+.center{
+	text-align: right;
+}
+
+.filebox .upload-name1 {
+    display: inline-block;
+    height: 40px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 1px solid #dddddd;
+    width: 78%;
+    color: #999999;
+}
+.filebox .upload-name2 {
+    display: inline-block;
+    height: 40px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 1px solid #dddddd;
+    width: 78%;
+    color: #999999;
+}
+.filebox label {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    vertical-align: middle;
+    background-color: #999999;
+    cursor: pointer;
+    height: 40px;
+    margin-left: 10px;
+}
+.filebox input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}

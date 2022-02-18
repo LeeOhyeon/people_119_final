@@ -1,0 +1,73 @@
+.enroll-Container{
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+}
+.enroll_title{
+    font-size: 24px;
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+.input-info-container{
+    width: 400px;
+    height: auto;
+
+}
+.input-info{
+    margin-bottom: 20px;
+}
+
+.agree{
+    display: flex;
+    justify-content: center;
+}
+.agree>div{
+    width: 100%;
+    height: 100px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.form-check{
+    margin-bottom: 10px;
+}
+.enroll-btn{
+    margin-top: 30px;
+    width: 100%;
+}
+.enroll-btn>button{
+width: 100%;
+background-color: rgb(62, 184, 255);
+border: none;
+font-weight: bolder;
+}
+
+.checkIdResult{
+	padding: 0px;
+	margin-bottom: 10px;
+}
+.checkPassword{
+	padding: 0px;
+	margin-bottom: 10px;
+}
+ .password_ck{
+ 	padding: 0px;
+	margin-bottom: 10px;
+ }
+  .password_ck span{
+  margin:0px;
+  color:red;
+  }
+  .resultCode{
+  padding: 0px;
+	margin-bottom: 10px;
+  }
+.resultEmail{
+	padding: 0px;
+	margin-bottom: 10px;
+}
+.btn{
+	 border: 1px solid lightgray;
+}

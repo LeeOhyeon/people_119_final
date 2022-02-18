@@ -1,0 +1,207 @@
+.company-review {
+    border-bottom:solid 1px #333;
+    width:850px;
+    margin-top:30px;
+}
+.meeting-count {
+    display:flex;
+}
+.meeting-count div {
+    margin-right:15px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.membership {
+    display:flex;
+}
+.membership div {
+    margin-right:15px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.membership-process{
+    display:flex;
+}
+.membership-process div{
+    margin-right:15px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.vacation {
+    display:flex;
+}
+.vacation div {
+    margin-right:15px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.vacation-count {
+    display:flex;
+}
+.vacation-count div {
+    margin-right:15px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.gender-ratio {
+    display:flex;
+}
+.gender-ratio div{
+    margin-right:15px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.attendance {
+    display:flex;
+}
+.attendance div{
+    margin-right:15px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.avarage-age {
+    display:flex;
+}
+.avarage-age div{
+    margin-right:15px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.clothes {
+    display:flex;
+}
+.clothes div {
+    margin-right:15px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.work-life-balance {
+    display:flex;
+}
+.work-life-balance div {
+    margin-right:15px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.night-shift{
+    display:flex;
+}
+.night-shift div {
+    margin-right:15px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.salary-increase {
+    display:flex;
+}
+.salary-increase div {
+    margin-right:15px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.incentive{
+    display:flex;
+}
+.incentive div {
+    margin-right:15px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.baby-vacation {
+    display:flex;
+}
+.baby-vacation div{
+    margin-right:15px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.grow-up {
+    display:flex;
+}
+.grow-up div {
+    margin-right:15px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.carrer {
+    display:flex;
+}
+.carrer div {
+    margin-right:15px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.self-dev {
+    display:flex;
+}
+.self-dev div {
+    margin-right:15px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.mento {
+    display:flex;
+}
+.mento div {
+    margin-right:15px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.avarage-years {
+    display:flex;
+}
+.avarage-years div {
+    margin-right:15px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.leadership {
+    display:flex;
+}
+.leadership div {
+    margin-right:15px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.company {
+    width:850px;
+    margin-top:30px;
+}
+.btn {
+    width:100%;
+    justify-content: center;
+    margin-top:30px;
+}
+.btn div {
+   display:inline;
+   
+   margin-right:30px;
+}
+
+.starpoint_wrap{display:inline-block;}
+.starpoint_box{position:relative;background:url(https://hsecode.github.io/images_codepen/codepen_sp_star.png) 0 0 no-repeat;font-size:0;}
+.starpoint_box .starpoint_bg{display:block;position:absolute;top:0;left:0;height:18px;background:url(https://hsecode.github.io/images_codepen/codepen_sp_star.png) 0 -20px no-repeat;pointer-events:none;}
+.starpoint_box .label_star{display:inline-block;width:10px;height:18px;box-sizing:border-box;}
+.starpoint_box .star_radio{opacity:0;width:0;height:0;position:absolute;}
+.starpoint_box .star_radio:nth-of-type(1):hover ~ .starpoint_bg,
+.starpoint_box .star_radio:nth-of-type(1):checked ~ .starpoint_bg{width:10%;}
+.starpoint_box .star_radio:nth-of-type(2):hover ~ .starpoint_bg,
+.starpoint_box .star_radio:nth-of-type(2):checked ~ .starpoint_bg{width:20%;}
+.starpoint_box .star_radio:nth-of-type(3):hover ~ .starpoint_bg,
+.starpoint_box .star_radio:nth-of-type(3):checked ~ .starpoint_bg{width:30%;}
+.starpoint_box .star_radio:nth-of-type(4):hover ~ .starpoint_bg,
+.starpoint_box .star_radio:nth-of-type(4):checked ~ .starpoint_bg{width:40%;}
+.starpoint_box .star_radio:nth-of-type(5):hover ~ .starpoint_bg,
+.starpoint_box .star_radio:nth-of-type(5):checked ~ .starpoint_bg{width:50%;}
+.starpoint_box .star_radio:nth-of-type(6):hover ~ .starpoint_bg,
+.starpoint_box .star_radio:nth-of-type(6):checked ~ .starpoint_bg{width:60%;}
+.starpoint_box .star_radio:nth-of-type(7):hover ~ .starpoint_bg,
+.starpoint_box .star_radio:nth-of-type(7):checked ~ .starpoint_bg{width:70%;}
+.starpoint_box .star_radio:nth-of-type(8):hover ~ .starpoint_bg,
+.starpoint_box .star_radio:nth-of-type(8):checked ~ .starpoint_bg{width:80%;}
+.starpoint_box .star_radio:nth-of-type(9):hover ~ .starpoint_bg,
+.starpoint_box .star_radio:nth-of-type(9):checked ~ .starpoint_bg{width:90%;}
+.starpoint_box .star_radio:nth-of-type(10):hover ~ .starpoint_bg,
+.starpoint_box .star_radio:nth-of-type(10):checked ~ .starpoint_bg{width:100%;}
+
+.blind{position:absolute;clip:rect(0 0 0 0);margin:-1px;width:1px;height: 1px;overflow:hidden;}

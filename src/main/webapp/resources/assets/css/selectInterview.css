@@ -1,0 +1,214 @@
+
+.container {
+    width:2000px;
+}
+.carrer-info {
+display:flex;
+margin-top:30px;
+}
+.company-name {
+display:flex;
+margin-top:30px;
+}
+.duty{
+display:flex;
+margin-top:30px;
+}
+
+.company-name input[type="text"] {
+	margin-left:135px;    
+}
+.workType{
+	margin-left:120px;
+}
+.carrer-select {
+    display:flex;
+    justify-content: center;
+    margin-left:80px;
+}
+.carrer-select div {
+    margin-right:10px;
+}
+.interview-date {
+    margin-top:30px;
+    display:flex;
+}
+.date {
+    margin-left:120px;
+}
+.interview-info {
+    margin-top:30px;
+}
+.evaluation {
+    margin-top:30px;
+    display:flex;
+}
+.eval-button {
+    margin-left:100px;
+}
+.eval-button button {
+    margin-right:10px;
+}
+.difficulty-container {
+    margin-top:30px;
+    display:flex;
+}
+.diffi-button {
+    margin-left:135px;
+}
+.diffi-button button {
+    margin-right:10px;
+}
+.interview-type{
+    display:flex;
+    margin-top:30px;
+}
+.interview-check{
+    margin-left:60px;
+}
+.interview-check label{
+    margin-right:5px;
+}
+.interviewee {
+    display:flex;
+    margin-top:30px;
+}
+.interviewee-check {
+    margin-left:120px;
+}
+.interviewee-check label{
+    margin-right:5px;
+}
+.interview-process {
+    display:flex;
+    margin-top:30px;
+    width:1296px;
+}
+.wayofinterview{
+	width:10%;
+}
+.mb-3 {
+    width:50%;
+    margin-left:55px;
+}
+
+.question {
+    display:flex;
+    margin-top:10px;
+}
+.question-input {
+    margin-left:10px;
+}
+.question-input input{
+    width:400px;
+    height:30px;
+}
+.question-info {
+    display:flex;
+    
+}
+.question-container {
+    margin-left:110px;
+}
+.question-tip {
+    margin-top:30px;
+    display:flex;
+    width:1296px;
+}
+.question-tip>.mb-3{
+    margin-left:100px;
+}
+.pass-yn {
+    display:flex;
+    margin-top:30px;
+}
+.pass-btn {
+    margin-left:110px;
+}
+.pass-btn button {
+    margin-right:10px;
+}
+.submit {
+    background-color:rgb(67, 184, 255);
+    color:white;
+    border:none;
+    width:100px;
+    height:40px;
+}
+.btn-container {
+    margin-top:100px;
+    margin-left:300px;
+    padding-bottom:100px;
+}
+.select-box {
+	margin-left:135px
+}
+.select-box select {
+	margin-left:135px;
+}
+.eval input[type="radio"]+span {
+	border-radius: 15px;
+    display: inline-block;
+    padding: 5px 5px;
+    border: 1px solid #dfdfdf;
+    text-align: center;
+    cursor: pointer;
+    width: 220px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.eval input[type='radio'] {
+	display: none;
+}
+.eval input[type="radio"]:checked+span {
+	background-color: rgb(64, 194, 255);
+	color: #ffffff;
+	font-size: 20px;
+	font-weight: bold;
+}
+.difficulty input[type="radio"]+span {
+	border-radius: 15px;
+    display: inline-block;
+    padding: 5px 5px;
+    border: 1px solid #dfdfdf;
+    text-align: center;
+    cursor: pointer;
+    width: 220px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.difficulty input[type='radio'] {
+	display: none;
+}
+.difficulty input[type="radio"]:checked+span {
+	background-color: rgb(64, 194, 255);
+	color: #ffffff;
+	font-size: 20px;
+	font-weight: bold;
+}
+.passOrNot input[type="radio"]+span {
+	border-radius: 15px;
+    display: inline-block;
+    padding: 5px 5px;
+    border: 1px solid #dfdfdf;
+    text-align: center;
+    cursor: pointer;
+    width: 220px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.passOrNot input[type='radio'] {
+	display: none;
+}
+.passOrNot input[type="radio"]:checked+span {
+	background-color: rgb(64, 194, 255);
+	color: #ffffff;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+
+

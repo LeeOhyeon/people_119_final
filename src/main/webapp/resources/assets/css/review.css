@@ -1,0 +1,75 @@
+.total-company-review>div>button {
+    margin-bottom:40px;
+    border-radius: 20px;
+}
+.mb-3{
+    margin-top:50px;
+    width:330px;
+}
+.mb-3 input{
+    border-right:none;
+}
+.mb-3>span{
+    background-color: white;
+    border-left:none;
+}
+.company-review-image {
+    display:inline-block;
+    width:49%;
+}
+.company-review{
+    display: inline-block;
+    width: 49%;
+}
+.total-review {
+    margin-top:40px;
+}
+.company-image {
+    display:inline-block;
+    width:9%;
+}
+.company-image>span {
+    font-size:100px;
+}
+.company-name {
+    display:inline-block;
+    width:10%;
+    vertical-align: middle;
+    height:120px;
+    
+}
+.review-info {
+    display:inline-block;
+    width:49%;
+    font-size:13px;
+}
+.review-view-count {
+    display:inline-block;
+    vertical-align: middle;
+    width:8%;
+    height: 90px;
+    text-align: center;
+}
+.interest {
+    display:inline-block;
+    width:8%;
+    vertical-align: middle;
+    height: 100px;
+}
+
+.total-review-info {
+    border:1px solid #333;
+    padding:15px;
+    margin-top:20px;
+    border-radius:10px;
+}
+.total-review-info div {
+    margin-right:30px;
+}
+.review-title-name {
+    display:inline-block;
+}
+.review-title-select {
+    display:inline;
+    float:right;
+}

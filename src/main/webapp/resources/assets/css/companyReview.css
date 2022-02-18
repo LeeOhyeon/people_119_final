@@ -1,0 +1,100 @@
+section.inner-page{
+	padding-left: 150px;
+	padding-right: 400px;
+}
+
+div.content{
+	padding-left: 250px;
+}
+
+.card{
+	margin-bottom: 20px;
+	padding: 20px 60px 20px 60px;
+	width: 500px;
+	height: 300px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.logoimg{
+	margin-right: 30px;
+}
+
+div.progress{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.companyName {
+	font-size: 50px;
+	font-weight: bolder;
+}
+
+.company_info {
+	margin-bottom: 50px;
+}
+
+.star-ratings {
+  color: #aaa9a9; 
+  position: relative;
+  unicode-bidi: bidi-override;
+  width: max-content;
+  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1.3px;
+  -webkit-text-stroke-color: #2b2a29;
+  display: inline-block;
+  vertical-align: bottom;
+}
+.star-point{
+	display: inline-block;
+	font-size: 40px;
+	margin-right: 20px;
+	vertical-align: bottom;
+}
+ 
+.star-ratings-fill {
+  color: #fff58c;
+  padding: 0;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  -webkit-text-fill-color: gold;
+  font-size: 45px;
+}
+ 
+.star-ratings-base {
+  z-index: 0;
+  padding: 0;
+  font-size: 45px;
+}
+
+div.sub {
+	display: inline-block;
+	margin-right: 10px;
+	padding-right: 10px;
+	border-right: 1px solid lightgray;
+}
+div.sub_end {
+	display: inline-block;
+}
+
+.currentpoint{
+	color: red;	
+	font-weight: bold;
+}
+.maxpoint{
+	color: darkgray;
+}
+
+.card_answer {
+	margin-bottom: 15px;
+}
+.card_answer3 {
+	margin-bottom: 40px;
+}
+span.title{
+	font-size: 20px;
+}

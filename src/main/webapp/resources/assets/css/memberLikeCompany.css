@@ -1,0 +1,59 @@
+.resume-btn {
+    margin-top:50px;
+}
+.total-count {
+    margin-top:40px;
+}
+
+ a:link { color: black; text-decoration: none;}
+ a:visited { color: black; text-decoration: none;}
+ a:hover { color: black; text-decoration: none;}
+.searchCoatainer{
+	width: 100%;
+	height: auto;
+	
+}
+
+
+.searchList-container{
+display: inline-block;
+height: 130px;
+width:30%;
+border: 1px solid lightgray;
+border-radius:15px;
+padding:20px;
+margin-bottom: 20px;
+margin-right: 10px;
+padding-top: 40px;
+
+}
+.companyFavicon{
+	display: inline-block;
+	width: 28%;
+}
+.companyName_{
+	display: inline-block;
+	font-weight: bolder;
+	width: 68%;
+		
+}
+.deleteBtn-container{
+	float: right;
+}
+.delBtn{
+	background-color: white;
+	border: none;
+}
+.offerCount_conatiner{
+	margin-top: 3px;
+}
+.favicon{
+	width: 50px;
+	height: 50px;
+}
+.companyName_conatiner{
+	display: flex;
+	justify-content: flex-start;
+	cursor: pointer;
+
+}

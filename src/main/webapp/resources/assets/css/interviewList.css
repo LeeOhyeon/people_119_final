@@ -1,0 +1,100 @@
+.company-container{
+    border:solid 1px black;
+    padding-left:30px;
+    width:1000px;
+    height:auto;
+    border-radius:10px;
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.company-info-title {
+    
+    display:flex;
+}
+.pass-yn{
+    margin-top:13px;
+    margin-left:10px;
+    font-size:13px;
+}
+.info {
+    display:flex;
+}
+.info div{
+    margin-right:10px;
+}
+.eval{
+    display:flex;
+}
+.smile{
+    font-size:50px;
+}
+.difficulty{
+    display:flex;
+}
+.result {
+    display:flex;
+}
+.interview-result{
+    display:flex;
+}
+.review{
+    margin-left:10px;
+    margin-top:10px;
+    margin-right:15px;
+}
+.select-box{
+    display:flex;
+}
+.title{
+    display:flex;
+}
+.review-count{
+    margin-top:10px;
+    margin-left:790px;
+}
+.enroll-date{
+    margin-top:10px;
+    width:100%;
+    text-align: right;
+    
+}
+.date-info{
+    margin-right:20px;
+    cursor:pointer;
+}
+.date{
+    font-size:12px;
+}
+.interview-type{
+    margin-top:20px;
+    display:flex;
+}
+.interviewee-count{
+    margin-top:20px;
+    display:flex;
+}
+.interview-process{
+    margin-top:20px;
+    display:flex;
+}
+.question{
+    margin-top:10px;
+    display:flex;
+}
+.interview-question{
+    display:flex;
+    margin-top:20px;
+}
+.question-container {
+    margin-left:60px;
+    margin-bottom:30px;
+    margin-top:-10px;
+}
+.question div{
+    margin-right:10px;
+}
+.companyName{
+	cursor:pointer;
+}
+

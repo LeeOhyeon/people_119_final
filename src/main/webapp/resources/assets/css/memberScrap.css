@@ -1,0 +1,71 @@
+.resume-btn {
+    margin-top:50px;
+}
+.total-count {
+    margin-top:40px;
+}
+
+ a:link { color: black; text-decoration: none;}
+ a:visited { color: black; text-decoration: none;}
+ a:hover { color: black; text-decoration: none;}
+.scrap-searchContainer{
+    display: flex;
+    justify-content: end;
+}
+.scrap-search{
+    width:400px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.searchList-container{
+display: flex;
+justify-content: flex-start;
+height: 150px;
+border: 1px solid lightgray;
+border-radius:15px;
+padding:20px;
+margin-bottom: 20px;
+}
+.company-title{
+    width: 20%;
+    font-size:17px;
+    word-break:break-all;
+    text-align: center;
+    padding-top:30px; 
+}
+.offer-title{
+    width: 60%;
+    font-size:20px;
+    font-weight: bolder;
+    padding-top:30px;
+    text-decoration: none;
+    padding-left: 30px;
+    
+}
+.offerContent{
+	font-size: 13px;
+	font-weight: normal;
+	color:gray;
+	margin-right: 5px;
+}
+.delBtn{
+	background-color: white;
+	border: none;
+	font-size: 20px;
+}
+.finishDate-container{
+    width: 10%;
+    padding-top:30px;
+    font-size: 15px;
+	font-weight: normal;
+	text-align: center;
+}
+.deleteBtn-container{
+   width: 10%;
+    width: 10%;
+    padding-top:38px;
+    font-size: 15px;
+	font-weight: normal;
+	text-align: center;
+}

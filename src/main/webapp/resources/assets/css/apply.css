@@ -1,0 +1,47 @@
+.mb-3{
+    width:200px;
+    
+}
+.mb-3 input{
+    border-right:none;
+}
+.mb-3>span{
+    background-color: white;
+    border-left:none;
+}
+.apply-group {
+    display:inline;
+    float:right;
+}
+.apply-yn{
+    display:inline-block;
+}
+.apply-input {
+    display:inline-block;
+}
+.apply-count{
+    display:inline-block;
+    margin-top:20px;
+    
+}
+.apply-info {
+    margin-top:15px;
+    border:1px solid #333;
+    border-radius: 15px;
+    padding:20px;
+}
+.condition {
+    font-size:11px;
+}
+.apply-info-title{
+    display:inline-block;
+    margin-top:20px;
+}
+.apply-info-yn{
+    display:inline;
+    float:right;
+    text-align: center;
+    margin-top:50px;
+}
+
+
