@@ -27,4 +27,7 @@ public interface CompanyDao {
 	
 	// 회사 이름으로 검색하기
 	List<Company> selectSearchCompanyList(SqlSessionTemplate session, String search);
+	
+	// 기업 정보 조회수 올리기
+	int updateCompanyCount(SqlSessionTemplate session, String companyName);
 }

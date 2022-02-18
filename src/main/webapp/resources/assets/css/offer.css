@@ -1,7 +1,4 @@
-section{
-   padding-left: 300px; 
-   padding-right: 300px;
-}
+/* 
 
 #hotHirepost{
    display: flex;   
@@ -16,9 +13,6 @@ section{
    justify-content: space-around;
 }
 
-div.margin{
-   margin-bottom: 80px;
-}
 
 img.offerImg{
    width: 429px;
@@ -56,4 +50,7 @@ img.offerImg{
    margin-bottom: 20px;
    border: 1px solid lightgray;
    height: 330px;
-}
+} */
+ a:link { color: black; text-decoration: none;}
+ a:visited { color: black; text-decoration: none;}
+ a:hover { color:white; text-decoration: none;}

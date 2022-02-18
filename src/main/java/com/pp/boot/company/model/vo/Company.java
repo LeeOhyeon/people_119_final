@@ -37,7 +37,7 @@ public class Company {
 	private String companyImage;
 	
 	// 기업 정보 조회수
-	
+	private int companyViewCount;
 	
 	
 }

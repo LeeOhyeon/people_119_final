@@ -54,5 +54,20 @@ public class InterviewServiceImpl implements InterviewService {
 		
 		return ir;
 	}
+
+	@Override
+	public int deleteInterview(int interviewReviewNo) {
+
+		int count=dao.deleteInterview(session,interviewReviewNo);
+		
+		return count;
+	}
+
+	@Override
+	public int interviewUpdate(InterviewReview ir) {
+		
+		int count=dao.interviewUpdate(session,ir);
+		return count;
+	}
 	
 }

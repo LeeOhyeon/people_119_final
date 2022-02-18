@@ -1,42 +1,129 @@
-div, ul, li {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:0;margin:0}
-a {text-decoration:none;}
-
-.quickmenu {position:absolute;width:280px;top:26%;margin-top:-50px;right:10px;background:#fff;}
-.quickmenu ul {position:relative;float:left;width:100%;display:inline-block;*display:inline;border:1px solid #ddd;}
-.quickmenu ul li {float:left;width:100%;border-bottom:1px solid #ddd;text-align:center;display:inline-block;*display:inline;}
-.quickmenu ul li a {position:relative;float:left;width:100%;height:30px;line-height:30px;text-align:center;color:#999;font-size:9.5pt;}
-.quickmenu ul li a:hover {color:#000;}
-.quickmenu ul li:last-child {border-bottom:0;}
-
-section{
-	padding-left: 300px; 
-	padding-right: 300px;
-	padding-top: 200px;
+ .offer_container{
+    border: 1px solid #e5e6eb;
+    padding: 40px;
+    margin: 0px;
+    background: white;
 }
 
-div.content{
-	position: relative;
-	min-height: 1000px;
-	width: 1303px;
-	border: 1px solid black;
-	padding: 50px 50px 50px 50px;
+.offer_header{
+	width: 100%;
+	padding: 30px;
+	padding-bottom: 20px;
 }
-.content ul{
-	margin-top: 0;
-	margin-bottom: 50px;
-	margin-left: 30px;
+.offer_titleContainer{
+	margin-top:15px;
+	display: flex;
 }
-
-.hirepostTitle{
-	font-size: 50px;
-	font-weight: bolder;
-}
-
 .companyName{
-	font-size: 25px;
+	display: inline-block;
+    overflow: hidden;
+    margin-right: 8px;
+    padding-right: 2px;
+    max-width: 380px;
+    height: 28px;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 23px;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    white-space: nowrap;
+	
 }
-
-.title{
-	font-size: 20px;
-	font-weight: bolder;
+.endDate{
+	display: inline-block;
+    overflow: hidden;
+    margin-right: 8px;
+    padding-right: 2px;
+    max-width: 380px;
+    height: 28px;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 23px;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    white-space: nowrap;
+    float: right;
+}
+.likeCompany{
+    display: inline-block;
+    padding: 0 9px 3px;
+    height: 28px;
+    border: 1px solid #e4e4e4;
+    box-sizing: border-box;
+    font-size: 15px;
+    vertical-align: top;
+    background-color: #fff;
+}
+.offerTitle{
+	width:80%;
+}
+.offerTitle h1{
+	margin-top: 4px;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: -1.5px;
+    line-height: 34px;
+    display: inline-block;
+}
+.scrapBtn{
+	display: block;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #e9e9e9;
+    text-align: center;
+    display: inline-block;
+    margin-right: 10px;
+}
+.apply{
+	border: 1px solid #ff8d5a;
+    color: #fff;
+    background: #ff8d5a;
+    display: inline-block;
+    width: 210px;
+    height: 58px;
+    border: 1px solid #dce2ef;
+    color: #8a92a6;
+    font-family: "Malgun Gothic",sans-serif !important;
+    font-size: 20px !important;
+    font-weight: bold;
+    letter-spacing: -2px;
+    line-height: 54px;
+    color:white;
+}
+.applyBtnContainer{
+	display: inline-block;
+}
+.info_container{
+	display: flex;
+	justify-content: space-between;
+}
+.offer_infoCotainer{
+	width: 48%;
+	border-bottom: 1px solid lightgray;
+	border-top: 1px solid lightgray;
+	margin-right: 15px;
+	padding: 15px;
+}
+.company_infoContainer{
+	width: 48%;
+	border-bottom: 1px solid lightgray;
+	border-top: 1px solid lightgray;
+	padding: 15px;
+}
+.firstTd{
+	width: 150px;
+	
+}
+	
+.tableTd tr td:first-child{
+	color: #888;
+    line-height: 23px;
+    font-size: 20px;
+}
+.tableTd tr td:last-child{
+    line-height: 23px;
+    font-size: 20px;
+}
+.content_container{
+	padding: 30px;
 }

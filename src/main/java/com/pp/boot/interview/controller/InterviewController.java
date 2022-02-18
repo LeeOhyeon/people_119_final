@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.pp.boot.common.PageFactory;
@@ -66,14 +67,14 @@ public class InterviewController {
 		 String msg = "";
 		 String loc = "";
 		 if(result>0) {
-			 msg ="등록완료";
-			  loc ="/";	 
+			 msg ="면접후기 등록이 완료되었습니다.";
+			  loc ="selectInterview.do?interviewReviewNo="+result;	 
 		 }
 		 
 		 model.addAttribute("msg",msg);
 		 model.addAttribute("loc",loc);
 		 
-		 return "interview/interviewList"; 
+		 return "common/msg"; 
 	 }
 	 @RequestMapping("/selectInterview.do")
 	 public ModelAndView selectInterview(ModelAndView mv, @RequestParam int interviewReviewNo) {
@@ -84,5 +85,41 @@ public class InterviewController {
 		 mv.setViewName("interview/selectInterview");
 		 return mv;
 	 }
-	
+	 @RequestMapping("/deleteInterview.do")
+	 @ResponseBody
+	 public int deleteInterview(@RequestParam int interviewReviewNo) {
+		 
+		 int count=service.deleteInterview(interviewReviewNo);
+		 
+		 return count;
+	 }
+	 @RequestMapping("/updateInterviewView.do")
+	 public ModelAndView updateInterviewView(ModelAndView mv,@RequestParam String memberId, @RequestParam int interviewReviewNo) {
+		 
+		 
+		 List<InterviewCareer> list=service.careerList(memberId);
+			
+			
+		 mv.addObject("list",list);
+		 mv.setViewName("interview/updateInterviewView");
+		 
+		 return mv;
+	 }
+	 @RequestMapping("/interviewUpdate.do")
+	 public String interviewUpdate(InterviewReview ir,Model model) {
+		 
+		 int result=service.interviewUpdate(ir);
+		 String msg = "";
+		 String loc = "";
+		 if(result>0) {
+			 msg ="면접후기 수정이 완료되었습니다";
+			  loc ="selectInterview.do?interviewReviewNo="+result;	 
+		 }
+		 
+		 model.addAttribute("msg",msg);
+		 model.addAttribute("loc",loc);
+		 
+		 
+		 return "common/msg"; 
+	 }
 }

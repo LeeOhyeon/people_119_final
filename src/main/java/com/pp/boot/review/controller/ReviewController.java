@@ -33,19 +33,6 @@ public class ReviewController {
 	private OfferService offerService;
 
 	
-	// 전체 기업 리뷰 리스트
-//	@RequestMapping("/companyReviewList.do")
-//	public String companyReviewList(Model model) {
-//		List<CompanyReview> list = service.selectCompanyReviewList();
-//		
-//		List<Offer> offerCounts = offerService.countOffer();
-//		
-//		model.addAttribute("companyReviewList", list);
-//		model.addAttribute("offerCounts", offerCounts);
-//		
-//		return "review/companyReviewList";
-//	}
-	
 	// 기업 리뷰 작성하기 화면 전환
 	@RequestMapping("/enrollCompanyReview.do")
 	public String enrollCompanyReview(Model m) {
@@ -80,6 +67,9 @@ public class ReviewController {
 	// 기업 리뷰 보기
 	@RequestMapping("companyReview.do")
 	public String companyReview(@RequestParam String companyName, Model m) {
+		// 조회수 올리기
+		int updateCount = companyService.updateCompanyCount(companyName);
+		
 		// 해당 기업의 리뷰 전체 개수 가져오기
 		int totalCount = companyService.countCompany(companyName);
 		

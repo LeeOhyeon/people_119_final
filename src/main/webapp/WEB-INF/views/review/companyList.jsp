@@ -65,7 +65,6 @@
 		          <div class="total-review-info">
 		            <div class="company-image">
 		              <img alt="" src="${path }/resources/upload/company/${cl.companyImage }" style="width: 100px; height: 100px;">
-		              <!-- <span><i class="fas fa-image"></i></span> -->
 		            </div>
 		            <div class="company-name">
 		              <h5><strong><a href="${path }/review/companyReview.do?companyName=${cl.companyName}"><c:out value="${cl.companyName }"/></a></strong></h5>
@@ -75,10 +74,11 @@
 		              <p><c:out value="${cl.service }"/></p>
 		            </div>
 		            <div class="review-view-count">
-		              <p><strong>조회수 <c:out value=""></c:out></strong></p>
+		              <p><strong>조회수 </strong><c:out value="${cl.companyViewCount }"/></p>
 		            </div>
+		            <input type="hidden" name="companyId" value="${cl.companyId }"/>
 		            <div class="interest">
-		              <button type="button" class="btn btn-light" style="width:100px">관심기업</button>
+		              <button type="button" class="btn btn-light" style="width:100px" onclick="insertLikeCompany(this);">관심기업</button>
 		            </div>
 		          </div>
 	          </c:forEach>
@@ -154,6 +154,40 @@
 				}
 			})
 		}		
+    	
+    	// 관심기업 등록
+		const insertLikeCompany=(e)=>{
+			
+			let companyId = $($(e).parents(".total-review-info")).find("input[name=companyId]").val();
+			console.log(companyId);
+			
+			$.ajax({
+				url:"${path}/member/checkLikeCompany.do",
+				type:"post",
+				data:{memberId:"${loginMember.memberId}",
+						companyId:companyId},
+				success:data=>{
+						if(data){
+							$.ajax({
+								url:"${path }/member/insertLikeCompany.do",
+								type:"post",
+								data:{memberId:"${loginMember.memberId}",
+									companyId:companyId	
+								},
+								success:data=>{
+									alert("관심기업 등록 완료");					
+								},
+								error:e=>{
+									alert("관심기업 등록 실패");
+								}
+							});		
+						}else{
+							alert("이미 관심기업으로 등록된 기업 입니다.");
+						}
+									
+					}
+			});
+		}
     </script>
   </main><!-- End #main -->
  <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

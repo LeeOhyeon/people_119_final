@@ -49,4 +49,11 @@ public class CompanyDaoImpl implements CompanyDao{
 	public List<Company> selectSearchCompanyList(SqlSessionTemplate session, String search){
 		return session.selectList("company.selectSearchCompanyList", search);
 	}
+	
+	// 기업 정보 조회수 올리기
+	@Override
+	public int updateCompanyCount(SqlSessionTemplate session, String companyName) {
+		return session.update("company.updateCompanyCount", companyName);
+	}
+	
 }

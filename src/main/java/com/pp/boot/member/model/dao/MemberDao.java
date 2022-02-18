@@ -28,11 +28,12 @@ public interface MemberDao {
 	int selectScrapCount(SqlSessionTemplate session, String memberId);
 	int searchScrapCount(SqlSessionTemplate session, Map<String, Object> param);
 	List<Scrap> searchScrapList(SqlSessionTemplate session, Map<String, Object> param);
-	int deleteScrap(SqlSessionTemplate session, int scrapNo);
+	int deleteScrap(SqlSessionTemplate session,int scrapNo);
 	List<LikeCompany> selectlikeCompanyList(SqlSessionTemplate session, Map<String, Object> param);
 	int selectlikeCompanyCount(SqlSessionTemplate session, String memberId);
 	int insertLikeCompany(SqlSessionTemplate session, Map<String, Object> param);
 	LikeCompany checkLikeCompany(SqlSessionTemplate session, Map<String, Object> param);
 	int deletelikeCompany(SqlSessionTemplate session, int likeCompanyNo);
+	int deleteScrapStar(SqlSessionTemplate session, Map param);
 	
 }

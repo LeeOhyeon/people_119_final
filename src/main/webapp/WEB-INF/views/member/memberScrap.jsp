@@ -148,7 +148,9 @@
 			$.ajax({
 				url:"${path}/member/deleteScrap.do",
 				type:"post",
-				data:{scrapNo:scrapNo},
+				data:{
+					memberId:"${loginMember.memberId}",
+					scrapNo:scrapNo},
 				success:data=>{
 					alert("삭제하였습니다.");
 					location.reload();

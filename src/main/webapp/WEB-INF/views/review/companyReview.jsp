@@ -32,6 +32,9 @@
 					<div class="company_info">
 						<div class="logo">
 							<img class="logoimg" alt="사진드러갈거야" src="${path}/resources/upload/company/${company.companyImage }">
+							<div style="display: inline-block;">
+								<p>기업정보</p>
+							</div>
 							<div class="star-point">
 								<span class="currentpoint"><c:out value="${percentCounts.STARPOINT }"/></span><span class="maxpoint"> / 5</span>
 							</div>
@@ -62,12 +65,12 @@
 							<div class="sub">직원수<c:out value="${company.employeeNumber }"/>명</div>
 							<div class="sub_end"><c:out value="${company.ceoName }"/></div>
 						</div>
-						<div class="best">
+						<!-- <div class="best">
 							<span>1번</span>
 							<span>2번</span>
 							<span>3번</span>
 							<span>4번</span>
-						</div>
+						</div> -->
 					</div>
 					
 					<div class="review_box">

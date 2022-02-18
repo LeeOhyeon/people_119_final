@@ -22,8 +22,11 @@ public class InterviewDaoImpl implements InterviewDao {
 
 	@Override
 	public int interviewEnroll(SqlSessionTemplate session, InterviewReview i) {
-		// TODO Auto-generated method stub
-		return session.insert("interview.interviewEnroll",i);
+		session.insert("interview.interviewEnroll",i);
+		
+		int interviewReviewNo=i.getInterviewReviewNo();
+		
+		return interviewReviewNo;
 	}
 
 	@Override
@@ -43,6 +46,23 @@ public class InterviewDaoImpl implements InterviewDao {
 	public InterviewReview selectInterview(SqlSessionTemplate session, int interviewReviewNo) {
 		// TODO Auto-generated method stub
 		return session.selectOne("interview.selectInterview",interviewReviewNo);
+	}
+
+	@Override
+	public int deleteInterview(SqlSessionTemplate session, int interviewReviewNo) {
+		// TODO Auto-generated method stub
+		return session.delete("interview.deleteInterview",interviewReviewNo);
+	}
+
+	@Override
+	public int interviewUpdate(SqlSessionTemplate session, InterviewReview ir) {
+		
+		session.update("interview.updateInterview",ir);
+		
+		int interviewReviewNo=ir.getInterviewReviewNo();
+		
+		return interviewReviewNo;
+		
 	}
 	
 }

@@ -449,6 +449,14 @@ public class MemberController {
 			return result;
 		}
 		
+		//스크랩 공고삭제
+				@RequestMapping("/deleteScrapStar.do")
+				@ResponseBody
+				public int deleteScrapStar(@RequestParam Map param,HttpServletResponse response) {
+					response.setContentType("application/json; charset=utf-8");
+					int result = service.deleteScrapStar(param);
+					return result;
+				}
 		
 		//관심기업 리스트 
 		@RequestMapping("/memberlikeCompanyList.do")
