@@ -16,5 +16,9 @@ public interface InterviewService {
 
 	int interviewListCount();
 
-	InterviewReview selectInterview(int interviewReviewNo);	
+	InterviewReview selectInterview(int interviewReviewNo);
+
+	int deleteInterview(int interviewReviewNo);
+
+	int interviewUpdate(InterviewReview ir);	
 }

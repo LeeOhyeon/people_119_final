@@ -212,31 +212,37 @@
     
   </main><!-- End #main -->
   <script>
+  	const interviewReviewNo="${ir.interviewReviewNo}";
+  	const memberId="${loginMember.memberId}";
   	const backto=()=>{
   		history.back();
   	}
+  	
+  	//후기 삭제
   	const deleteIr=()=>{
   		let interviewReviewNo="${ir.interviewReviewNo}";
-  		$.ajax({
-  			url:"${path}/interview/deleteInterview.do",
-  			data:{interviewReviewNo:interviewReviewNo},
-  			dataType:"json",
-  			success:data=>{
-  				
-  			}
-  		});	
+  	    if(confirm("정말 삭제하시겠습니까?")==true) {
+  	    	$.ajax({
+  	  			url:"${path}/interview/deleteInterview.do",
+  	  			data:{interviewReviewNo:interviewReviewNo},
+  	  			dataType:"json",
+  	  			success:data=>{
+  	  				if(data>0) { 					
+  	  					alert("후기 삭제 완료");
+  	  					location.assign("${path}/interview/interviewList.do");
+  	  				}else{
+  	  					alert("후기 삭제 실패");
+  	  					return;
+  	  				}
+  	  			}
+  	  		});		
+  	    }else{
+  	    	return;
+  	    }
   	}
-  	
+  	//후기 수정
   	const updateIr=()=>{
-  		let interviewReviewNo="${ir.interviewReviewNo}";
-  		$.ajax({
-  			url:"${path}/interview/updateInterview.do",
-  			data:{interviewReviewNo:interviewReviewNo},
-  			dataType:"json",
-  			success:data=>{
-  				
-  			}
-  		});	
+  		location.assign("${path}/interview/updateInterviewView.do?interviewReviewNo="+interviewReviewNo+"&&memberId="+memberId);
   	}
   </script>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
