@@ -15,7 +15,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>Inner Page</h2>
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="${path }">Home</a></li>
             <li>Inner Page</li>
           </ol>
         </div>
@@ -77,8 +77,9 @@
 	            <div class="review-view-count">
 	              <p><strong>조회수</strong></p>
 	            </div>
+	            <input type="hidden" name="companyId" value="${cl.companyId }"/>
 	            <div class="interest">
-	              <button type="button" class="btn btn-light" style="width:100px">관심기업</button>
+	              <button type="button" class="btn btn-light" style="width:100px" onclick="insertLikeCompany(this);">관심기업</button>
 	            </div>
 	          </div>
           </c:forEach>
@@ -107,6 +108,39 @@
 				}
 			})
 		}		
+    	
+		const insertLikeCompany=(e)=>{
+			
+			let companyId = $($(e).parents(".total-review-info")).find("input[name=companyId]").val();
+			console.log(companyId);
+			
+			$.ajax({
+				url:"${path}/member/checkLikeCompany.do",
+				type:"post",
+				data:{memberId:"${loginMember.memberId}",
+						companyId:companyId},
+				success:data=>{
+						if(data){
+							$.ajax({
+								url:"${path }/member/insertLikeCompany.do",
+								type:"post",
+								data:{memberId:"${loginMember.memberId}",
+									companyId:companyId	
+								},
+								success:data=>{
+									alert("관심기업 등록 완료");					
+								},
+								error:e=>{
+									alert("관심기업 등록 실패");
+								}
+							});		
+						}else{
+							alert("이미 관심기업으로 등록된 기업 입니다.");
+						}
+									
+					}
+			});
+		}
     </script>
   </main><!-- End #main -->
  <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

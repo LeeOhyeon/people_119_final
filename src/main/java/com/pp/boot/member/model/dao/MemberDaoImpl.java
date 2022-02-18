@@ -140,6 +140,11 @@ public class MemberDaoImpl implements MemberDao {
 	public int deletelikeCompany(SqlSessionTemplate session, int likeCompanyNo) {
 		return session.delete("member.deletelikeCompany",likeCompanyNo);
 	}
+
+	@Override
+	public int deleteScrapStar(SqlSessionTemplate session, Map param) {
+		return session.delete("member.deleteScrapStar",param);
+	}
 	
 	
 	

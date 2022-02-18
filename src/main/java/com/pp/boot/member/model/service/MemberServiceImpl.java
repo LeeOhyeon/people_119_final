@@ -138,6 +138,11 @@ public class MemberServiceImpl implements MemberService {
 		return dao.deletelikeCompany(session,likeCompanyNo);
 	}
 
+	@Override
+	public int deleteScrapStar(Map param) {
+		return dao.deleteScrapStar(session,param);
+	}
+
 	
 	
 	

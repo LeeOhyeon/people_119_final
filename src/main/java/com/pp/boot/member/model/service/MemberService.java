@@ -32,5 +32,6 @@ public interface MemberService {
 	int insertLikeCompany(Map<String, Object> param);
 	LikeCompany checkLikeCompany(Map<String, Object> param);
 	int deletelikeCompany(int likeCompanyNo);
+	int deleteScrapStar(Map param);
 	
 }
