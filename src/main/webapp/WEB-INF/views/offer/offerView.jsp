@@ -43,9 +43,20 @@
                     <div class="scrapBtn">
 	                    <span onclick="insertScrap();" class="star" style="cursor: pointer; font-size: 35px;"><i class="fas fa-star"></i></span>
                     </div>
-                    <div class="applyBtnContainer">
-						 <button class="apply" type="button" onclick="location.assign('${path }/applicant/apply.do?offerNo=${offer.offerNo}&memberId=${loginMember.memberId}')"; class="btn btn-primary">지원하기</button>
-					</div>
+                    
+                    <c:choose>
+                    	<c:when test="${offer.status eq 1 }">
+		                    <div class="applyBtnContainer">
+								 <button class="apply-end" type="button" onclick="location.assign('${path }/applicant/apply.do?offerNo=${offer.offerNo}&memberId=${loginMember.memberId}')"; class="btn btn-primary" disabled="disabled">지원이 마감되었습니다.</button>
+							</div>
+						</c:when>
+                    	<c:when test="${offer.status eq 0 }">
+		                    <div class="applyBtnContainer">
+								 <button class="apply" type="button" onclick="location.assign('${path }/applicant/apply.do?offerNo=${offer.offerNo}&memberId=${loginMember.memberId}')"; class="btn btn-primary">지원하기</button>
+							</div>
+						</c:when>
+					</c:choose>
+					
                   </div>
               </div>
 
