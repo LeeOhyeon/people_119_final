@@ -67,4 +67,10 @@ public class OfferServiceImpl implements OfferService {
 	public List<Offer> selectHotOfferList() {
 		return dao.selectHotOfferList(session);
 	}
+	
+	// 공고 STATUS 자동 업데이트
+	@Override
+	public int updateOfferStatus() {
+		return dao.updateOfferStatus(session);
+	}
 }

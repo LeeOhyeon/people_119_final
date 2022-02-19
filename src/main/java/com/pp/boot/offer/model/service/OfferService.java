@@ -28,4 +28,7 @@ public interface OfferService {
 	
 	// 조회수 높은 TOP3 공고 가져오기
 	List<Offer> selectHotOfferList();
+	
+	// 공고 STATUS 자동 업데이트
+	int updateOfferStatus();
 }

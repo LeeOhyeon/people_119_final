@@ -54,4 +54,9 @@ public class OfferDaoImpl implements OfferDao {
 		return session.selectList("offer.selectHotOfferList");
 	}
 	
+	// 공고 STATUS 자동 업데이트
+	@Override
+	public int updateOfferStatus(SqlSessionTemplate session) {
+		return session.update("offer.updateOfferStatus");
+	}
 }

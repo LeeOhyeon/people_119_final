@@ -59,6 +59,14 @@
           </div>
           </div>
           
+			<c:if test="${empty companyList }">
+				<div class="content-wrap">
+					<div class="info-wrap">
+						<h5><strong>현재 PEOPLE119에 가입한 기업이 없습니다.</strong></h5>
+					</div>
+				</div>
+			</c:if>
+          
           <div class="content-wrap">
 	          <div class="info-wrap">
 	          <c:forEach var="cl" items="${companyList }">
