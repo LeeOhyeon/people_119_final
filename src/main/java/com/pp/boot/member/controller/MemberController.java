@@ -450,14 +450,14 @@ public class MemberController {
 		}
 		
 		//스크랩 공고삭제
-				@RequestMapping("/deleteScrapStar.do")
-				@ResponseBody
-				public int deleteScrapStar(@RequestParam Map param,HttpServletResponse response) {
-					response.setContentType("application/json; charset=utf-8");
-					int result = service.deleteScrapStar(param);
-					return result;
-				}
-		
+		@RequestMapping("/deleteScrapStar.do")
+		@ResponseBody
+		public int deleteScrapStar(@RequestParam Map param,HttpServletResponse response) {
+			response.setContentType("application/json; charset=utf-8");
+			int result = service.deleteScrapStar(param);
+			return result;
+		}
+
 		//관심기업 리스트 
 		@RequestMapping("/memberlikeCompanyList.do")
 		public ModelAndView memberlikeCompanyList(@RequestParam String memberId, ModelAndView mv,@RequestParam(value = "cPage", defaultValue = "1") int cPage,
@@ -506,4 +506,28 @@ public class MemberController {
 			int result = service.deletelikeCompany(likeCompanyNo);
 			return result;
 		}
+		
+		
+		//비밀번호 맞는지 확인
+		@RequestMapping("/checkPassword.do")
+		@ResponseBody
+		public void checkPassword(@RequestParam Map param,HttpServletResponse response) throws IOException{
+			response.setContentType("application/json; charset=utf-8");
+			Member loginMember = service.loginMember(param);
+			if(loginMember != null && encoder.matches((String)param.get("password"),loginMember.getPassword())) {
+				response.getWriter().print(true);
+			}else {
+				response.getWriter().print(false);
+			}
+		}
+		
+		//회원 탈퇴
+		@RequestMapping("/deleteMember.do")
+		@ResponseBody
+		public int deleteMember(@RequestParam Map param,HttpServletResponse response) throws IOException{
+			response.setContentType("application/json; charset=utf-8");
+			int result = service.deleteMember(param);
+			return result;
+		}
+		
 }

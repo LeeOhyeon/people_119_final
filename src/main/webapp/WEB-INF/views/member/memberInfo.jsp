@@ -150,9 +150,8 @@
               
                <div class="member_info">
                 <div class="">
-                 <button class="btn btn-outline-secondary" type="button"  id="searchpasswordBtn"
-								data-bs-toggle="modal" data-bs-target="#updatePassword"
-							>비밀번호 변경</button>
+                 <button class="btn btn-outline-secondary" type="button"  id="searchpasswordBtn"data-bs-toggle="modal" data-bs-target="#updatePassword">비밀번호 변경</button>
+                 <button class="btn btn-outline-secondary" type="button" id="deleteMemberBtn" data-bs-toggle="modal" data-bs-target="#deleteMember">회원 탈퇴</button>
                 </div>
               </div>
               
@@ -164,7 +163,7 @@
     </section>
 
   </main><!-- End #main -->
-  <!-- Modal -->
+  <!--비밀번호 변경 Modal -->
 <div class="modal fade" id="updatePassword" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -195,10 +194,75 @@
     </div>
   </div>
 </div>
+
+<!--회원탈퇴 Modal -->
+<div class="modal fade" id="deleteMember" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">회원 탈퇴</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      	<div>
+      		<p>회원 탈퇴를 위해 현재 비밀번호를 입력해 주세요.</p>
+      	</div>
+      	<div>
+			<input type="password" class="form-control" name="password" id="delPassword"/>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeBtn">닫기</button>
+        <button type="button" class="btn btn-primary" id="deleteMemberModalBtn" onclick="deleteMember();">회원 탈퇴</button>
+      </div>
+    </div>
+  </div>
+</div>
   
   <script>
   	//회원아이디
-  	const memberId = "${loginMember.memberId}";
+	const memberId = "${loginMember.memberId}";
+  
+	//패스워드 맞는는지 체크  
+	$("#delPassword").change(()=>{
+		let password = $("#delPassword").val();
+		$.ajax({
+			url :"${paht}/member/checkPassword.do",
+			type:"post",
+			data:{memberId:memberId,password:password},
+			success:data=>{
+				if(data){
+					alert("비밀번호를 확인 완료!");	
+				}else{
+					alert("비밀번호를 확인해 주세요!");	
+				}
+					
+			}
+		});
+		
+	});
+	
+	//회원 탈퇴
+	const deleteMember=()=>{
+		
+		$.ajax({
+			url :"${paht}/member/deleteMember.do",
+			type:"post",
+			data:{memberId:memberId},
+			success:data=>{
+				if(data>0){
+					alert("그동안 서비스를 이용해 주셔서 감사합니다.");
+					location.assign('${path}/member/logout.do');
+				}else{
+					alert("회원 탈퇴 실패!");	
+				}
+					
+			}
+		});
+	}
+	
+	
+  
   	//이름 수정
   	const updateName=()=>{
   		
