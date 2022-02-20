@@ -49,6 +49,7 @@
 					<li class="link-tab-li"><a
 						href="${path}/member/memberlikeCompanyList.do?memberId=${loginMember.memberId}"><i
 							class="fas fa-star"></i>관심 기업</a></li>
+					<li class="link-tab-li"><a href="${path }/review/enrollCompanyReview.do?"><i class="fa-solid fa-microphone-stand"></i> 기업 리뷰 작성하기</a></li>
 					<li class="link-tab-li"><a
 						href="${path }/applicant/applyList.do?memberId=${loginMember.memberId}"><i
 							class="fas fa-location-arrow"></i> 지원 내역</a></li>
