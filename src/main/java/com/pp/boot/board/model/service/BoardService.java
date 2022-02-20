@@ -11,15 +11,15 @@ import com.pp.boot.board.model.vo.Like;
 public interface BoardService {
 	List<BoardTotal> boardList(Map<String,Object>param);
 	
-	List<Board> freeList();
+	List<BoardTotal> freeList();
 	
-	List<Board> leaveList();
+	List<BoardTotal> leaveList();
 	
-	List<Board> qaList();
+	List<BoardTotal> qaList();
 	
-	List<Board> readyList();
+	List<BoardTotal> readyList();
 	
-	List<Board> turnoverList();
+	List<BoardTotal> turnoverList();
 	
 	int boardListCount();
 	
@@ -41,7 +41,7 @@ public interface BoardService {
 
 	int boardLikeCount(Like l);
 
-	List<Board> hotList();
+	List<BoardTotal> hotList();
 
 	int insertReply(Comment c);
 
@@ -74,6 +74,8 @@ public interface BoardService {
 	List<BoardTotal> totalCommentSort(Map<String, Object> param);
 
 	List<Board> newboardList();
+
+	List<BoardTotal> totalBoardList();
 
 	
 }

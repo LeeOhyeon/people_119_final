@@ -28,7 +28,6 @@ public class InterviewDaoImpl implements InterviewDao {
 		
 		return interviewReviewNo;
 	}
-
 	@Override
 	public List<InterviewReview> interviewList(SqlSessionTemplate session, Map<String, Integer> pageParam) {
 		RowBounds rb=new RowBounds((pageParam.get("cPage")-1)*pageParam.get("numPerpage"),
@@ -63,6 +62,20 @@ public class InterviewDaoImpl implements InterviewDao {
 		
 		return interviewReviewNo;
 		
+	}
+
+	@Override
+	public List<InterviewReview> findInterview(SqlSessionTemplate session, Map<String, Integer> pageParam,String keyword) {
+		// TODO Auto-generated method stub
+		RowBounds rb=new RowBounds((pageParam.get("cPage")-1)*pageParam.get("numPerpage"),
+				pageParam.get("numPerpage"));
+		return session.selectList("interview.findInterview",keyword,rb);
+	}
+
+	@Override
+	public int findInterviewCount(SqlSessionTemplate session,String keyword) {
+		// TODO Auto-generated method stub
+		return session.selectOne("interview.findInterviewCount",keyword);
 	}
 	
 }

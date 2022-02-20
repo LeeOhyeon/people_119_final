@@ -69,5 +69,18 @@ public class InterviewServiceImpl implements InterviewService {
 		int count=dao.interviewUpdate(session,ir);
 		return count;
 	}
+
+	@Override
+	public List<InterviewReview> findInterview(Map<String, Integer> pageParam,String keyword) {
+		// TODO Auto-generated method stub
+		List<InterviewReview> list=dao.findInterview(session,pageParam,keyword);
+		return list;
+	}
+
+	@Override
+	public int findInterviewCount(String keyword) {
+		int count=dao.findInterviewCount(session,keyword);
+		return count;
+	}
 	
 }

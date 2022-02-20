@@ -25,6 +25,10 @@ public interface InterviewDao {
 
 	int interviewUpdate(SqlSessionTemplate session, InterviewReview ir);
 
+	List<InterviewReview> findInterview(SqlSessionTemplate session, Map<String, Integer> pageParam,String keyword);
+
+	int findInterviewCount(SqlSessionTemplate session,String keyword);
+
 	
 
 }
