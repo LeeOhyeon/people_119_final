@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -38,7 +39,6 @@ public class OfferController {
 	public ModelAndView offerList(@RequestParam(value="cPage", defaultValue="1") int cPage, @RequestParam(value="numPerpage", defaultValue="8") int numPerpage, ModelAndView mv) {
 		// 조회수가 가장 높은 TOP3 공고 리스트 가져오기
 		List<Offer> hotList = service.selectHotOfferList();
-		log.debug("{}" + hotList);
 		
 		// 전체 공고 리스트 불러오기
 		List<Offer> list = service.selectOfferList();
@@ -82,7 +82,6 @@ public class OfferController {
 	@RequestMapping(value="/enrollOfferEnd.do", method=RequestMethod.POST)
 	public ModelAndView enrollOfferEnd(Offer o, ModelAndView mv, @RequestParam(value="file1", required=false) MultipartFile file1, HttpServletRequest req) {
 		
-//		log.debug("{}" + o);
 		
 		// 저장경로 설정
 		String path = req.getServletContext().getRealPath("/resources/upload/offer/");
@@ -122,8 +121,16 @@ public class OfferController {
 	@Scheduled(cron = "0 0 0 * * *")
 	public void updateOfferStatus() {
 		int result = service.updateOfferStatus();
-		log.debug("{스케쥴러 실행}");
 	}
+	
+	//메인화면 채용공고 갯수 
+	@RequestMapping("/countOffer.do")
+	@ResponseBody
+	public int countOffer() {
+		int totalData = service.countOfferList();
+		return totalData;
+	}
+	
 	
 }
 

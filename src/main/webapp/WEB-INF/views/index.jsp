@@ -55,8 +55,8 @@
                 <div class="col-md-6 d-md-flex align-items-md-stretch">
                   <div class="count-box">
                     <i class="bi bi-journal-richtext"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="643" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Job Posting</strong> PEOPLE119에 올라와 있는 채용공고의 수</p>
+                    <span class="countOffer"></span>
+                    <p ><strong>Job Posting</strong> PEOPLE119에 올라와 있는 채용공고의 수</p>
                   </div>
                 </div>
 
@@ -71,7 +71,7 @@
                 <div class="col-md-6 d-md-flex align-items-md-stretch">
                   <div class="count-box">
                     <i class="bi bi-award"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="365" data-purecounter-duration="1" class="purecounter"></span>
+                    <span class="countCompany"></span>
                     <p><strong>Company</strong> PEOPLE119와 연결되어 있는 회사 수</p>
                   </div>
                 </div>
@@ -205,8 +205,8 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>합격 후기</h2>
-          <p>취업에 성공한 선배 치타들의 생생한 후기를 확인해보세요</p>
+          <h2>면접 후기</h2>
+          <p>면접을 보고온 치타의 생생한 후기를 확인해보세요</p>
         </div>
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -295,6 +295,43 @@
     </section><!-- End 합격 후기 -->
    
    </main>
+	
+	
+	<script type="text/javascript">
+
+		$(document).ready(()=>{
+			countOffer();
+			countCompany();
+			
+		});
+		
+		//전체 공고 갯수
+		function countOffer(){
+			
+			$.ajax({
+				url : "${path}/offer/countOffer.do",
+				success:data=>{
+					$(".countOffer").html(data);
+				}
+			});
+			
+		}
+		
+		//전체 회사 수
+		function countCompany(){
+			$.ajax({
+				url : "${path}/company/countCompany.do",
+				success:data=>{
+					$(".countCompany").html(data);
+				}
+			});
+			
+		}
+		
+	
+	
+	</script>
+
 
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

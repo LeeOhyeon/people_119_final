@@ -16,7 +16,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>채용공고 스크랩</h2>
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="${path }">Home</a></li>
             <li>채용공고 스크랩</li>
           </ol>
         </div>

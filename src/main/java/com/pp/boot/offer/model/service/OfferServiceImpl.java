@@ -40,7 +40,6 @@ public class OfferServiceImpl implements OfferService {
 	// 공고 등록
 	@Override
 	public int enrollOffer(Offer o) {
-		log.debug("{service}" + o);
 		return dao.enrollOffer(session, o);
 	}
 	

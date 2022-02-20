@@ -19,7 +19,7 @@ public class LoginInterceptor implements HandlerInterceptor{
 	
 		//login여부 확인하기
 	
-	 log.debug("인터셉터 실행");
+	 //log.debug("인터셉터 실행");
 	 
 	 HttpSession session = request.getSession(); Member loginMember =
 	 (Member)session.getAttribute("loginMember"); if(loginMember == null) {

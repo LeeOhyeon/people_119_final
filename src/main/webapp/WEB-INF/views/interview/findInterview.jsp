@@ -16,8 +16,8 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>면접후기</h2>
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Inner Page</li>
+            <li><a href="${path }">Home</a></li>
+            <li>면접 후기</li>
           </ol>
         </div>
 
