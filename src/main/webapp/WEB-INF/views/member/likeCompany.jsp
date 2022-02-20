@@ -16,7 +16,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>관심기업</h2>
           <ol>
-            <li><a href="/">Home</a></li>
+            <li><a href="${path }">Home</a></li>
             <li>관심기업</li>
           </ol>
         </div>

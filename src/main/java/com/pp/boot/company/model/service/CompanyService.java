@@ -28,5 +28,6 @@ public interface CompanyService {
 	
 	// 기업 정보 조회수 올리기
 	int updateCompanyCount(String companyName);
+	int countCompany();
 	
 }

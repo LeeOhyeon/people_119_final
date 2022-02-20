@@ -53,7 +53,6 @@ public class ApplicantController {
 	// 지원 취소 -> 취소하고 다시 리스트 보여줘야지 ㅋㅋ 
 	@RequestMapping("/deleteApply.do")
 	public String deleteApply(@RequestParam Map param, Model model, @RequestParam String memberId) {
-		log.debug("{}" + param);
 		int result = service.deleteApply(param);
 		
 		List<Applicant> list = service.selectApplyList(memberId);

@@ -15,9 +15,11 @@ public class LoggerInterceptor implements HandlerInterceptor{
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 	
-		log.debug("------- 전처리 인터셉터 실행!--------");
-		log.debug("요청주소 : {}",request.getRequestURI());
-		log.debug("------- 전처리 인터셉터 끝!--------");		
+		/*
+		 * log.debug("------- 전처리 인터셉터 실행!--------");
+		 * log.debug("요청주소 : {}",request.getRequestURI());
+		 * log.debug("------- 전처리 인터셉터 끝!--------");
+		 */
 		
 		return HandlerInterceptor.super.preHandle(request, response, handler);
 		//return false;

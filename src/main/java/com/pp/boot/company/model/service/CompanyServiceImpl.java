@@ -63,5 +63,11 @@ public class CompanyServiceImpl implements CompanyService {
 	public int updateCompanyCount(String companyName) {
 		return dao.updateCompanyCount(session, companyName);
 	}
+	@Override
+	public int countCompany() {
+		return dao.countCompany(session);
+	}
+	
+	
 	
 }

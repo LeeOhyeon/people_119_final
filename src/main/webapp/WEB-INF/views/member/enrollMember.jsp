@@ -180,7 +180,7 @@
 		let email = $("#email").val();
 		$.ajax({
 			type:"post",
-			url:"/member/checkEmail.do",
+			url:"${path}/member/checkEmail.do",
 			data:{email:email},
 			success:data=>{
 				if(data){
@@ -204,7 +204,7 @@ const sendMail=()=>{
 	}else{
 		$.ajax({
 			type:"post",
-			url:"/member/sendMail.do",
+			url:"${path}/member/sendMail.do",
 			data:{email:email},
 			success:data=>{
 				console.log("성공");

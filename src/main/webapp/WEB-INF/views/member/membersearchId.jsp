@@ -15,7 +15,7 @@
 			<div class="d-flex justify-content-between align-items-center">
 				<h2>아이디/비밀번호 찾기</h2>
 				<ol>
-					<li><a href="index.html">Home</a></li>
+					<li><a href="${path }">Home</a></li>
 					<li>아이디/비밀번호 찾기</li>
 				</ol>
 			</div>
@@ -149,7 +149,7 @@ $("#email").keyup(()=>{
 	let email = $("#email").val();
 	$.ajax({
 		type:"post",
-		url:"/member/checkEmail.do",
+		url:"${path}/member/checkEmail.do",
 		data:{email:email},
 		success:data=>{
 			$(".resultEmail").html("");
@@ -173,7 +173,7 @@ const sendMail=()=>{
 	}else{
 		$.ajax({
 			type:"post",
-			url:"/member/sendMail.do",
+			url:"${path}/member/sendMail.do",
 			data:{email:email},
 			success:data=>{
 				console.log("성공");

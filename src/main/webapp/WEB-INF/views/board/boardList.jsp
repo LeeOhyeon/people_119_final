@@ -15,8 +15,8 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>커뮤니티</h2>
           <ol>
-            <li><a href="#">Home</a></li>
-            <li>Inner Page</li>
+            <li><a href="${path }">Home</a></li>
+            <li>커뮤니티</li>
           </ol>
         </div>
 

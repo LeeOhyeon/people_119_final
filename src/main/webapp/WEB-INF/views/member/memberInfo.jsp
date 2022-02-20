@@ -17,7 +17,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>마이페이지</h2>
           <ol>
-            <li><a href="/">Home</a></li>
+            <li><a href="${path }">Home</a></li>
             <li>마이페이지</li>
           </ol>
         </div>
@@ -227,12 +227,12 @@
 	$("#delPassword").change(()=>{
 		let password = $("#delPassword").val();
 		$.ajax({
-			url :"${paht}/member/checkPassword.do",
+			url :"${path}/member/checkPassword.do",
 			type:"post",
 			data:{memberId:memberId,password:password},
 			success:data=>{
 				if(data){
-					alert("비밀번호를 확인 완료!");	
+					alert("비밀번호 확인 완료!");	
 				}else{
 					alert("비밀번호를 확인해 주세요!");	
 				}
@@ -246,7 +246,7 @@
 	const deleteMember=()=>{
 		
 		$.ajax({
-			url :"${paht}/member/deleteMember.do",
+			url :"${path}/member/deleteMember.do",
 			type:"post",
 			data:{memberId:memberId},
 			success:data=>{
@@ -417,7 +417,7 @@
   		let email = $("#email").val();
   		$.ajax({
   			type:"post",
-  			url:"/member/checkEmail.do",
+  			url:"${path}/member/checkEmail.do",
   			data:{email:email},
   			success:data=>{
   				$(".resultEmail").html("");
@@ -442,7 +442,7 @@
   		}else{
   			$.ajax({
   				type:"post",
-  				url:"/member/sendMail.do",
+  				url:"${path}/member/sendMail.do",
   				data:{email:email},
   				success:data=>{
   					console.log("성공");

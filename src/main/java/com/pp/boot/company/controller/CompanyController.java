@@ -175,9 +175,6 @@ public class CompanyController {
 			List<Company> list = service.selectCompanyList();
 			List<Offer> offerCounts = offerService.countOffer();
 			
-//			for(int i = 0; i < list.size(); i++) {
-//				log.debug("{}" + list.get(i).getCompanyId());
-//			}
 			
 			model.addAttribute("companyList", list);
 			model.addAttribute("offerCounts", offerCounts);
@@ -189,11 +186,20 @@ public class CompanyController {
 		@RequestMapping("searchList.do")
 		@ResponseBody
 		public List<Company> searchCompanyList(@RequestParam String search) {
-//			log.debug("{}" + search);
 			List<Company> list = service.selectSearchCompanyList(search);
-//			log.debug("{}" + list);
 			
 			return list;
+		}
+		
+		
+		// 전체 기업 리스트
+		@RequestMapping("/countCompany.do")
+		@ResponseBody
+		public int countCompany() {
+		
+			int count = service.countCompany();
+			
+			return count;
 		}
 }
 
