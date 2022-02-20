@@ -35,7 +35,7 @@ public class OfferController {
 
 	// 채용공고 리스트로 화면 전환
 	@RequestMapping("/offerList.do")
-	public ModelAndView offerList(@RequestParam(value="cPage", defaultValue="1") int cPage, @RequestParam(value="numPerpage", defaultValue="5") int numPerpage, ModelAndView mv) {
+	public ModelAndView offerList(@RequestParam(value="cPage", defaultValue="1") int cPage, @RequestParam(value="numPerpage", defaultValue="8") int numPerpage, ModelAndView mv) {
 		// 조회수가 가장 높은 TOP3 공고 리스트 가져오기
 		List<Offer> hotList = service.selectHotOfferList();
 		log.debug("{}" + hotList);

@@ -31,7 +31,7 @@
           </div>
           <div class="boardSearch">
             <div class="boardSearch-container">
-              <c:if test="${loginMember==null}">
+             <%--  <c:if test="${loginMember==null}">
 	              <div class="board-login">
 	                <div>
 	                  <p class="login">로그인 후 이용해주세요</p>
@@ -40,8 +40,8 @@
 	                  <button type="button" onclick="login();" class="btn btn-primary" style="width:200px">커뮤니티 로그인하기</button>
 	                </div>
 	              </div>
-              </c:if>
-              <c:if test="${loginMember!=null}">
+              </c:if> --%>
+             <%--  <c:if test="${loginMember!=null}">
               	<div class="board-login">
 	                <div>
 	                  <p class="login">환영합니다. <strong>${loginMember.memberId}님</strong></p>
@@ -58,7 +58,7 @@
 	                	</div>
 	                </div>
 	            </div>
-              </c:if>
+              </c:if> --%>
             </div>
           </div>
         </div>

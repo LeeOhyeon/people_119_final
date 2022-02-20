@@ -284,6 +284,7 @@
         	<div class="quickmenu-container">
 				<div class="quickmenu">
 					<ul>
+						<li><button type="button" class="btn btn-outline-primary quickmenuBtn" onclick="location.assign('${path}/resume/memberResumeList.do?memberId=${loginMember.memberId}');">이력서 관리</button></li>
 						<li><button type="button" class="btn btn-outline-primary quickmenuBtn" onclick="location.assign('${path }/resume/updateResumeView.do?resumeNo=${resumeNo}');">이력서 수정</button></li>
 						<li><button type="button" class="btn btn-outline-primary quickmenuBtn" onclick="location.assign('${path }/member/memberInfoView.do?memberId=${loginMember.memberId}');">기본정보 수정</button></li>
 						<li><button type="button" class="btn btn-outline-primary quickmenuBtn" onclick="if(confirm('정말 삭제하시겠습니까?')){

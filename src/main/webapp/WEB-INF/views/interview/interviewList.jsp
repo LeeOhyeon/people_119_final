@@ -67,7 +67,7 @@
                 <p>${l.interviewDate} |</p>
               </div>
               <div class="carrer-years">
-                <p>경력 ${l.career}</p>
+                <p>${l.career}</p>
               </div>
             </div>
           </div>

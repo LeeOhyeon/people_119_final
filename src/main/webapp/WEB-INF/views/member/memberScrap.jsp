@@ -56,8 +56,8 @@
                   <div class="scrap-search">
 	                  <div style="width: 150px;">
 		                  <select class="form-select" aria-label="Default select example" name="searchCol">
-							  <option value="offerTitle" selected="selected">공고명</option>
-							  <option value="companyName">회사명</option>
+							  <option value="OFFERTITLE" selected="selected">공고명</option>
+							  <option value="COMPANYNAME">회사명</option>
 						</select>
 	                  </div>
                       <div class="input-group mb-3" >

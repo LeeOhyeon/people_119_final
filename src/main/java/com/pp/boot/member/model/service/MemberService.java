@@ -34,5 +34,6 @@ public interface MemberService {
 	int deletelikeCompany(int likeCompanyNo);
 	int deleteScrapStar(Map param);
 	int deleteMember(Map param);
+	int deleteLikeCompany(Map param);
 	
 }

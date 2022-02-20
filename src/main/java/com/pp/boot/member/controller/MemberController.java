@@ -508,6 +508,17 @@ public class MemberController {
 		}
 		
 		
+		//관심기업 하트색깔 바꾸기
+		@RequestMapping("/deleteLikeCompany.do")
+		@ResponseBody
+		public int deleteLikeCompany(@RequestParam Map param,HttpServletResponse response) {
+			response.setContentType("application/json; charset=utf-8");
+			int result = service.deleteLikeCompany(param);
+			return result;
+		}
+				
+		
+		
 		//비밀번호 맞는지 확인
 		@RequestMapping("/checkPassword.do")
 		@ResponseBody

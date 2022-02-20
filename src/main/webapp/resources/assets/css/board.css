@@ -56,7 +56,7 @@
     border:1px solid #edeef0;
     border-radius:10px;
     padding:20px;
-    width:930px;
+    width:100%;
 }
 .content{
     margin-top:10px;
@@ -80,7 +80,7 @@
 }
 .whole-content{
     display:inline-block;
-    width:35%;
+    width:48%;
     height:250px;
     border:1px solid #edeef0;
     border-radius: 10px;
@@ -89,7 +89,7 @@
 }
 .ready-empl{
     display:inline-block;
-    width:35%;
+    width:48%;
     height:250px;
     border:1px solid #edeef0;
     border-radius: 10px;
@@ -123,7 +123,7 @@
 }
 .turnover-content{
     display:inline-block;
-    width:35%;
+    width:48%;
     height:250px;
     border:1px solid #edeef0;
     border-radius: 10px;
@@ -132,7 +132,7 @@
 }
 .leave-content {
     display:inline-block;
-    width:35%;
+    width:48%;
     height:250px;
     border:1px solid #edeef0;
     border-radius: 10px;
@@ -154,7 +154,7 @@
 }
 .free-content{
     display:inline-block;
-    width:35%;
+    width:48%;
     height:250px;
     border:1px solid #edeef0;
     border-radius: 10px;
@@ -163,7 +163,7 @@
 }
 .question-content {
     display:inline-block;
-    width:35%;
+    width:48%;
     height:250px;
     border:1px solid #edeef0;
     border-radius: 10px;

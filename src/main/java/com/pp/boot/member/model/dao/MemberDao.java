@@ -36,5 +36,6 @@ public interface MemberDao {
 	int deletelikeCompany(SqlSessionTemplate session, int likeCompanyNo);
 	int deleteScrapStar(SqlSessionTemplate session, Map param);
 	int deleteMember(SqlSessionTemplate session, Map param);
+	int deleteLikeCompany(SqlSessionTemplate session, Map param);
 	
 }
