@@ -29,6 +29,7 @@
 		<div class="container">
 
 			<div class="loginContainer">
+			<img id="u17_img" class="img " src="/resources/company/companylogin/images/companylogin/u17.jpg">
 				<div class="loginouter">
 					<div class="loginTitle">로그인이 필요한 서비스 입니다.</div>
 					<div class="loginTitle2">개인회원</div>
