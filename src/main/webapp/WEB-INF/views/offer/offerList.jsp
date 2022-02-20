@@ -61,6 +61,7 @@
 			              <p class="description" style="font-size: 20px; margin-top: 20px; "><c:out value="${hl.offerTitle }"/></p>
 			              <p class="description" style="font-size: 17px;">${fn:replace(hl.tech, ',', ' · ') }</p>
 			              <p class="description" style="font-size: 17px;"><c:out value="${hl.location }"/> / <c:out value="${hl.carrer }"/></p>
+			              <p class="description" style="font-size: 17px;">마감일 : <c:out value="${hl.endDate }"/></p>
 			            </div>
 			          </div>
 		      </c:forEach>
@@ -90,17 +91,40 @@
                <p class="offerTech">${fn:replace(o.tech, ',', ' · ') }</p>
                <p class="offerInfo"><c:out value="${o.location }"/> / <c:out value="${o.carrer }"/></p>
             </div> --%>
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" style="margin-top:20px;">
-	            <div class="icon-box" data-aos="fade-up" data-aos-delay="${i.index+1}00" style="cursor: pointer;" onclick="location.assign('${path }/offer/offerView.do?offerNo=${o.offerNo}')">
-	           	 <div class="" style="width: 250px; height: 150px">
-			       <img src="${path}/resources/upload/offer/${o.image }" style="width: 250px; height: 150px"></div>
-	              <br>
-	              <h4 class="title"><c:out value="${o.companyName }"/></h4>
-	              <p class="description"><c:out value="${o.offerTitle }"/></p>
-	              <p class="description">${fn:replace(o.tech, ',', ' · ') }</p>
-	              <p class="description"><c:out value="${o.location }"/> / <c:out value="${o.carrer }"/></p>
-	            </div>
-	          </div>
+            <c:choose>
+		      		<c:when test="${o.status eq 1 }">
+		      			<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" style="margin-top:20px;">
+							<div class="icon-box" data-aos="fade-up" data-aos-delay="${i.index+1}00" style="cursor: pointer;" onclick="location.assign('${path }/offer/offerView.do?offerNo=${o.offerNo}')">
+								<div class="" style="width: 250px; height: 150px">
+									<img src="${path}/resources/upload/offer/${o.image }" style="width: 250px; height: 150px">
+								</div>
+								<br>
+								<h4 class="title"><c:out value="${o.companyName }"/></h4>
+								<p class="description"><c:out value="${o.offerTitle }"/></p>
+								<p class="description">${fn:replace(o.tech, ',', ' · ') }</p>
+								<p class="description"><c:out value="${o.location }"/> / <c:out value="${o.carrer }"/></p>
+								<p class="description red">채용이 종료된 공고입니다</p>
+						  	</div>
+						</div>
+		      		</c:when>
+		      		<c:when test="${o.status eq 0 }">
+						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" style="margin-top:20px;">
+							<div class="icon-box" data-aos="fade-up" data-aos-delay="${i.index+1}00" style="cursor: pointer;" onclick="location.assign('${path }/offer/offerView.do?offerNo=${o.offerNo}')">
+								<div class="" style="width: 250px; height: 150px">
+									<img src="${path}/resources/upload/offer/${o.image }" style="width: 250px; height: 150px">
+								</div>
+								<br>
+								<h4 class="title"><c:out value="${o.companyName }"/></h4>
+								<p class="description"><c:out value="${o.offerTitle }"/></p>
+								<p class="description">${fn:replace(o.tech, ',', ' · ') }</p>
+								<p class="description"><c:out value="${o.location }"/> / <c:out value="${o.carrer }"/></p>
+								<p class="description">마감일 : <c:out value="${o.endDate }"/></p>
+						  	</div>
+						</div>
+		      		</c:when>
+		      	</c:choose>
+            
+            
          </c:forEach>
         </div>
          

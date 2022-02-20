@@ -40,4 +40,9 @@ public class ApplicantServiceImpl implements ApplicantService {
 		return dao.countApply(session, memberId);
 	}
 	
+	// 지원 취소
+	@Override
+	public int deleteApply(Map param) {
+		return dao.deleteApply(session, param);
+	}
 }

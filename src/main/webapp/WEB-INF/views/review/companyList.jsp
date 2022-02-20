@@ -13,10 +13,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Inner Page</h2>
+          <h2>기업 리뷰</h2>
           <ol>
             <li><a href="${path }">Home</a></li>
-            <li>Inner Page</li>
+            <li>기업 리뷰</li>
           </ol>
         </div>
 
@@ -33,10 +33,10 @@
             <strong>현직자,퇴직자가 알려주는 생생한 기업리뷰</strong></h5>
 			<form name="searchFrm">
 	            <div class="input-group mb-3">
-	              <input type="text" id="searchCompanyName" class="form-control" placeholder="어떤 기업의 리뷰가 궁금하세요?" aria-label="Recipient's username"
+	              <input type="text" id="searchCompanyName" name="keyword" class="form-control" placeholder="어떤 기업의 리뷰가 궁금하세요?" aria-label="Recipient's username"
 	                aria-describedby="basic-addon2">
 	              <!-- <span class="input-group-text" id="basic-addon2"><i class="fas fa-search"></i></span> -->
-	              <button class="input-group-text" id="basic-addon2" onclick="getSearchList();"><i class="fas fa-search"></i></button>
+	              <button type="button" class="input-group-text" id="basic-addon2" onclick="getSearchList();"><i class="fas fa-search"></i></button>
 	            </div>
             </form>
           </div>
@@ -44,6 +44,7 @@
           
           </div>
         </div>
+        <div>
         <div class="total-review">
           <div class="review-title">
             <div class="review-title-name">
@@ -56,33 +57,41 @@
               </select>
             </div>
           </div>
+          </div>
           
-          <c:forEach var="cl" items="${companyList }">
-	          <div class="total-review-info">
-	            <div class="company-image">
-	              <img alt="" src="${path}/resources/upload/company/${cl.companyImage }" style="width: 100px; height: 100px;">
-	              <!-- <span><i class="fas fa-image"></i></span> -->
-	            </div>
-	            <div class="company-name">
-	              <h5><strong><a href="${path }/review/companyReview.do?companyName=${cl.companyName}"><c:out value="${cl.companyName }"/></a></strong></h5>
-	              <p>현재 채용중 <span></span></p>
-	            </div>
-	            <div class="review-info">
-	              노력하지 않고 무언가를 잘 해낼 수 있는 사람이 천재라고 한다면, 저는 절대 천재가 아닙니다.
-	              하지만 피나는 노력 끝에 뭔가를 이루는 사람이 천재라고 한다면, 저는 천재가 맞습니다.
-	              천재의 손끝에는 노력이라는 핏방울이 묻어 있기 마련입니다.
-	              제가 대한민국 최고의 취준생이 될 수 있었던 이유는, 저보다 많이 노력한 사람이 한 명도 없었기 때문입니다.
-	              저는 단 한 번도 저 자신과 맺은 약속을 어긴 적이 없습니다.
-	            </div>
-	            <div class="review-view-count">
-	              <p><strong>조회수</strong></p>
-	            </div>
-	            <input type="hidden" name="companyId" value="${cl.companyId }"/>
-	            <div class="interest">
-	              <button type="button" class="btn btn-light" style="width:100px" onclick="insertLikeCompany(this);">관심기업</button>
-	            </div>
+			<c:if test="${empty companyList }">
+				<div class="content-wrap">
+					<div class="info-wrap">
+						<h5><strong>현재 PEOPLE119에 가입한 기업이 없습니다.</strong></h5>
+					</div>
+				</div>
+			</c:if>
+          
+          <div class="content-wrap">
+	          <div class="info-wrap">
+	          <c:forEach var="cl" items="${companyList }">
+		          <div class="total-review-info">
+		            <div class="company-image">
+		              <img alt="" src="${path }/resources/upload/company/${cl.companyImage }" style="width: 100px; height: 100px;">
+		            </div>
+		            <div class="company-name">
+		              <h5><strong><a href="${path }/review/companyReview.do?companyName=${cl.companyName}"><c:out value="${cl.companyName }"/></a></strong></h5>
+		              <p>현재 채용중 <span></span></p>
+		            </div>
+		            <div class="review-info">
+		              <p><c:out value="${cl.service }"/></p>
+		            </div>
+		            <div class="review-view-count">
+		              <p><strong>조회수 </strong><c:out value="${cl.companyViewCount }"/></p>
+		            </div>
+		            <input type="hidden" name="companyId" value="${cl.companyId }"/>
+		            <div class="interest">
+		              <button type="button" class="btn btn-light" style="width:100px" onclick="insertLikeCompany(this);">관심기업</button>
+		            </div>
+		          </div>
+	          </c:forEach>
 	          </div>
-          </c:forEach>
+          </div>
 	          
         </div>
       </div>
@@ -94,21 +103,67 @@
 		function getSearchList(){
 			$.ajax({
 				url: "${path}/company/searchList.do",
-				data: {search: $('#searchCompanyName').val()},
+				data: {search: $('input[name=keyword]').val()},
 				dataType:"json",
 				success: data=>{
+					console.log(data);
 					// 먼저 초기화 시키고
-					/* $(".total-review-info").empty();
+					$(".info-wrap").empty();
 					
-					if(result.length == 0){
-						
-					} else if(result.length > 0){
-						
-					} */
+					var wrapDiv = $("<div class='info-wrap'>");
+					var totalDiv = $("<div class='total-review-info'>");
+					var imageDiv = $("<div class='company-image'>");
+					var nameDiv = $("<div class='company-name'>");
+					var infoDiv = $("<div class='review-info'>");
+					var viewCountDiv = $("<div class='review-view-count'>");
+					var interestDiv = $("<div class='interest'>");
+					
+					if(data.length == 0) {
+						console.log("없어");
+						const span = $("<span>").html("검색어에 해당하는 기업이 존재하지 않습니다.");
+						totalDiv.append(span);
+						wrapDiv.append(totalDiv);
+						$(".content-wrap").append(wrapDiv);
+					}
+					
+					if(data.length > 0) {
+						console.log("있어");
+						data.forEach(function(d){
+							// 이미지
+							var companyImage = d["companyImage"];
+							var image = $("<img style='width: 100px; height: 100px;'>");
+							image.attr("src","${path}/resources/upload/company/"+companyImage);
+							imageDiv.append(image);
+							// 회사이름
+							var companyName = d["companyName"];
+							var h5 = $("<h5>");
+							var strong = $("<strong>");
+							var a = $("<a href='${path}/review/companyReview.do?companyName=" + companyName + "'>").text(companyName);
+							strong.append(a);
+							h5.append(strong);
+							nameDiv.append(h5);
+							// 정보
+							var info = d["service"];
+							var infoP = $("<p>").text(info);
+							infoDiv.append(infoP);
+							// 조회수
+							var readCountP = $("<p>").text("조회수");
+							viewCountDiv.append(readCountP);
+							// 관심기업
+							var button = $("<button type='button' class='btn btn-light' style='width:100px'>").text("관심기업");
+							interestDiv.append(button);
+							
+							totalDiv.append(imageDiv).append(nameDiv).append(infoDiv).append(viewCountDiv).append(interestDiv);
+							wrapDiv.append(totalDiv);
+							
+							$(".content-wrap").append(wrapDiv);
+						})
+					}
 				}
 			})
 		}		
     	
+    	// 관심기업 등록
 		const insertLikeCompany=(e)=>{
 			
 			let companyId = $($(e).parents(".total-review-info")).find("input[name=companyId]").val();

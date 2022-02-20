@@ -90,6 +90,22 @@
     line-height: 54px;
     color:white;
 }
+.apply-end{
+	border: 1px solid lightgray;
+    color: #fff;
+    background: lightgray;
+    display: inline-block;
+    width: 210px;
+    height: 58px;
+    border: 1px solid #dce2ef;
+    color: #8a92a6;
+    font-family: "Malgun Gothic",sans-serif !important;
+    font-size: 20px !important;
+    font-weight: bold;
+    letter-spacing: -2px;
+    line-height: 54px;
+    color:white;
+}
 .applyBtnContainer{
 	display: inline-block;
 }

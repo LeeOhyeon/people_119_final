@@ -7,6 +7,9 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +26,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Controller
 @Slf4j
+@EnableScheduling
 @RequestMapping("/offer")
 public class OfferController {
 	
@@ -111,6 +115,14 @@ public class OfferController {
 	    mv.addObject("msg", msg);
 	    mv.setViewName("common/msg");
 	    return mv;
+	}
+	
+	// 매일 00시에 실행.
+	// endDate가 현재 날짜보다 과거면 STATUS 컬럼 값을 1로 UPDATE
+	@Scheduled(cron = "0 0 0 * * *")
+	public void updateOfferStatus() {
+		int result = service.updateOfferStatus();
+		log.debug("{스케쥴러 실행}");
 	}
 	
 }
