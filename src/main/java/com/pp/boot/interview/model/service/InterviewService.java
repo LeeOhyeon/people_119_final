@@ -20,5 +20,9 @@ public interface InterviewService {
 
 	int deleteInterview(int interviewReviewNo);
 
-	int interviewUpdate(InterviewReview ir);	
+	int interviewUpdate(InterviewReview ir);
+
+	List<InterviewReview> findInterview(Map<String, Integer> pageParam,String keyword);
+
+	int findInterviewCount(String keyword);	
 }

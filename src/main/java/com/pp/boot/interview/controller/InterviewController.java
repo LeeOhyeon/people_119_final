@@ -122,4 +122,21 @@ public class InterviewController {
 		 
 		 return "common/msg"; 
 	 }
+	 @RequestMapping("/findInterview.do")
+	 public ModelAndView findInterview(ModelAndView mv,@RequestParam String keyword,@RequestParam(value="cPage",defaultValue="1") int cPage,
+				@RequestParam(value="numPerPage", defaultValue="10")int numPerpage) {
+		 
+		 Map<String,Integer> pageParam=Map.of("cPage",cPage,"numPerpage",numPerpage);
+		 int totalCount=service.findInterviewCount(keyword);
+		 List<InterviewReview> list=service.findInterview(pageParam,keyword);
+		 
+		 mv.addObject("keyword",keyword);
+		 mv.addObject("totalCount",totalCount);
+		 mv.addObject("pageBar",PageFactory.getPageBar(totalCount, cPage, numPerpage, 5, "findInterview.do"));
+		 mv.addObject("list",list);
+		 mv.setViewName("interview/findInterview");
+		 return mv; 
+	 }
+	 
+	 
 }

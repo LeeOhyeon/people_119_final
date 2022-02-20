@@ -28,14 +28,14 @@
       <div class="container">
         <div class="title">
           <div>
-            <h2><strong>면접 후기</strong></h2>
+            <h2><strong>검색결과</strong></h2>
           </div>
           <div class="review-count">
             <p>총 ${totalCount}건</p>
           </div>
         </div>
         <div>
-           <p>최신으로 등록된 면접후기들을 만나보세요 <strong>후기등록</strong>과 <strong>조회</strong>는 회원들만 이용가능한 서비스입니다.</p>
+           <p><strong>${keyword}</strong>에 대한 검색 결과입니다 <strong>후기등록</strong>과 <strong>조회</strong>는 회원들만 이용가능한 서비스입니다.</p>
         </div>
         <div class="select-box">
           <div class="enrollInterview">
@@ -175,17 +175,19 @@
     <script>
     const memberId="${loginMember.memberId}";  
   
-     const insertBtn=()=>{
-    	 if(memberId!="") {
-    		 location.assign('${path}/interview/interviewEnrollView.do?memberId='+memberId);	 
-    	 }else{
-    		 alert("후기 등록은 회원만 이용가능합니다");
-    		 return;
-    	 }	 
-     }
     
-  
-     const toggle=(e)=>{
+	    const insertBtn=()=>{
+		   	 if(memberId!="") {
+		   		 location.assign('${path}/interview/interviewEnrollView.do?memberId='+memberId);	 
+		   	 }else{
+		   		 alert("후기 등록은 회원만 이용가능합니다");
+		   		 return;
+		   	 }	 
+	    }
+    
+ 
+    
+      const toggle=(e)=>{
     	  if(memberId=="") {
     		  alert("로그인 후 이용가능한 서비스입니다");
     	  }else{
@@ -204,6 +206,7 @@
     		  alert("후기 조회는 회원만 이용가능합니다");
  	   		  return;
     	  }
+    	  
       }
       
      const findStr=()=>{

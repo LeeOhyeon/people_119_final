@@ -15,15 +15,15 @@ public interface BoardDao {
 	
 	int boardListCount(SqlSessionTemplate session);
 	
-	List<Board> freeList(SqlSessionTemplate session);
+	List<BoardTotal> freeList(SqlSessionTemplate session);
 	
-	List<Board> leaveList(SqlSessionTemplate session);
+	List<BoardTotal> leaveList(SqlSessionTemplate session);
 
-	List<Board> qaList(SqlSessionTemplate session);
+	List<BoardTotal> qaList(SqlSessionTemplate session);
 	
-	List<Board> readyList(SqlSessionTemplate session);
+	List<BoardTotal> readyList(SqlSessionTemplate session);
 	
-	List<Board> turnoverList(SqlSessionTemplate session);
+	List<BoardTotal> turnoverList(SqlSessionTemplate session);
 	
 	Board selectBoard(SqlSessionTemplate session,int boardNo);
 
@@ -43,7 +43,7 @@ public interface BoardDao {
 
 	int boardLikeCount(SqlSessionTemplate session, Like l);
 
-	List<Board> hotList(SqlSessionTemplate session);
+	List<BoardTotal> hotList(SqlSessionTemplate session);
 
 	int insertReply(SqlSessionTemplate session, Comment c);
 
@@ -76,4 +76,6 @@ public interface BoardDao {
 	List<BoardTotal> totalCommentSort(SqlSessionTemplate session, Map<String, Object> param);
 
 	List<Board> newboardList(SqlSessionTemplate session);
+
+	List<BoardTotal> totalBoardList(SqlSessionTemplate session);
 }

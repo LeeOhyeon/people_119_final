@@ -61,12 +61,15 @@
 }
 .board-like{
   font-size:13px;
+  margin-left:5px;
 }
 .board-comment{
   font-size:13px;
+  margin-left:5px;
 }
 .board-view{
   font-size:13px;
+  margin-left:5px;
 }
 .boardSort div {
   margin-right:15px;
@@ -78,4 +81,16 @@
 .enrollDate{
 	display:inline-block;
 	font-size:12px;
+}
+.boardSort{
+	margin-top:30px;	
+}
+.boardLike{
+	font-size: 14px;
+}
+.boardComment{
+	font-size: 14px;
+}
+.boardView{
+	font-size: 14px;
 }

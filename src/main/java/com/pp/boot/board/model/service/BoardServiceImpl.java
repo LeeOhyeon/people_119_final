@@ -33,28 +33,28 @@ public class BoardServiceImpl implements BoardService {
 		return count;
 	}
 	@Override
-	public List<Board> freeList() {
-		List<Board> free=dao.freeList(session);
+	public List<BoardTotal> freeList() {
+		List<BoardTotal> free=dao.freeList(session);
 		return free;
 	}
 	@Override
-	public List<Board> leaveList() {
-		List<Board> leave=dao.leaveList(session);
+	public List<BoardTotal> leaveList() {
+		List<BoardTotal> leave=dao.leaveList(session);
 		return leave;
 	}
 	@Override
-	public List<Board> qaList() {
-		List<Board> qa=dao.qaList(session);
+	public List<BoardTotal> qaList() {
+		List<BoardTotal> qa=dao.qaList(session);
 		return qa;
 	}
 	@Override
-	public List<Board> readyList() {
-		List<Board> ready=dao.readyList(session);
+	public List<BoardTotal> readyList() {
+		List<BoardTotal> ready=dao.readyList(session);
 		return ready;
 	}
 	@Override
-	public List<Board> turnoverList() {
-		List<Board> turnover=dao.turnoverList(session);
+	public List<BoardTotal> turnoverList() {
+		List<BoardTotal> turnover=dao.turnoverList(session);
 		return turnover;
 	}
 	@Override
@@ -103,8 +103,8 @@ public class BoardServiceImpl implements BoardService {
 		return count;
 	}
 	@Override
-	public List<Board> hotList() {
-		List<Board> list=dao.hotList(session);
+	public List<BoardTotal> hotList() {
+		List<BoardTotal> list=dao.hotList(session);
 		return list;
 	}
 	@Override
@@ -190,6 +190,12 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public List<Board> newboardList() {
 		List<Board> list=dao.newboardList(session);
+		return list;
+	}
+	@Override
+	public List<BoardTotal> totalBoardList() {
+		// TODO Auto-generated method stub
+		List<BoardTotal> list=dao.totalBoardList(session);
 		return list;
 	}
 	

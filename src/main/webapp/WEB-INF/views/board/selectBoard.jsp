@@ -268,6 +268,7 @@ $(document).ready(()=>{
   	//대댓글 ajax
   	const reply=(e)=>{
   		let btn = $(e);
+  		
   		let commentContent = $(btn.parents('.comment-reply')).find('input[name=commentContent]').val();
   		let commentNo=$(btn.parents('.comment-reply')).attr("id");
   		console.log(commentNo);
@@ -278,6 +279,7 @@ $(document).ready(()=>{
   			success:data=>{	
   				alert("대댓글 등록성공!");
   				selectReply();
+  				$(btn.parents('.comment-reply')).find('input[name=commentContent]').val("");
   			}
   		})
   	
