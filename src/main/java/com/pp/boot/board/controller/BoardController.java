@@ -202,7 +202,7 @@ public class BoardController {
 		String loc = "";
 		if(result>0) {
 			  msg ="게시글 등록이 완료되었습니다.";
-			  loc ="selectBoard.do?boardNo="+result;	 
+			  loc ="/board/selectBoard.do?boardNo="+result;	 
 		}
 		 
 		model.addAttribute("msg",msg);

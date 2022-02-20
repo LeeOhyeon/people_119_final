@@ -31,5 +31,6 @@ public class InterviewReview {
 	private String interviewTip;
 	private String passOrNot;
 	private String dept;
+	private Date enrollDate;
 	
 }
