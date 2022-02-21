@@ -26,9 +26,17 @@
     <section class="inner-page">
       <div class="container">
         <div class="boardInfo">
-          <div class="boardCount">
-            <h3><strong>실시간 전체글 ${count}개</strong></h3>
-          </div>
+          <div>
+          	 <div class="boardCount">
+            	<h3><strong>실시간 전체글 ${count}개</strong></h3>
+          	</div>
+          	<c:if test="${loginMember!=null}">
+	          	<div class="myInfo">
+	          		<button type="button" class="btn btn-light" style="width:150px" onclick="myInfo();">내 글 확인하기</button>
+	          		<button type="button" class="btn btn-light" style="width:100px" onclick="insert();">글 등록</button>
+	          	</div>
+          	</c:if>
+          </div>             
           <div class="boardSearch">
             <div class="boardSearch-container">
              <%--  <c:if test="${loginMember==null}">
@@ -100,6 +108,7 @@
               <button type="button" class="btn btn-light" style="width:100px" onclick="leave();">퇴사</button>
               <button type="button" class="btn btn-light" style="width:100px" onclick="free();">잡담</button>
               <button type="button" class="btn btn-light" style="width:100px" onclick="qa();">Q&A</button>
+             
             </div>
           </div>
         </div>
@@ -263,6 +272,14 @@
 		const qa=()=>{
 			location.assign("${path}/board/boardCategory.do?category=질문");
 		}
+		const insert=()=>{
+			location.assign("${path}/board/insertBoard.do");
+		}
+		const myInfo=()=>{
+			location.assign("${path}/board/myInfoBoard.do?memberId=${loginMember.memberId}");
+		}
+		
+		
 		
     </script>
   </main><!-- End #main -->

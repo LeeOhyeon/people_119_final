@@ -198,5 +198,17 @@ public class BoardServiceImpl implements BoardService {
 		List<BoardTotal> list=dao.totalBoardList(session);
 		return list;
 	}
+	@Override
+	public List<BoardTotal> myInfoBoard(Map<String, Integer> param, String memberId) {
+		// TODO Auto-generated method stub
+		List<BoardTotal> list=dao.myInfoBoard(session,param,memberId);
+		return list;
+	}
+	@Override
+	public int myInfoBoardCount(String memberId) {
+		// TODO Auto-generated method stub
+		int count=dao.myInfoBoardCount(session,memberId);
+		return count;
+	}
 	
 }

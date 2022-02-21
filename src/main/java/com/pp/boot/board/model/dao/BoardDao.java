@@ -78,4 +78,10 @@ public interface BoardDao {
 	List<Board> newboardList(SqlSessionTemplate session);
 
 	List<BoardTotal> totalBoardList(SqlSessionTemplate session);
+
+	List<BoardTotal> myInfoBoard(SqlSessionTemplate session, Map<String, Integer> param, String memberId);
+
+	int myInfoBoardCount(SqlSessionTemplate session,String memberId);
+	
+	
 }
