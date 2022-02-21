@@ -54,8 +54,11 @@
 	            	 	</select>
 	            	 </div>
 	            	 <div class="search-input">
-	            	 	<input type="text" class="find" placeholder="검색어를 입력해주세요">
-		          		<input type="button" class="findbtn" value="검색" onclick="findStr();">
+	            	 	<input type="text" class="form-control" name="keyword" id="keyword" style="width:px;">	         
+		          		
+	            	 </div>
+	            	 <div class="search-button">
+	            	 	<button type="button" class="btn btn-light" onclick="findStr();">검색</button>
 	            	 </div>	              	      	 
          	</div>
           </div>
@@ -69,7 +72,8 @@
           </div>
           <div class="insert">
             <div class="insert-btn">
-              <button type="button" class="btn btn-light" id="#" style="width:200px" onclick="insertBoard();">게시글 작성하기</button>
+              <button type="button" class="btn btn-light" style="width:150px" onclick="myInfo();">내 글 확인하기</button>
+              <button type="button" class="btn btn-light" id="#" style="width:150px" onclick="insertBoard();">게시글 작성하기</button>
             </div>
           </div>
         </div>
@@ -100,6 +104,9 @@
 		const qa=()=>{
 			location.assign("${path}/board/boardCategory.do?category=질문");
 		} 
+		const myInfo=()=>{
+			location.assign("${path}/board/myInfoBoard.do?memberId=${loginMember.memberId}");
+		}
 		
 		//온로드시 최신순 정렬
 		$(document).ready(()=>{
@@ -435,7 +442,7 @@
 		} 
 		
 		const findStr=()=>{
-			const keyword=$(".find").val();
+			const keyword=$("#keyword").val();
 			const parse=$("#searchParse").val();
 			const category="${category}";
 			
