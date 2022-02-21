@@ -13,6 +13,8 @@
     padding:80px;
     border-radius:15px ;
     border: 1px solid lightgray;
+    border-top-left-radius:0px; 
+    border-bottom-left-radius:0px; 
 }
 .loginTitle{
     font-size: 28px;
