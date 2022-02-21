@@ -263,5 +263,67 @@ public class BoardDaoImpl implements BoardDao {
 		// TODO Auto-generated method stub
 		return session.selectOne("board.myInfoBoardCount",memberId);
 	}
+
+	@Override
+	public List<BoardTotal> searchBoard(SqlSessionTemplate session, Map<String, Integer> param,
+			Map<String, String> value) {
+		// TODO Auto-generated method stub
+		int cPage = (Integer)param.get("cPage");
+		int numPerPage =(Integer)param.get("numPerPage");
+		RowBounds rb = new RowBounds((cPage-1)*numPerPage,numPerPage); 
+		return session.selectList("board.searchBoard",value,rb);
+	}
+
+	@Override
+	public List<BoardTotal> searchBoardTitle(SqlSessionTemplate session, Map<String, Integer> param,
+			Map<String, String> value) {
+		// TODO Auto-generated method stub
+		int cPage = (Integer)param.get("cPage");
+		int numPerPage =(Integer)param.get("numPerPage");
+		RowBounds rb = new RowBounds((cPage-1)*numPerPage,numPerPage); 
+		return session.selectList("board.searchBoardTitle",value,rb);
+	}
+
+	@Override
+	public int searchBoardCount(SqlSessionTemplate session, Map<String, String> value) {
+		// TODO Auto-generated method stub
+		return session.selectOne("board.searchBoardCount",value);
+	}
+
+	@Override
+	public int searchBoardTitleCount(SqlSessionTemplate session, Map<String, String> value) {
+		// TODO Auto-generated method stub
+		return session.selectOne("board.searchBoardTitleCount",value);
+	}
+
+	@Override
+	public List<BoardTotal> totalSearchBoard(SqlSessionTemplate session, Map<String, Integer> param,
+			Map<String, String> value) {
+		int cPage = (Integer)param.get("cPage");
+		int numPerPage =(Integer)param.get("numPerPage");
+		RowBounds rb = new RowBounds((cPage-1)*numPerPage,numPerPage); 
+		return session.selectList("board.totalSearchBoard",value,rb);
+	}
+
+	@Override
+	public int totalSearchBoardCount(SqlSessionTemplate session, Map<String, String> value) {
+		// TODO Auto-generated method stub
+		return session.selectOne("board.totalSearchBoardCount",value);
+	}
+
+	@Override
+	public List<BoardTotal> totalSearchBoardTitle(SqlSessionTemplate session, Map<String, Integer> param,
+			Map<String, String> value) {
+		int cPage = (Integer)param.get("cPage");
+		int numPerPage =(Integer)param.get("numPerPage");
+		RowBounds rb = new RowBounds((cPage-1)*numPerPage,numPerPage);		
+		return session.selectList("board.totalSearchBoardTitle",value,rb);
+	}
+
+	@Override
+	public int totalSearchBoardTitleCount(SqlSessionTemplate session, Map<String, String> value) {
+		// TODO Auto-generated method stub
+		return session.selectOne("board.totalSearchBoardTitleCount",value);
+	}
 		
 }

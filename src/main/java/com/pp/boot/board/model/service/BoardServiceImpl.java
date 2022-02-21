@@ -210,5 +210,53 @@ public class BoardServiceImpl implements BoardService {
 		int count=dao.myInfoBoardCount(session,memberId);
 		return count;
 	}
+	@Override
+	public List<BoardTotal> searchBoard(Map<String, Integer> param, Map<String, String> value) {
+		// TODO Auto-generated method stub
+		List<BoardTotal> list=dao.searchBoard(session,param,value);
+		return list;
+	}
+	@Override
+	public List<BoardTotal> searchBoardTitle(Map<String, Integer> param, Map<String, String> value) {
+		// TODO Auto-generated method stub
+		List<BoardTotal> list=dao.searchBoardTitle(session,param,value);
+		return list;
+	}
+	@Override
+	public int searchBoardCount(Map<String, String> value) {
+		int count=dao.searchBoardCount(session,value);
+		return count;
+	}
+	@Override
+	public int searchBoardTitleCount(Map<String, String> value) {
+		// TODO Auto-generated method stub
+		int count=dao.searchBoardTitleCount(session,value);
+		return count;
+	}
+	@Override
+	public List<BoardTotal> totalSearchBoard(Map<String, Integer> param, Map<String, String> value) {
+		List<BoardTotal> list=dao.totalSearchBoard(session,param,value);
+		
+		return list;
+	}
+	@Override
+	public int totalSearchBoardCount(Map<String, String> value) {
+		// TODO Auto-generated method stub
+		int count=dao.totalSearchBoardCount(session,value);
+		return count;
+	}
+	@Override
+	public List<BoardTotal> totalSearchBoardTitle(Map<String, Integer> param, Map<String, String> value) {
+		// TODO Auto-generated method stub
+		List<BoardTotal> list=dao.totalSearchBoardTitle(session,param,value);
+		
+		return list;
+	}
+	@Override
+	public int totalSearchBoardTitleCount(Map<String, String> value) {
+		// TODO Auto-generated method stub
+		int count=dao.totalSearchBoardTitleCount(session,value);
+		return count;
+	}
 	
 }

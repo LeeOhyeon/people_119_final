@@ -94,3 +94,9 @@
 .boardView{
 	font-size: 14px;
 }
+.search-select {
+	display:inline-block;
+}
+.search-input{
+	display:inline-block;
+}

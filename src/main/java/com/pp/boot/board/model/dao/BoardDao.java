@@ -82,6 +82,25 @@ public interface BoardDao {
 	List<BoardTotal> myInfoBoard(SqlSessionTemplate session, Map<String, Integer> param, String memberId);
 
 	int myInfoBoardCount(SqlSessionTemplate session,String memberId);
+
+	List<BoardTotal> searchBoard(SqlSessionTemplate session, Map<String, Integer> param, Map<String, String> value);
+
+	List<BoardTotal> searchBoardTitle(SqlSessionTemplate session, Map<String, Integer> param,
+			Map<String, String> value);
+
+	int searchBoardCount(SqlSessionTemplate session, Map<String, String> value);
+
+	int searchBoardTitleCount(SqlSessionTemplate session, Map<String, String> value);
+
+	List<BoardTotal> totalSearchBoard(SqlSessionTemplate session, Map<String, Integer> param,
+			Map<String, String> value);
+
+	int totalSearchBoardCount(SqlSessionTemplate session, Map<String, String> value);
+
+	List<BoardTotal> totalSearchBoardTitle(SqlSessionTemplate session, Map<String, Integer> param,
+			Map<String, String> value);
+
+	int totalSearchBoardTitleCount(SqlSessionTemplate session, Map<String, String> value);
 	
 	
 }

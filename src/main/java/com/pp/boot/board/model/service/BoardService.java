@@ -81,5 +81,21 @@ public interface BoardService {
 
 	int myInfoBoardCount(String memberId);
 
+	List<BoardTotal> searchBoard(Map<String, Integer> param, Map<String, String> value);
+	
+	List<BoardTotal> searchBoardTitle(Map<String, Integer> param, Map<String, String> value);
+
+	int searchBoardCount(Map<String, String> value);
+
+	int searchBoardTitleCount(Map<String, String> value);
+
+	List<BoardTotal> totalSearchBoard(Map<String, Integer> param, Map<String, String> value);
+
+	int totalSearchBoardCount(Map<String, String> value);
+
+	List<BoardTotal> totalSearchBoardTitle(Map<String, Integer> param, Map<String, String> value);
+
+	int totalSearchBoardTitleCount(Map<String, String> value);
+
 	
 }

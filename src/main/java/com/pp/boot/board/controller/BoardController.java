@@ -537,4 +537,49 @@ public class BoardController {
 		
 		return mv;
 	}
+	@RequestMapping("/searchBoard.do")
+	public ModelAndView searchBoard(ModelAndView mv, @RequestParam String parse, @RequestParam String keyword,@RequestParam String category,@RequestParam(value="cPage",defaultValue = "1") int cPage,
+			@RequestParam(value="numPerPage" , defaultValue = "10") int numPerPage) {
+		
+		Map<String,Integer> param=Map.of("cPage",cPage,"numPerPage",numPerPage);
+		
+		Map<String,String> value;
+		List<BoardTotal> list=new ArrayList();
+		int count=0;
+		
+		if(category.equals("게시글전체")) {
+			if(parse.equals("작성자")) {
+				value=Map.of("parse",parse,"keyword",keyword);
+				list=service.totalSearchBoard(param,value);
+				count=service.totalSearchBoardCount(value);
+			}else if(parse.equals("제목")) {
+				value=Map.of("parse",parse,"keyword",keyword);
+				list=service.totalSearchBoardTitle(param,value);
+				count=service.totalSearchBoardTitleCount(value);
+			}
+		}else {
+			if(parse.equals("작성자")) {
+				value=Map.of("parse",parse,"keyword",keyword,"category",category);
+				list=service.searchBoard(param,value);
+				count=service.searchBoardCount(value);
+				
+			}else if(parse.equals("제목")) {
+				value=Map.of("parse",parse,"keyword",keyword,"category",category);
+				list=service.searchBoardTitle(param,value);
+				count=service.searchBoardTitleCount(value);
+			}
+		}
+		
+		
+	
+		mv.addObject("category", category);
+		mv.addObject("keyword",keyword);
+		mv.addObject("pageBar",PageFactoryMember.getPageBar(count, cPage, numPerPage, 5, "searchBoard.do?parse="+parse+"&&keyword="+keyword+"&&category="+category+"&&"));
+		mv.addObject("count",count);
+		mv.addObject("list",list);
+		mv.setViewName("board/searchBoard");
+		
+		
+		return mv;
+	}
 }
