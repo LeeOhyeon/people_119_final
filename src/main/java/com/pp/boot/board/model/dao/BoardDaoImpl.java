@@ -248,5 +248,20 @@ public class BoardDaoImpl implements BoardDao {
 		// TODO Auto-generated method stub
 		return session.selectList("board.totalBoardList");
 	}
+
+	@Override
+	public List<BoardTotal> myInfoBoard(SqlSessionTemplate session, Map<String, Integer> param, String memberId) {
+		// TODO Auto-generated method stub
+		int cPage = (Integer)param.get("cPage");
+		int numPerPage =(Integer)param.get("numPerPage");
+		RowBounds rb = new RowBounds((cPage-1)*numPerPage,numPerPage); 
+		return session.selectList("board.myInfoBoard",memberId,rb);
+	}
+
+	@Override
+	public int myInfoBoardCount(SqlSessionTemplate session,String memberId) {
+		// TODO Auto-generated method stub
+		return session.selectOne("board.myInfoBoardCount",memberId);
+	}
 		
 }

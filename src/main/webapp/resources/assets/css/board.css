@@ -250,6 +250,11 @@
 	margin-right:20px;
 	font-size:14px;
 }
-
-
+.boardCount{
+	display:inline-block;
+}
+.myInfo{
+	display:inline;
+	float:right;
+}
 

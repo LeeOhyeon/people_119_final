@@ -39,7 +39,7 @@ $(document).ready(()=>{
         <div class="board">
           <div>
 	          <div class="boardTitle">
-	              <h5><strong>${b.boardTitle}</strong></h5>
+	              <h5><strong>[${b.category}]&nbsp;${b.boardTitle}</strong></h5>
 	          </div>
 	          <c:if test="${b.memberId eq loginMember.memberId}">
 	          	<div class="updateboard">

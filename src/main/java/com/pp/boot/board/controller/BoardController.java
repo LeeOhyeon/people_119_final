@@ -37,6 +37,7 @@ import com.pp.boot.common.PageFactoryBoard;
 import com.pp.boot.common.PageFactoryBoardComment;
 import com.pp.boot.common.PageFactoryBoardLike;
 import com.pp.boot.common.PageFactoryBoardView;
+import com.pp.boot.common.PageFactoryMember;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -518,5 +519,22 @@ public class BoardController {
 				out.close();
 			}
 		}
+	}
+	@RequestMapping("/myInfoBoard.do")
+	public ModelAndView myInfoBoard(ModelAndView mv, @RequestParam String memberId,@RequestParam(value="cPage",defaultValue = "1") int cPage,
+			@RequestParam(value="numPerPage" , defaultValue = "10") int numPerPage) {
+		
+		Map<String,Integer> param=Map.of("cPage",cPage,"numPerPage",numPerPage);
+		
+		List<BoardTotal> list=service.myInfoBoard(param,memberId);
+	    int count=service.myInfoBoardCount(memberId);
+		
+		mv.addObject("pageBar",PageFactoryMember.getPageBar(count, cPage, numPerPage, 5, "myInfoBoard.do?memberId="+memberId+"&&"));
+		mv.addObject("count",count);
+		mv.addObject("list",list);
+		mv.setViewName("board/myBoard");
+		
+		
+		return mv;
 	}
 }

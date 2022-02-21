@@ -77,5 +77,9 @@ public interface BoardService {
 
 	List<BoardTotal> totalBoardList();
 
+	List<BoardTotal> myInfoBoard(Map<String, Integer> param, String memberId);
+
+	int myInfoBoardCount(String memberId);
+
 	
 }

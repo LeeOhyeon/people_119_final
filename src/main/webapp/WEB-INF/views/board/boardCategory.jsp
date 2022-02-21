@@ -113,7 +113,7 @@
 						
 						const board=$("<div class='board'>");
 						const boardTitle=$("<div class='boardTitle' id='"+data["list"][i]["boardNo"]+"'>");
-						const boardNo=$("<a href='${path}/board/selectBoard.do?boardNo="+data["list"][i]["boardNo"]+"' id='board-Title'><strong>"+data["list"][i]["boardTitle"]+"</strong></a>");
+						const boardNo=$("<a href='${path}/board/selectBoard.do?boardNo="+data["list"][i]["boardNo"]+"' id='board-Title'><strong>"+"["+data["list"][i]["category"]+"]&nbsp;&nbsp;"+data["list"][i]["boardTitle"]+"</strong></a>");
 						//const boardContent=$("<div class='boardContent'>"+data["list"][i]["boardContent"]+"</div>");
 
 						const boardSort=$("<div class='boardSort'>");
@@ -180,7 +180,7 @@
 						
 						const board=$("<div class='board'>");
 						const boardTitle=$("<div class='boardTitle' id='"+data["list"][i]["boardNo"]+"'>");
-						const boardNo=$("<a href='${path}/board/selectBoard.do?boardNo="+data["list"][i]["boardNo"]+"' id='board-Title'><strong>"+data["list"][i]["boardTitle"]+"</strong></a>");
+						const boardNo=$("<a href='${path}/board/selectBoard.do?boardNo="+data["list"][i]["boardNo"]+"' id='board-Title'><strong>"+"["+data["list"][i]["category"]+"]&nbsp;&nbsp;"+data["list"][i]["boardTitle"]+"</strong></a>");
 						//const boardContent=$("<div class='boardContent'>"+data["list"][i]["boardContent"]+"</div>");
 
 						const boardSort=$("<div class='boardSort'>");
@@ -246,7 +246,7 @@
 						
 						const board=$("<div class='board'>");
 						const boardTitle=$("<div class='boardTitle' id='"+data["list"][i]["boardNo"]+"'>");
-						const boardNo=$("<a href='${path}/board/selectBoard.do?boardNo="+data["list"][i]["boardNo"]+"' id='board-Title'><strong>"+data["list"][i]["boardTitle"]+"</strong></a>");
+						const boardNo=$("<a href='${path}/board/selectBoard.do?boardNo="+data["list"][i]["boardNo"]+"' id='board-Title'><strong>"+"["+data["list"][i]["category"]+"]&nbsp;&nbsp;"+data["list"][i]["boardTitle"]+"</strong></a>");
 						//const boardContent=$("<div class='boardContent'>"+data["list"][i]["boardContent"]+"</div>");
 
 						const boardSort=$("<div class='boardSort'>");
@@ -311,7 +311,7 @@
 						
 						const board=$("<div class='board'>");
 						const boardTitle=$("<div class='boardTitle' id='"+data["list"][i]["boardNo"]+"'>");
-						const boardNo=$("<a href='${path}/board/selectBoard.do?boardNo="+data["list"][i]["boardNo"]+"' id='board-Title'><strong>"+data["list"][i]["boardTitle"]+"</strong></a>");
+						const boardNo=$("<a href='${path}/board/selectBoard.do?boardNo="+data["list"][i]["boardNo"]+"' id='board-Title'><strong>"+"["+data["list"][i]["category"]+"]&nbsp;&nbsp;"+data["list"][i]["boardTitle"]+"</strong></a>");
 						//const boardContent=$("<div class='boardContent'>"+data["list"][i]["boardContent"]+"</div>");
 
 						const boardSort=$("<div class='boardSort'>");
@@ -376,7 +376,7 @@
 						
 						const board=$("<div class='board'>");
 						const boardTitle=$("<div class='boardTitle' id='"+data["list"][i]["boardNo"]+"'>");
-						const boardNo=$("<a href='${path}/board/selectBoard.do?boardNo="+data["list"][i]["boardNo"]+"' id='board-Title'><strong>"+data["list"][i]["boardTitle"]+"</strong></a>");
+						const boardNo=$("<a href='${path}/board/selectBoard.do?boardNo="+data["list"][i]["boardNo"]+"' id='board-Title'><strong>"+"["+data["list"][i]["category"]+"]&nbsp;&nbsp;"+data["list"][i]["boardTitle"]+"</strong></a>");
 						//const boardContent=$("<div class='boardContent'>"+data["list"][i]["boardContent"]+"</div>");
 
 						const boardSort=$("<div class='boardSort'>");
