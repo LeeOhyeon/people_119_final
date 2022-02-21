@@ -72,9 +72,17 @@ public class ReviewController {
 		
 		// 해당 기업의 리뷰 전체 개수 가져오기
 		int totalCount = companyService.countCompany(companyName);
+		Map percentCounts = null;
+		int status = 10;
 		
-		// 퍼센트 계산하기
-		Map percentCounts = service.countPercent(companyName);
+		// 기업리뷰가 있냐 없냐 구분하기
+		if(totalCount == 0) {
+			status = 1;
+		}else if(totalCount > 0) {
+			status = 0;
+			// 퍼센트 가져오는거
+			percentCounts = service.countPercent(companyName);
+		}
 
 		// 기업 별 공고 개수 가져오기
 		List<Offer> offerCounts = offerService.countOffer();
@@ -85,6 +93,7 @@ public class ReviewController {
 		m.addAttribute("totalCount", totalCount);
 		m.addAttribute("percentCounts", percentCounts);
 		m.addAttribute("offerCounts", offerCounts);
+		m.addAttribute("status", status);
 		
 		m.addAttribute("company", c);
 		
