@@ -46,6 +46,11 @@
             <h4>전체<strong>${count}</strong>건</h4>
           </div>
           <div class="search">
+          		<c:if test="${loginMember!=null}">
+	          	<div class="myInfo">	    
+	          		<button type="button" class="btn btn-light" style="width:100px" onclick="insert();">글 등록</button>
+	          	</div>
+          		</c:if>
           </div>
         </div>
         <div class="boardContainer">
@@ -104,6 +109,9 @@
 		const qa=()=>{
 			location.assign("${path}/board/boardCategory.do?category=질문");
 		} 
+		const insert=()=>{
+			location.assign("${path}/board/insertBoard.do");
+		}
 		
     </script>
   </main><!-- End #main -->

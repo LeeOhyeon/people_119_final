@@ -113,7 +113,7 @@ $(document).ready(()=>{
   		const comment=document.getElementById("floatingTextarea2");
   		let memberIdVal = "${loginMember.memberId}"; 
   		
-  		if(memberIdVal!="") {
+  		if(memberIdVal!=""&&commentContent!="") {
   			$.ajax({
   	  			url: "${path}/board/insertComment.do",
   	  			data: {boardNo:"${b.boardNo}","memberId":"${loginMember.memberId}","commentContent":commentContent,"commentLevel":"1"},
@@ -124,9 +124,11 @@ $(document).ready(()=>{
   	  				comment.value=null;
   	  			}
   	  		});	
-  		}else{
+  		}else if(memberIdVal==""){
   			alert("로그인 후 이용해주세요");
   			location.assign("${path}/member/memberLoginView.do");
+  		}else if(commentContent=="") {
+  			alert("댓글 입력좀 ㅋ");
   		}
   	}
   	
@@ -267,22 +269,27 @@ $(document).ready(()=>{
   	
   	//대댓글 ajax
   	const reply=(e)=>{
+  		let memberIdVal = "${loginMember.memberId}"; 
   		let btn = $(e);
-  		
   		let commentContent = $(btn.parents('.comment-reply')).find('input[name=commentContent]').val();
   		let commentNo=$(btn.parents('.comment-reply')).attr("id");
   		console.log(commentNo);
-  		$.ajax({
-  			url:"${path}/board/commentReply.do",
-  			data:{boardNo:"${b.boardNo}",commentRef:commentNo,"memberId":"${loginMember.memberId}",commentContent:commentContent},
-  			dataType:"json",
-  			success:data=>{	
-  				alert("대댓글 등록성공!");
-  				selectReply();
-  				$(btn.parents('.comment-reply')).find('input[name=commentContent]').val("");
-  			}
-  		})
-  	
+  		if(memberIdVal=="") {
+  			alert("로그인 후 이용하세요");
+  		}else if(commentContent=="") {
+  			alert("대댓글을 일정 글자 이상 작성해주세요");
+  		}else if(memberIdVal!=""&&commentContent!="") {
+  			$.ajax({
+  	  			url:"${path}/board/commentReply.do",
+  	  			data:{boardNo:"${b.boardNo}",commentRef:commentNo,"memberId":"${loginMember.memberId}",commentContent:commentContent},
+  	  			dataType:"json",
+  	  			success:data=>{	
+  	  				alert("대댓글 등록성공!");
+  	  				selectReply();
+  	  				$(btn.parents('.comment-reply')).find('input[name=commentContent]').val("");
+  	  			}
+  	  		});
+  		}		
   	}
   	
   	//대댓글 화면출력
