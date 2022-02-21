@@ -51,8 +51,7 @@
 	            		 <select class="form-select"  aria-label="Default select example" id="searchParse" style="width:140px">
 		            	 	<option value="작성자">작성자명</option>
 		            	 	<option value="제목">글 제목</option>
-	            	 	</select> 
-	            	 	
+	            	 	</select>
 	            	 </div>
 	            	 <div class="search-input">
 	            	 	<input type="text" class="find" placeholder="검색어를 입력해주세요">
