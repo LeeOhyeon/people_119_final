@@ -22,6 +22,21 @@ public class ApplicantController {
 	@Autowired
 	private ApplicantService service;
 	
+	// 로그인한 회원이 이미 지원 했는지 안했는지 확인
+	@RequestMapping("checkApply.do")
+	public int checkApply(@RequestParam Map param) {
+		int check = 0;
+		// 매개변수 조건에 맞는 데이터의 개수를 확인
+		int result = service.checkApply(param);
+		if(result == 0) {
+			check = 0;
+		}else if(result == 1) {
+			check = 1;
+		}
+		
+		return check;
+	}
+	
 	// 지원하고 나서 지원내역 화면 전환
 	@RequestMapping("/apply.do")
 	public String apply(@RequestParam Map param, Model model, String memberId) {
@@ -33,6 +48,7 @@ public class ApplicantController {
 		
 		model.addAttribute("applyList", list);
 		model.addAttribute("total", total);
+		model.addAttribute("result", result);
 		
 		return "applicant/applyList";
 	}

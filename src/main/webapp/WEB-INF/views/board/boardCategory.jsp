@@ -46,11 +46,19 @@
             <h4>전체<strong>${count}</strong>건</h4>
           </div>
           <div class="search">
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="다른 사람들은 어떤 이야기를 할까?"
-                aria-label="Recipient's username" aria-describedby="basic-addon2" style="width: 300px;">
-              <span class="input-group-text" id="basic-addon2"><i class="fas fa-search"></i></span>
-            </div>
+            <div class="findBoard">            	 
+	            	 <div class="search-select">
+	            		 <select class="form-select"  aria-label="Default select example" id="searchParse" style="width:140px">
+		            	 	<option value="MEMBERID">작성자명</option>
+		            	 	<option value="BOARDTITLE">글 제목</option>
+	            	 	</select> 
+	            	 	
+	            	 </div>
+	            	 <div class="search-input">
+	            	 	<input type="text" class="find" placeholder="검색어를 입력해주세요">
+		          		<input type="button" class="findbtn" value="검색" onclick="findStr();">
+	            	 </div>	              	      	 
+         	</div>
           </div>
         </div>
         <div class="sort">
@@ -426,6 +434,16 @@
 				}
 			});
 		} 
+		
+		const findStr=()=>{
+			const keyword=$(".find").val();
+			const parse=$("#searchParse").val();
+			const category="${category}";
+			
+			
+			location.assign("${path}/board/searchBoard.do?parse="+parse+"&&keyword="+keyword+"&&category="+category);
+		}
+		
 		
     </script>
   </main><!-- End #main -->
