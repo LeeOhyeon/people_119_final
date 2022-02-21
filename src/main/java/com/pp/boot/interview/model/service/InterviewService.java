@@ -24,5 +24,7 @@ public interface InterviewService {
 
 	List<InterviewReview> findInterview(Map<String, Integer> pageParam,String keyword);
 
-	int findInterviewCount(String keyword);	
+	int findInterviewCount(String keyword);
+
+	List<InterviewReview> newInterviewList();	
 }

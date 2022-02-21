@@ -48,6 +48,15 @@ public class InterviewController {
 		mv.setViewName("interview/interviewList");
 		return mv;
 	}
+	//메인 면접 후기
+	
+	@RequestMapping("/newInterviewList.do")
+	@ResponseBody
+	public List<InterviewReview> newInterviewList() {
+		List<InterviewReview> list=service.newInterviewList();
+		return list;
+	}
+	
 	@RequestMapping("/interviewEnrollView.do")
 	public ModelAndView interviewEnrollView(ModelAndView mv,@RequestParam String memberId) {
 		

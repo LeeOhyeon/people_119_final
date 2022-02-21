@@ -82,5 +82,11 @@ public class InterviewServiceImpl implements InterviewService {
 		int count=dao.findInterviewCount(session,keyword);
 		return count;
 	}
+
+	@Override
+	public List<InterviewReview> newInterviewList() {
+		return dao.newInterviewList(session);
+	}
+	
 	
 }

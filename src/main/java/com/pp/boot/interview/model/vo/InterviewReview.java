@@ -32,5 +32,6 @@ public class InterviewReview {
 	private String passOrNot;
 	private String dept;
 	private Date enrollDate;
+	private String companyImage;
 	
 }

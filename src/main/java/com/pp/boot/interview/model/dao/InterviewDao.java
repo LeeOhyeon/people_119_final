@@ -29,6 +29,8 @@ public interface InterviewDao {
 
 	int findInterviewCount(SqlSessionTemplate session,String keyword);
 
+	List<InterviewReview> newInterviewList(SqlSessionTemplate session);
+
 	
 
 }

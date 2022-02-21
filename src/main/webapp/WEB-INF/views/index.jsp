@@ -17,7 +17,7 @@
           <h2 data-aos="fade-up" data-aos-delay="400">이제 출발한다<br> 경주장의 치타가...<br> 다른 경주견들은 직감적으로 긴장하기 시작했다... </h2>
           <div data-aos="fade-up" data-aos-delay="800">
           	<!-- 달리기 시작하기 누르면? MyPage에 이력서 작성하는 쪽으로 연결시켜주는거야. 아이디어 개쩔었다 ㄹㅇㅋㅋ -->
-            <a href="" class="btn-get-started scrollto">달리기 시작하기</a>
+            <a href="${path }/resume/insertResumeView.do?memberId=${loginMember.memberId}" class="btn-get-started scrollto">달리기 시작하기</a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
@@ -88,116 +88,16 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>마감임박 공고</h2>
-          <p>지원 마감이 얼마 남지 않았습니다. 늦기 전에 꼭 지원하세요!</p>
+           <h2>새로 올라온 공고</h2>
+          <p>새로 올라온 공고를 확인하고, 나에게 맞는 포지션에 지원하세요!</p>
         </div>
 
-        <div class="row">
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-               <!-- DB에서 가져오게 -->
-              <!-- <div class="icon"><i class="bx bxl-dribbble"></i></div> -->
-              <div class="" style="width: 250px; height: 150px"><img src="${path}/resources/assets/img/275.jpg" style="width: 250px; height: 150px"></div>
-              <h4 class="title"><a href="">275 Company</a></h4>
-              <p class="description">노력하는 천재 채용중</p>
-              <p class="description">JAVA, JavaScript, Spring Framework</p>
-              <p class="description">마감일 : 2022. 00. 00</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-               <!-- DB에서 가져오게 -->
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4 class="title"><a href="">회사이름</a></h4>
-              <p class="description">뽑는 내용</p>
-              <p class="description">기술스택</p>
-              <p class="description">마감일 : 2022. 00. 00</p> <!-- D-00 으로 표시하는게 더 좋을까? -->
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-               <!-- DB에서 가져오게 -->
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4 class="title"><a href="">회사이름</a></h4>
-              <p class="description">뽑는 내용</p>
-              <p class="description">기술스택</p>
-              <p class="description">마감일 : 2022. 00. 00</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-              <!-- DB에서 가져오게 -->
-              <div class="icon"><i class="bx bx-world"></i></div>
-              <h4 class="title"><a href="">회사이름</a></h4>
-              <p class="description">뽑는 내용</p>
-              <p class="description">기술스택</p>
-              <p class="description">마감일 : 2022. 00. 00</p>
-            </div>
-          </div>
+        <div class="row newOffer">
 
         </div>
 
       </div>
     </section><!-- End 마감임박 공고 -->
-
-    <!-- ======= 새로 올라온 공고 ======= -->
-    <section id="more-services" class="more-services">
-      <div class="container">
-      
-	    <div class="section-title" data-aos="fade-up">
-          <h2>새로 올라온 공고</h2>
-          <p>새로 올라온 공고를 확인하고, 나에게 맞는 포지션에 지원하세요!</p>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6 d-flex align-items-stretch">
-            <div class="card" style='background-image: url("${path}/resources/assets/img/more-services-1.jpg");' data-aos="fade-up" data-aos-delay="100">
-              <div class="card-body">
-                <h5 class="card-title"><a href="">시프 Company</a></h5>
-                <p class="card-text">월급루팡 채용중</p>
-                <p class="card-text">JAVA, JavaScript, Spring Framework</p>
-                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> 지원하기</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-            <div class="card" style='background-image: url("${path}/resources/assets/img/more-services-2.jpg");' data-aos="fade-up" data-aos-delay="200">
-              <div class="card-body">
-                <h5 class="card-title"><a href="">회사이름</a></h5>
-                <p class="card-text">채용내용</p>
-                <p class="card-text">요구 기술스택</p>
-                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> 지원하기</a></div>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-md-6 d-flex align-items-stretch mt-4">
-            <div class="card" style='background-image: url("${path}/resources/assets/img/more-services-3.jpg");' data-aos="fade-up" data-aos-delay="100">
-              <div class="card-body">
-                <h5 class="card-title"><a href="">회사이름</a></h5>
-                <p class="card-text">채용내용</p>
-                <p class="card-text">요구 기술스택</p>
-                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> 지원하기</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 d-flex align-items-stretch mt-4">
-            <div class="card" style='background-image: url("${path}/resources/assets/img/more-services-4.jpg");' data-aos="fade-up" data-aos-delay="200">
-              <div class="card-body">
-                <h5 class="card-title"><a href="">회사이름</a></h5>
-                <p class="card-text">채용내용</p>
-                <p class="card-text">요구 기술스택</p>
-                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> 지원하기</a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End 새로 올라온 공고 -->
 
 
     <!-- ======= 합격 후기 ======= -->
@@ -212,81 +112,7 @@
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
           <div class="swiper-wrapper">
 
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="${path}/resources/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                  <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
-                  <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="${path}/resources/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                  <h3>Sara Wilsson</h3>
-                  <h4>Designer</h4>
-                  <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="${path}/resources/assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                  <h3>Jena Karlis</h3>
-                  <h4>Store Owner</h4>
-                  <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="${path}/resources/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                  <h3>Matt Brandon</h3>
-                  <h4>Freelancer</h4>
-                  <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="${path}/resources/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                  <h3>John Larson</h3>
-                  <h4>Entrepreneur</h4>
-                  <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
+            
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -302,7 +128,8 @@
 		$(document).ready(()=>{
 			countOffer();
 			countCompany();
-			
+			newOfferList();
+			 newInterview();
 		});
 		
 		//전체 공고 갯수
@@ -328,8 +155,55 @@
 			
 		}
 		
-	
-	
+		//새로 올라온 공고
+		function newOfferList(){
+			$.ajax({
+				url:"${path}/offer/newOfferList.do",
+				success:data=>{
+				 for(let i=0;i<4;i++){
+					 const div1 = $("<div class='col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0'>");
+			         const div2 =  
+			   $("<div class='icon-box' data-aos='fade-up' data-aos-delay='"+(i+1)+"00'><a href='${path}/offer/offerView.do?offerNo="+data[i]["offerNo"]+"'><div style='width: 250px; height: 150px'><img src='${path}/resources/upload/offer/"+data[i]['image']+"'style='width: 250px; height: 150px'></div><h4 class='title companyNameTitle'>"+data[i]["companyName"]+"</h4><p class='description'>"+data[i]["offerTitle"]+"</p><p class='description'>"+data[i]["tech"]+"</p><p class='description'>마감일 : <span style='color:red'>"+data[i]["endDate"]+"</span></p>");  
+			         /* const div3 = $("<div style='width: 250px; height: 150px'>"); 
+			         const img = $("<img>");
+			         img.attr("src","${path}/resources/upload/"+data[i]["image"]);
+			         img.css("width","250px");
+			         img.css("height","150px");
+			         const companyName = $("<h4 class='title'><a href='${path}/offer/offerView.do?offerNo="+data[i]["offerNo"]+"'>"+data[i]["companyName"]+"</a></h4>"); 
+			         const offerTitle = $("<p class='description'>"+data[i]["offerTitle"]+"</p>");
+			         const tech=$("<p class='description'>"+data[i]["tech"]+"</p>");    
+			         const endDate=$("<p class='description'>"+data[i]["endDate"]+"</p>");	 
+			         div1.append(div2).append(companyName).append(offerTitle).append(tech).append(endDate); */
+			         
+			         div1.append(div2);
+			         $(".newOffer").append(div1);
+				 }	
+					
+				}
+			});
+			
+		}
+
+	//면접후기
+		
+		function newInterview(){
+			$.ajax({
+				url : "${path}/interview/newInterviewList.do",
+				success:data=>{
+					console.log(data);
+					for(let i=0;i<data.length;i++){
+						const div1 = $("<div class='swiper-slide'>");
+						const div2 = $("<div class='testimonial-wrap'>");
+						const div3 = $("<div class='testimonial-item' style='display:flex; cursor:pointer; justify-content:space-around;' onclick=\"location.assign('${path}/interview/selectInterview.do?interviewReviewNo="+data[i]["interviewReviewNo"]+"')\"><div style='display:inline-block'><h3>"+data[i]["companyName"]+"</h3><h4>"+data[i]["enrollDate"]+"</h4><p><p><span style='font-weight:bold'>직무직업</span> : "+data[i]["workType"]+"</p><p><span style='font-weight:bold'>면접 당시 경력</span> : "+data[i]["career"]+"</p><p><span style='font-weight:bold'>평가</span> : "+data[i]["evaluation"]+"</p><p><span style='font-weight:bold'>난이도</span> : "+data[i]["difficulty"]+"</p><p style='margin:0px;display:inline-block; width:177.75px; white-space:nowrap; overflow:hidden;text-overflow:ellipsis;'><span style='font-weight:bold'>면접Tip</span> : "+data[i]["interviewTip"]+"</p></p></div><div style='display:inline-block'><img width='220px' height='280px' src='${path}/resources/upload/company/"+data[i]["companyImage"]+"'></div></a>");
+						div1.append(div2).append(div3);
+						$(".swiper-wrapper").append(div1);
+					}
+					
+					
+				}
+			});
+		}
+
 	</script>
 
 

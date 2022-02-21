@@ -56,6 +56,18 @@ public class OfferController {
 		return mv;
 	}
 	
+	//메인화면 새로운 공고 리스트
+	@RequestMapping("/newOfferList.do")
+	@ResponseBody
+	public List<Offer> newOfferList() {
+		
+		// 전체 공고 리스트 불러오기
+		List<Offer> list = service.selectOfferList();
+		
+		return list;
+	}
+	
+	
 	// 채용공고 상세보기
 	@RequestMapping("/offerView.do")
 	public String offerView(@RequestParam int offerNo, Model model) {
