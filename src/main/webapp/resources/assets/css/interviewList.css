@@ -1,5 +1,5 @@
 .company-container{
-    border:solid 1px black;
+    border:solid 1px lightgray;
     padding-left:30px;
     width:1000px;
     height:auto;
@@ -96,6 +96,7 @@
 }
 .companyName{
 	cursor:pointer;
+	font-weight: bold;
 }
 .enrollInterview{
 	display:inline-block;

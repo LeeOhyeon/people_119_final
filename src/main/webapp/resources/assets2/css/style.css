@@ -614,7 +614,7 @@ section {
   z-index: -1;
 }
 .featured-services .icon-box:hover::before {
-  background: #106eea;
+  background: rgba(64, 185, 255, 0.678);
   top: 0;
   border-radius: 0px;
 }

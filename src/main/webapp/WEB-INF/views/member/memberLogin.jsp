@@ -16,7 +16,7 @@
 			<div class="d-flex justify-content-between align-items-center">
 				<h2>개인회원 로그인</h2>
 				<ol>
-					<li><a href="index.html">Home</a></li>
+					<li><a href="${path }">Home</a></li>
 					<li>개인회원 로그인</li>
 				</ol>
 			</div>
@@ -29,6 +29,7 @@
 		<div class="container">
 
 			<div class="loginContainer">
+			<img id="u17_img" class="img " src="/resources/company/companylogin/images/companylogin/u17.jpg">
 				<div class="loginouter">
 					<div class="loginTitle">로그인이 필요한 서비스 입니다.</div>
 					<div class="loginTitle2">개인회원</div>

@@ -16,7 +16,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>채용공고 스크랩</h2>
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="${path }">Home</a></li>
             <li>채용공고 스크랩</li>
           </ol>
         </div>
@@ -56,8 +56,8 @@
                   <div class="scrap-search">
 	                  <div style="width: 150px;">
 		                  <select class="form-select" aria-label="Default select example" name="searchCol">
-							  <option value="offerTitle" selected="selected">공고명</option>
-							  <option value="companyName">회사명</option>
+							  <option value="OFFERTITLE" selected="selected">공고명</option>
+							  <option value="COMPANYNAME">회사명</option>
 						</select>
 	                  </div>
                       <div class="input-group mb-3" >

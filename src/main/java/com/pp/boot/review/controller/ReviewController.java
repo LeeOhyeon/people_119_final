@@ -86,7 +86,6 @@ public class ReviewController {
 
 		// 기업 별 공고 개수 가져오기
 		List<Offer> offerCounts = offerService.countOffer();
-		log.debug("{reviewcontroller}" + offerCounts);
 		
 		// 기업 정보 가져오기
 		Company c = companyService.selectCompany(companyName);

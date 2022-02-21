@@ -80,7 +80,6 @@ public class BoardController {
 		
 		
 		int count=service.boardListCount();
-//		log.debug("{}"+list);
 		mv.addObject("list",list);
 		mv.addObject("free",free);
 		mv.addObject("leave",leave);
@@ -100,7 +99,6 @@ public class BoardController {
 		service.updateViewCount(boardNo);
 		
 		List<Comment> comment=service.commentList(boardNo);
-		log.debug("{}"+b);
 		mv.addObject("b",b);
 		mv.addObject("comment",comment);
 		mv.setViewName("board/selectBoard");
@@ -202,7 +200,7 @@ public class BoardController {
 		String loc = "";
 		if(result>0) {
 			  msg ="게시글 등록이 완료되었습니다.";
-			  loc ="selectBoard.do?boardNo="+result;	 
+			  loc ="/board/selectBoard.do?boardNo="+result;	 
 		}
 		 
 		model.addAttribute("msg",msg);
@@ -262,10 +260,8 @@ public class BoardController {
 	@RequestMapping("/updateBoardView.do")
 	public ModelAndView updateBoardView(ModelAndView mv, @RequestParam int boardNo) {
 		
-		log.debug("{}"+boardNo);
 		Board b=service.updateBoardView(boardNo);
 		
-		log.debug("{}"+b);
 		
 		mv.addObject("b",b);
 		mv.setViewName("board/updateBoard");

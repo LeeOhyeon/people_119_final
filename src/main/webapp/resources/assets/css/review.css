@@ -27,41 +27,49 @@
 .company-image {
     display:inline-block;
     width:9%;
+    display: flex;
+    align-items: center;
 }
 .company-image>span {
     font-size:100px;
 }
 .company-name {
     display:inline-block;
-    width:10%;
+    width:20%;
     vertical-align: middle;
     height:120px;
-    
+    display: flex;
+    align-items: center;
 }
 .review-info {
     display:inline-block;
-    width:49%;
-    font-size:13px;
+    width:40%;
+    font-size:18px;
+    display: flex;
+    align-items: center;
 }
 .review-view-count {
     display:inline-block;
     vertical-align: middle;
-    width:8%;
-    height: 90px;
+    width:10%;
     text-align: center;
+    display: flex;
+    align-items: center;
 }
 .interest {
     display:inline-block;
-    width:8%;
+    width:10%;
     vertical-align: middle;
-    height: 100px;
+    display: flex;
+    align-items: center;
 }
 
 .total-review-info {
-    border:1px solid #333;
+    border:1px solid lightgray;
     padding:15px;
     margin-top:20px;
     border-radius:10px;
+    display: flex;
 }
 .total-review-info div {
     margin-right:30px;

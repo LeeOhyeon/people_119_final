@@ -68,7 +68,7 @@ public class MemberController {
 			loc = "/";
 		}else {
 			msg = "아이디와 비밀번호를 확인해 주세요";
-			loc = "memberLoginView.do";
+			loc = "/member/memberLoginView.do";
 		}
 			
 		model.addAttribute("msg",msg);
@@ -108,10 +108,10 @@ public class MemberController {
 		
 		if(result>0) {
 			msg="회원가입이 완료되었습니다. 로그인 해주세요";
-			loc="memberLoginView.do";
+			loc="/member/memberLoginView.do";
 		}else {
 			msg="회원가입 실패";
-			loc="enrollMemberView.do";
+			loc="/member/enrollMemberView.do";
 		}
 		model.addAttribute("msg",msg);
 		model.addAttribute("loc",loc);
@@ -214,7 +214,6 @@ public class MemberController {
 	@ResponseBody
 	public Member searchId(@RequestParam Map param,HttpServletResponse response) throws IOException{
 		Member member = service.searchId(param);
-		log.debug("{}"+member);
 		response.setContentType("application/json; charset=utf-8");
 		return member; 
 	}
@@ -384,7 +383,6 @@ public class MemberController {
 			mv.addObject("scrapCount",scrapCount);
 			mv.addObject("scrap",scrap);
 			mv.addObject("pageBar", PageFactoryMember.getPageBar(scrapCount, cPage, numPerPage, 5, "/member/memberScrapList.do?memberId="+memberId+"&&"));
-			log.debug("sList : "+scrap);
 			
 			mv.setViewName("member/memberScrap");
 			return mv;
@@ -450,14 +448,14 @@ public class MemberController {
 		}
 		
 		//스크랩 공고삭제
-				@RequestMapping("/deleteScrapStar.do")
-				@ResponseBody
-				public int deleteScrapStar(@RequestParam Map param,HttpServletResponse response) {
-					response.setContentType("application/json; charset=utf-8");
-					int result = service.deleteScrapStar(param);
-					return result;
-				}
-		
+		@RequestMapping("/deleteScrapStar.do")
+		@ResponseBody
+		public int deleteScrapStar(@RequestParam Map param,HttpServletResponse response) {
+			response.setContentType("application/json; charset=utf-8");
+			int result = service.deleteScrapStar(param);
+			return result;
+		}
+
 		//관심기업 리스트 
 		@RequestMapping("/memberlikeCompanyList.do")
 		public ModelAndView memberlikeCompanyList(@RequestParam String memberId, ModelAndView mv,@RequestParam(value = "cPage", defaultValue = "1") int cPage,
@@ -506,4 +504,39 @@ public class MemberController {
 			int result = service.deletelikeCompany(likeCompanyNo);
 			return result;
 		}
+		
+		
+		//관심기업 하트색깔 바꾸기
+		@RequestMapping("/deleteLikeCompany.do")
+		@ResponseBody
+		public int deleteLikeCompany(@RequestParam Map param,HttpServletResponse response) {
+			response.setContentType("application/json; charset=utf-8");
+			int result = service.deleteLikeCompany(param);
+			return result;
+		}
+				
+		
+		
+		//비밀번호 맞는지 확인
+		@RequestMapping("/checkPassword.do")
+		@ResponseBody
+		public void checkPassword(@RequestParam Map param,HttpServletResponse response) throws IOException{
+			response.setContentType("application/json; charset=utf-8");
+			Member loginMember = service.loginMember(param);
+			if(loginMember != null && encoder.matches((String)param.get("password"),loginMember.getPassword())) {
+				response.getWriter().print(true);
+			}else {
+				response.getWriter().print(false);
+			}
+		}
+		
+		//회원 탈퇴
+		@RequestMapping("/deleteMember.do")
+		@ResponseBody
+		public int deleteMember(@RequestParam Map param,HttpServletResponse response) throws IOException{
+			response.setContentType("application/json; charset=utf-8");
+			int result = service.deleteMember(param);
+			return result;
+		}
+		
 }

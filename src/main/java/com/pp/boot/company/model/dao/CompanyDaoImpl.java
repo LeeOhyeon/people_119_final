@@ -55,5 +55,10 @@ public class CompanyDaoImpl implements CompanyDao{
 	public int updateCompanyCount(SqlSessionTemplate session, String companyName) {
 		return session.update("company.updateCompanyCount", companyName);
 	}
+	@Override
+	public int countCompany(SqlSessionTemplate session) {
+		return session.selectOne("company.countCompany2");
+	}
+	
 	
 }

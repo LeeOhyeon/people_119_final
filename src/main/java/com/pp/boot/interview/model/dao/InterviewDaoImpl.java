@@ -22,11 +22,8 @@ public class InterviewDaoImpl implements InterviewDao {
 
 	@Override
 	public int interviewEnroll(SqlSessionTemplate session, InterviewReview i) {
-		session.insert("interview.interviewEnroll",i);
 		
-		int interviewReviewNo=i.getInterviewReviewNo();
-		
-		return interviewReviewNo;
+		return session.insert("interview.interviewEnroll",i);
 	}
 	@Override
 	public List<InterviewReview> interviewList(SqlSessionTemplate session, Map<String, Integer> pageParam) {

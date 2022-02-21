@@ -76,7 +76,6 @@
 		            </div>
 		            <div class="company-name">
 		              <h5><strong><a href="${path }/review/companyReview.do?companyName=${cl.companyName}"><c:out value="${cl.companyName }"/></a></strong></h5>
-		              <p>현재 채용중 <span></span></p>
 		            </div>
 		            <div class="review-info">
 		              <p><c:out value="${cl.service }"/></p>
@@ -86,7 +85,7 @@
 		            </div>
 		            <input type="hidden" name="companyId" value="${cl.companyId }"/>
 		            <div class="interest">
-		              <button type="button" class="btn btn-light" style="width:100px" onclick="insertLikeCompany(this);">관심기업</button>
+		              <button type="button" class="btn btn-outline-secondary" style="width:100px" onclick="insertLikeCompany(this);">관심기업</button>
 		            </div>
 		          </div>
 	          </c:forEach>

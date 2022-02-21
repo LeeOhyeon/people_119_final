@@ -54,7 +54,6 @@ public class ResumeController {
 		List<Resume> rList = resumeService.selectResumeList(param);
 		int countList = resumeService.selectResumeListCount(memberId);
 		
-		log.debug("rList : "+rList);
 		
 		mv.addObject("resumeList",rList);
 		mv.addObject("countList",countList);
@@ -149,10 +148,10 @@ public class ResumeController {
 		
 	 	if(result>0) {
 	 		msg ="이력서 삭제가 완료되었습니다.";
-	 		loc = "memberResumeList.do?memberId="+memberId;
+	 		loc = "/resume/memberResumeList.do?memberId="+memberId;
 	 	}else {
 	 		msg ="이력서 삭제 실패.";
-	 		loc = "memberResumeList.do?memberId="+memberId;
+	 		loc = "/resume/memberResumeList.do?memberId="+memberId;
 	 	}
 	 
 	 	model.addAttribute("msg",msg);

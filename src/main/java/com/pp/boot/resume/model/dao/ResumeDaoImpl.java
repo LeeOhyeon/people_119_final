@@ -37,7 +37,6 @@ public class ResumeDaoImpl implements ResumeDao {
 		
 		int resumeNo = resume.getResumeNo();
 		
-		log.debug("resume : "+resumeNo);
 
 		return resumeNo;
 	}

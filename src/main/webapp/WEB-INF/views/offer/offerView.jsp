@@ -33,7 +33,7 @@
               <div class="offer_header">
                   <div class="likeCompany_container">
                     <div class="companyName"><c:out value="${offer.companyName }"/></div>
-                    <button type="button" class="likeCompany" onclick="insertLikeCompany();">관심기업 등록</button> 
+                    <button type="button" class="likeCompany" onclick="insertLikeCompany();"><span class="likeHeart"><i class="fas fa-heart"></i></span> 관심기업 등록</button> 
                   	<div class="endDate">마감일 : <c:out value="${offer.endDate }"/></div>
                   </div>
                   <div class="offer_titleContainer">
@@ -136,6 +136,7 @@
 
 $(document).ready(()=>{
 	checkScrap();
+	checkCompany();
 });
 
 function checkScrap(){
@@ -173,6 +174,7 @@ const insertScrap=()=>{
 								offerNo:"${offer.offerNo}"	
 						},
 						success:data=>{
+							alert("스크랩이 완료 되었습니다.");
 							$(".star").css("color","yellow");		
 						},
 						error:e=>{
@@ -187,6 +189,7 @@ const insertScrap=()=>{
 								offerNo:"${offer.offerNo}"	
 						},
 						success:data=>{
+							alert("스크랩 삭제 완료.");
 							$(".star").css("color","black");	
 						},
 						error:e=>{
@@ -199,6 +202,26 @@ const insertScrap=()=>{
 	});
 	
 }
+
+
+//관심기업 체크
+function checkCompany(){
+	$.ajax({
+		url:"${path}/member/checkLikeCompany.do",
+		type:"post",
+		data:{memberId:"${loginMember.memberId}",
+				companyId:"${offer.companyId}"},
+		success:data=>{
+			if(data){
+				$(".likeHeart").css("color","black");
+			}else{
+				$(".likeHeart").css("color","red");
+			}	
+							
+			}
+	});
+}
+
 
 //관심기업
 const insertLikeCompany=()=>{
@@ -216,14 +239,30 @@ const insertLikeCompany=()=>{
 							companyId:"${offer.companyId}"	
 						},
 						success:data=>{
-							alert("관심기업 등록 완료");					
+							alert("관심기업 등록 완료");				
+							$(".likeHeart").css("color","red");
 						},
 						error:e=>{
 							alert("관심기업 등록 실패");
+							$(".likeHeart").css("color","black");
 						}
 					});		
 				}else{
-					alert("이미 관심기업으로 등록된 기업 입니다.");
+					$.ajax({
+						url:"${path }/member/deleteLikeCompany.do",
+						type:"post",
+						data:{memberId:"${loginMember.memberId}",
+							companyId:"${offer.companyId}"	
+						},
+						success:data=>{
+							alert("관심기업 삭제 완료");		
+							$(".likeHeart").css("color","black");
+						},
+						error:e=>{
+							alert("관심기업 취소 실패");		
+							$(".likeHeart").css("color","red");
+						}
+					});		
 				}
 							
 			}

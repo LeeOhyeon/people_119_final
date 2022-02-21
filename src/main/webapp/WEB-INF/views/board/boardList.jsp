@@ -15,8 +15,8 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>커뮤니티</h2>
           <ol>
-            <li><a href="#">Home</a></li>
-            <li>Inner Page</li>
+            <li><a href="${path}">Home</a></li>
+            <li>커뮤니티</li>
           </ol>
         </div>
 
@@ -31,7 +31,7 @@
           </div>
           <div class="boardSearch">
             <div class="boardSearch-container">
-              <c:if test="${loginMember==null}">
+             <%--  <c:if test="${loginMember==null}">
 	              <div class="board-login">
 	                <div>
 	                  <p class="login">로그인 후 이용해주세요</p>
@@ -40,8 +40,8 @@
 	                  <button type="button" onclick="login();" class="btn btn-primary" style="width:200px">커뮤니티 로그인하기</button>
 	                </div>
 	              </div>
-              </c:if>
-              <c:if test="${loginMember!=null}">
+              </c:if> --%>
+             <%--  <c:if test="${loginMember!=null}">
               	<div class="board-login">
 	                <div>
 	                  <p class="login">환영합니다. <strong>${loginMember.memberId}님</strong></p>
@@ -58,7 +58,7 @@
 	                	</div>
 	                </div>
 	            </div>
-              </c:if>
+              </c:if> --%>
             </div>
           </div>
         </div>

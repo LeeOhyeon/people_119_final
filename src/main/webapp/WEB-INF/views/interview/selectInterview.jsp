@@ -25,10 +25,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Inner Page</h2>
+          <h2>면접 후기</h2>
           <ol>
-            <li><a href="/">Home</a></li>
-            <li>Inner Page</li>
+            <li><a href="${path }">Home</a></li>
+            <li>면접 후기</li>
           </ol>
         </div>
 
@@ -37,7 +37,7 @@
 
     <section class="inner-page">
       <div class="container">
-        <h3><strong>익명</strong>님의 면접 경험</h3>
+        <h3>면접 경험</h3>
         <p>이 페이지는 <strong>PEOPLE119</strong> 회원님이 등록해주신 소중한 경험입니다.<br> <strong>불펌 및 무단 스크랩은 금지합니다.</strong></p>
         <div class="normal-info">
           <h5><strong>기본정보</strong></h5>
@@ -81,6 +81,12 @@
                 <strong>${ir.interviewDate}</strong>
               </div>
             </div>
+            
+            
+            
+            
+            
+            
             <div class="interview-info">
               <h5><strong>면접 정보</strong></h5>
             </div>
