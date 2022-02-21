@@ -49,8 +49,8 @@
             <div class="findBoard">            	 
 	            	 <div class="search-select">
 	            		 <select class="form-select"  aria-label="Default select example" id="searchParse" style="width:140px">
-		            	 	<option value="MEMBERID">작성자명</option>
-		            	 	<option value="BOARDTITLE">글 제목</option>
+		            	 	<option value="작성자">작성자명</option>
+		            	 	<option value="제목">글 제목</option>
 	            	 	</select> 
 	            	 	
 	            	 </div>
