@@ -54,44 +54,53 @@
               <p><strong>총 <c:out value="${countList }"/>건</strong></p>
             </div>
             
-            <c:forEach var="rList" items="${resumeList }">
-            <c:if test="${rList.resumeTitle ne null }">
-            <div class="resume-info">
-              <div class="resume-title">
-              	<h3 style="display: inline-block;"><a href="${path }/resume/resumeDetailView.do?resumeNo=${rList.resumeNo}">  
-                <strong><c:out value="${rList.resumeTitle }"/></strong>
-              	</a></h3>
-              	 <div class="resume-del">
-                  <button type="button"style="width:100px; background-color: white; border: none; font-size: 20px"
-                  onclick="if(confirm('정말 삭제하시겠습니까?')){
-                  location.assign('${path}/resume/deleteResume.do?resumeNo=${rList.resumeNo }&&memberId=${rList.memberId }')};"
-                  ><i class="fas fa-trash-alt"></i></button>
-                </div>
-              </div>
-              <div class="resume">
-                <div class="information">
-                  <div>
-                    <h5><strong>근무조건 : <c:out value="${rList.workType }"/></strong></h5>
-                  </div>
-                  <div>
-                    <h5><strong>희망연봉 : <c:out value="${rList.hopeSalary }"/></strong></h5>
-                  </div>
-                </div>
-                <div class="hope-info">
-                  <div>
-                    <h5><strong>희망 직무 : <c:out value="${rList.hopePosition }"/></strong></h5>
-                  </div>
-                  <div>
-                    <h5><strong>희망지역 : <c:out value="${rList.workingArea }"/></strong></h5>
-                     
-                  </div>
-                </div>
-               
-              </div>
-              
-            </div>
-            </c:if>
-   		 </c:forEach>
+            
+              <c:if test="${countList == 0}">
+              	<div class="resume-info">
+              		<div>등록된 이력서가 없습니다. 이력서를 등록해 주세요.</div>
+              	</div>
+              </c:if>
+            
+            <c:if test="${resumeList ne null}">
+	            <c:forEach var="rList" items="${resumeList }">
+		            <c:if test="${rList.resumeTitle ne null }">
+		            <div class="resume-info">
+		              <div class="resume-title">
+		              	<h3 style="display: inline-block;"><a href="${path }/resume/resumeDetailView.do?resumeNo=${rList.resumeNo}">  
+		                <strong><c:out value="${rList.resumeTitle }"/></strong>
+		              	</a></h3>
+		              	 <div class="resume-del">
+		                  <button type="button"style="width:100px; background-color: white; border: none; font-size: 20px"
+		                  onclick="if(confirm('정말 삭제하시겠습니까?')){
+		                  location.assign('${path}/resume/deleteResume.do?resumeNo=${rList.resumeNo }&&memberId=${rList.memberId }')};"
+		                  ><i class="fas fa-trash-alt"></i></button>
+		                </div>
+		              </div>
+		              <div class="resume">
+		                <div class="information">
+		                  <div>
+		                    <h5><strong>근무조건 : <c:out value="${rList.workType }"/></strong></h5>
+		                  </div>
+		                  <div>
+		                    <h5><strong>희망연봉 : <c:out value="${rList.hopeSalary }"/></strong></h5>
+		                  </div>
+		                </div>
+		                <div class="hope-info">
+		                  <div>
+		                    <h5><strong>희망 직무 : <c:out value="${rList.hopePosition }"/></strong></h5>
+		                  </div>
+		                  <div>
+		                    <h5><strong>희망지역 : <c:out value="${rList.workingArea }"/></strong></h5>
+		                     
+		                  </div>
+		                </div>
+		               
+		              </div>
+		              
+		            </div>
+		            </c:if>
+	   		 </c:forEach>
+   		 </c:if>
           </div>
         </div>
         <div>

@@ -52,10 +52,10 @@ public class ReviewController {
 		String loc ="";
 		if(result>0) {
 			msg = "등록 성공";
-			loc ="companyReview.do?companyName="+cr.getCompanyName();
+			loc ="/review/companyReview.do?companyName="+cr.getCompanyName();
 		}else {
 			msg = "등록 실패";
-			loc ="companyList.do";
+			loc ="/review/companyList.do";
 		}
 		
 		model.addAttribute("msg",msg);

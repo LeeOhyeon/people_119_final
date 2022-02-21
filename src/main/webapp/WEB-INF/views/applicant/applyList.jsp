@@ -89,9 +89,10 @@
 				<c:if test="${empty applyList }">
 					<div class="apply-info">
 						<div class="apply-info-title">
-							<h2>
-								<strong>지원한 공고가 없습니다.</strong>
-							</h2>
+							<div class="nonScrap">
+			                	<div class="nonScrapText">등록된 입사지원 정보가 없습니다.</div>
+			                	<button type="button" class="btn btn-outline-primary scrapAdd" onclick="location.assign('${path}/offer/offerList.do')">채용공고 보러가기</button>
+			                </div>
 						</div>
 					</div>
 				</c:if>

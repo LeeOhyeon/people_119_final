@@ -768,11 +768,12 @@
         	<div class="quickmenu-container">
 				<div class="quickmenu">
 					<ul>
+					
 						<li><button type="button" class="btn btn-outline-primary quickmenuBtn" onclick="location.assign('${path }/member/memberInfoView.do?memberId=${loginMember.memberId}')">기본정보 수정</button></li>
-						
 						<li><button type="button" class="btn btn-outline-primary quickmenuBtn" onclick="copyCertificateDiv();">+자격증</button></li>
 						<li><button type="button" class="btn btn-outline-primary quickmenuBtn" onclick="copyLanguageDiv();">+어학시험</button></li>
 						<li><button type="button" class="btn btn-outline-primary quickmenuBtn" onclick="insertResume();">이력서 저장</button></li>
+					<li><button type="button" class="btn btn-outline-primary quickmenuBtn" onclick="location.assign('${path}/resume/memberResumeList.do?memberId=${loginMember.memberId}');">이력서 관리</button></li>
 					</ul>
 				</div>
 			</div>        
@@ -1138,6 +1139,22 @@ function DropFile(dropAreaId, fileListId) {
 		let careerTitle = $("input[name=careerTitle]").val();
 		let careerContent = $("#careerContent").val();
 		
+
+		if(upfile == null){alert("이력서 사진은 반드시 등록해야 합니다."); return}
+		if(resumeTitle == ''){alert("이력서 제목을 입력해 주세요."); $("input[name=resumeTitle]").focus(); return}
+		if(academic == ''){alert("최종학력을 선택해 주세요."); return}
+		if(schoolName == ''){alert("학교명을 입력해 주세요.");$("input[name=schoolName]").focus(); return}
+		if(schoolArea == ''){alert("학교 지역을 입력해 주세요.");$("input[name=schoolArea]").focus(); return}
+		if(admissionDate == ''){alert("입학날짜를 선택해 주세요."); $("input[name=admissionDate]").focus(); return}
+		if(graduationDate == ''){alert("졸업날짜를 선택해 주세요."); $("input[name=graduationDate]").focus();return}
+		if(workType == '' ){alert("희망 근무형태를 선택해 주세요."); $("select[name=workType]").focus();return}
+		if(hopeSalary == ''){alert("희망 연봉을 입력해 주세요."); $("input[name=hopeSalary]").focus();return}
+		if(workingArea == ''||workingArea ==null ){alert("희망근무지역을 선택해 주세요."); $("select[name=workingArea]").focus();return}
+		if(tech == ''||tech == null){alert("보유기술을 선택해 주세요."); $("select[name=tech]").focus(); return}
+		if(selfTitle == ''){alert("자기소개서 제목을 입력해 주세요."); $("input[name=selfTitle]").focus(); return}
+		if(selfContent == ''){alert("자기소개서를 입력해 주세요."); $("input[name=selfContent]").focus(); return}
+		else{
+		
 		formdata.append("resumeNo",resumeNo);
 		formdata.append("memberId",memberId);
 		formdata.append("resumeTitle",resumeTitle);
@@ -1180,6 +1197,7 @@ function DropFile(dropAreaId, fileListId) {
 			 
 		 }); 
 		 
+	 	}
 	 }
 	 
 	 function memberResumeList(){

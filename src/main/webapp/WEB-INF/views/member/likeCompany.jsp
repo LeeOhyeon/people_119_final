@@ -53,6 +53,13 @@
               
                
               <div class="searchCoatainer">
+               <c:if test="${likeCompanyCount == 0 }">
+	               <div class="nonScrap">
+	                	<div class="nonScrapText">등록된 관심기업이 없습니다. 마음에 드는 기업을 등록 하세요!</div>
+	                </div>
+               </c:if>
+              
+              
               <c:if test="${likeCompany != null }">
                <c:forEach var="l" items="${likeCompany }" varStatus="vs">
 	                <div class="searchList-container" >

@@ -98,7 +98,7 @@ public class CompanyController {
 			loc="/";
 		}else {
 			msg="회원가입 실패";
-			loc="enrollCompanyView.do";
+			loc="/company/enrollCompanyView.do";
 		}
 		model.addAttribute("msg",msg);
 		model.addAttribute("loc",loc);

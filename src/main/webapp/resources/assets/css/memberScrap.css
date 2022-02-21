@@ -4,7 +4,23 @@
 .total-count {
     margin-top:40px;
 }
-
+.nonScrap{
+height: 200px;
+border: 1px solid lightgray;
+border-radius:15px;
+padding:20px;
+padding-top:50px;
+margin-bottom: 20px;
+}
+.nonScrapText{
+	font-size: 25px;
+	font-weight: bold;
+}
+.scrapAdd{
+	width: 250px;
+	height: 50px;
+	margin-top: 20px;
+}
  a:link { color: black; text-decoration: none;}
  a:visited { color: black; text-decoration: none;}
  a:hover { color: black; text-decoration: none;}

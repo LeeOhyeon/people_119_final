@@ -53,6 +53,32 @@
              
           </div>
          
+         <!-- 이력서 기본정보 -->
+         <div class="resume-basic-container-resumeBasic">
+            <p style="font-size: 30px; font-weight: bolder; margin-bottom: 0px;">
+            <div class="school-input-container">
+            	<div class="elementary-container">
+            		<table class="table table-borderless align-middle table-sm">	
+            				<tr class="table-light align-middle basicTr">
+            					<th scope="col">학력사항</th>
+            					<th scope="col">경력사항</th>
+            					<th scope="col">희망연봉</th>
+            					<th scope="col">희망근무지/근무형태</th>
+            				</tr>
+	            			<tr class="table-light">
+	            				<td class="basicTd" ><c:out value="${r.academic }"/></td>
+	            				<c:forEach var="c" items="${r.career }" begin="0" end="0">
+	            				<td class="basicTd" ><c:out value="${c.career }"/></td>
+	            				</c:forEach>
+	            				<td class="basicTd" ><c:out value="${r.hopeSalary }"/> 만원</td>
+	            				<td class="basicTd" ><c:out value="${r.workingArea }"/><br><c:out value="${r.workType }"/></td>
+	            			</tr>
+	            		</table>
+            	</div>
+            </div>
+          </div>
+         
+         
          
           <div class="resume-basic-container-elementary">
             <p style="font-size: 30px; font-weight: bolder; margin-bottom: 0px;">학력
@@ -86,8 +112,6 @@
 	            		</table>
             	</div>
             </div>
-            
-           
           </div>
 	
 	<c:if test="${r.career ne null}">

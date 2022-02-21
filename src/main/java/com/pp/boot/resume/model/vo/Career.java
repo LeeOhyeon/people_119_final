@@ -24,7 +24,7 @@ public class Career {
 	private String position;
 	private String department;
 	private String deptLocation;
-	private int annualIncome;
+	private String annualIncome;
 	private String assignedTask;
 	private String career;
 	

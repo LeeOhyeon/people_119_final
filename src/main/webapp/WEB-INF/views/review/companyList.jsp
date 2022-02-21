@@ -50,12 +50,12 @@
             <div class="review-title-name">
               <h4><strong>전체 기업리뷰</strong></h4>
             </div>
-            <div class="review-title-select">
+            <!-- <div class="review-title-select">
               <select class="form-select" aria-label="Default select example" style="width:120px">
                 <option value="인턴">조회순</option>
                 <option value="사원">최신순</option>
               </select>
-            </div>
+            </div> -->
           </div>
           </div>
           

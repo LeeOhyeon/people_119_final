@@ -69,7 +69,13 @@
                 </div>
                
                
-              <div class="searchCoatainer">
+             <div class="searchCoatainer">
+              <c:if test="${scrap != null }">
+             	<div class="nonScrap">
+                	<div class="nonScrapText">등록된 스크랩 정보가 없습니다. 마음에 드는 공고를 스크랩 하세요!</div>
+                	<button type="button" class="btn btn-outline-primary scrapAdd" onclick="location.assign('${path}/offer/offerList.do')">채용공고 보러가기</button>
+                </div>
+              </c:if>
               <c:if test="${scrap != null }">
                <c:forEach var="s" items="${scrap }">
                

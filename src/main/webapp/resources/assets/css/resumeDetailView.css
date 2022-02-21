@@ -15,7 +15,17 @@
 	width: 30%;
 	height: 100%;
 }
+.resume-basic-container-resumeBasic{
+	margin-bottom: 40px;
+}
 
+.basicTr{
+	height: 50px!important;
+}
+.basicTd{
+	height:50px!important;
+	padding-bottom: 20px;
+}
 .basic-info-container {
 	padding-top: 30px;
 	width: 65%;
