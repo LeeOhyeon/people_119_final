@@ -120,9 +120,11 @@
 <script>
 	const checkId=()=>{
 		
-		const memberId = $("#memberId").val();
-		if(memberId.length<5 || memberId.length>13){
-			$(".checkIdResult").html("<span style='color:red;'>아이디는 5글자 이상 13글자 미만입니다.</span>");
+		const memberId = $("#memberId").val().trim();
+		let idReg = /^[A-Za-z0-9][A-Za-z0-9_-]{4,15}/;
+		
+		if(!idReg.test($("input[name=memberId]").val())){
+			$(".checkIdResult").html("<span style='color:red;'>영문 대문자/소문자/숫자로 시작(5~15자).</span>");
 		}else{
 			$.ajax({
 				url : "${path}/member/enrollCheckId.do",
@@ -143,7 +145,7 @@
 	
 	$("#password").change(()=>{
 		
-		const password = $("#password").val();
+		const password = $("#password").val().trim();
 		const checkPw=RegExp(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,25}$/);
 		
 		if(password.length<8 || password.length>16){
@@ -162,8 +164,8 @@
 	
 		$("#password_").change(()=>{
 			
-			const password = $("#password").val();
-			const password_ = $("#password_").val();
+			const password = $("#password").val().trim();
+			const password_ = $("#password_").val().trim();
 			
 			if(password == password_){
 				$(".checkPassword").html("<span style='color:green;'>비밀번호가 일치합니다.</span>");
@@ -176,47 +178,59 @@
 	});
 	
 	//이메일 중복체크
-	$("#email").keyup(()=>{
-		let email = $("#email").val();
-		$.ajax({
-			type:"post",
-			url:"${path}/member/checkEmail.do",
-			data:{email:email},
-			success:data=>{
-				if(data){
-					$(".resultEmail").html("<span style='color:green;'>사용 가능한 이메일 입니다.</span>");
-					$("#sendMail_").attr("onclick","sendMail();");
-				}else{
-					$(".resultEmail").html("<span style='color:red;'>이미 사용중인 이메일 입니다.</span>");
-					$("#sendMail_").removeAttr("onclick");
-				}
-			}
-		});
+	$("#email").change(()=>{
+		let emailReg = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+		let email = $("#email").val().trim();
+		if (!emailReg.test($("#email").val().trim())) {
+			$(".resultEmail").html("<span style='color:red;'>이메일 형식을 맞춰서 작성해주세요.</span>");
+		 }else{
+				$.ajax({
+					type:"post",
+					url:"${path}/member/checkEmail.do",
+					data:{email:email},
+					success:data=>{
+						if(data){
+							$(".resultEmail").html("<span style='color:green;'>사용 가능한 이메일 입니다.</span>");
+							$("#sendMail_").attr("onclick","sendMail();");
+						}else{
+							$(".resultEmail").html("<span style='color:red;'>이미 사용중인 이메일 입니다.</span>");
+							$("#sendMail_").removeAttr("onclick");
+						}
+					}
+				});
+		 }
 	});
 	
 	//이메일 인증
 let comparekey;
+	
 const sendMail=()=>{
 	
-	let email = $("#email").val();
-	if(email.trim().length == 0 || email == null){
-		alert("이메일을 입력해 주세요!");
-	}else{
-		$.ajax({
-			type:"post",
-			url:"${path}/member/sendMail.do",
-			data:{email:email},
-			success:data=>{
-				console.log("성공");
-				console.log(data);
-				comparekey = data;	
-			},
-			error : e=>{
-				console.log("실패");
-			}
-		});
-	}
+	let emailReg = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+	let email = $("#email").val().trim();
 	
+	
+	if(email.trim().length == 0 || email == null){
+		alert("이메일을 입력해 주세요!");	
+	}else{
+		if (!emailReg.test($("#email").val().trim())) {
+			 alert("이메일 형식을 맞춰서 작성해주세요.");
+		 }else{
+			 $.ajax({
+					type:"post",
+					url:"${path}/member/sendMail.do",
+					data:{email:email},
+					success:data=>{
+						console.log("성공");
+						console.log(data);
+						comparekey = data;	
+					},
+					error : e=>{
+						console.log("실패");
+					}
+				});
+		 }
+	}
 }
 
 	
@@ -225,13 +239,17 @@ const sendMail=()=>{
 	const compareKey=()=>{
 		const emailCode = $("#emailCode").val();
 		
-		if(comparekey == emailCode){
-			$(".resultCode").html("<span style='color:green'>인증 성공</span>");
-			compareResult = true;
+		if(emailCode.length ==0 || emailCode == ''){
+			alert("이메일 인증을 진행해 주세요!");
 		}else{
-			$(".resultCode").html("<span style='color:red'>인증 번호를 다시 입력해 주세요.</span>");
-			$("#emailCode").val("");
-			compareResult = false;
+			if(comparekey == emailCode){
+				$(".resultCode").html("<span style='color:green'>인증 성공</span>");
+				compareResult = true;
+			}else{
+				$(".resultCode").html("<span style='color:red'>인증 번호를 다시 입력해 주세요.</span>");
+				$("#emailCode").val("");
+				compareResult = false;
+			}	
 		}
 	}
 	

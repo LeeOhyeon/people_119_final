@@ -54,6 +54,7 @@
                   기본 정보
                 </div>
                 <div class="member_info">
+               	 <div class="updateTitle">이름</div>
                   <div class="input-group mb-3">
                     <input type="text" class="form-control" id="memberName" name="memberName" value="${loginMember.memberName }" placeholder="이름" aria-label="Recipient's username"
                       aria-describedby="updateName">
@@ -61,6 +62,7 @@
                   </div>
                 </div>
                 <div class="member_info">
+                <div class="updateTitle">생일</div>
                   <div class="input-group mb-3">
                     <input type="date" class="form-control" placeholder="생년월일" id="birth" value="${loginMember.birth }" name="birth" aria-label="Recipient's username"
                       aria-describedby="updateBirth">
@@ -68,6 +70,7 @@
                   </div>
                 </div>
                 <div class="member_info">
+                <div class="updateTitle">성별</div>
                   <div class="select_gender">
                     <div class="form-check">
                       <input class="form-check-input" type="radio" name="gender" id="genderM" value="M" ${loginMember.gender eq "M"?"checked":""}>
@@ -87,7 +90,7 @@
                 </div>
               </div> 
                <div class="member_info">
-               	
+               	<div class="updateTitle">주소</div>
                 <div class="input-group mb-3">
                 
                 <c:set var="address" value="${loginMember.address }"/>	
