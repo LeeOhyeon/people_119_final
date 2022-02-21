@@ -22,4 +22,7 @@ public interface ReviewDao {
 	// countMeetingCount
 	Map countPercent(SqlSessionTemplate session, String companyName);
 	
+	// 중복확인
+	Company checkCompanyName(SqlSessionTemplate session, Map param);
+	
 }

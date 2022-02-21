@@ -1,7 +1,10 @@
 package com.pp.boot.review.controller;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -55,7 +58,7 @@ public class ReviewController {
 			loc ="/review/companyReview.do?companyName="+cr.getCompanyName();
 		}else {
 			msg = "등록 실패";
-			loc ="/review/companyList.do";
+			loc ="/review/enrollCompanyReview.do";
 		}
 		
 		model.addAttribute("msg",msg);
@@ -99,6 +102,14 @@ public class ReviewController {
 		
 		
 		return "review/companyReview";
+	}
+	
+	// 회사 중복체크
+	@RequestMapping("enrollCheckCompanyName.do")
+	public void checkCompanyName(@RequestParam Map param, HttpServletResponse response) throws IOException{
+		Company company = service.checkCompanyName(param);
+		response.setContentType("application/json; charset=utf-8");
+		response.getWriter().print(company!=null?false:true);
 	}
 	
 	

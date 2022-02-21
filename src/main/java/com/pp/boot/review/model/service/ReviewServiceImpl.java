@@ -11,7 +11,11 @@ import com.pp.boot.company.model.vo.Company;
 import com.pp.boot.review.model.dao.ReviewDao;
 import com.pp.boot.review.model.vo.CompanyReview;
 
+import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class ReviewServiceImpl implements ReviewService {
 	
 	@Autowired
@@ -43,4 +47,11 @@ public class ReviewServiceImpl implements ReviewService {
 	public Map countPercent(String companyName) {
 		return dao.countPercent(session, companyName);
 	}
+	
+	// 중복확인
+	@Override
+	public Company checkCompanyName(Map param) {
+		return dao.checkCompanyName(session, param);
+	}
+	
 }

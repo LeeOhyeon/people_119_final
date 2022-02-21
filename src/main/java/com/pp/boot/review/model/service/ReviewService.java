@@ -19,4 +19,7 @@ public interface ReviewService {
 
 	// meetingCount
 	Map countPercent(String companyName);
+	
+	// 중복확인
+	Company checkCompanyName(Map param);
 }

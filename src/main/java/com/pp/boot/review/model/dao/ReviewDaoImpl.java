@@ -35,4 +35,10 @@ public class ReviewDaoImpl implements ReviewDao {
 	public Map countPercent(SqlSessionTemplate session, String companyName) {
 		return session.selectOne("companyReview.countPercent", companyName);
 	}
+	
+	// 중복확인
+	@Override
+	public Company checkCompanyName(SqlSessionTemplate session, Map param) {
+		return session.selectOne("companyReview.checkCompanyName", param);
+	}
 }
