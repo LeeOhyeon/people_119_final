@@ -18,4 +18,7 @@ public interface ApplicantService {
 	
 	// 지원 취소
 	int deleteApply(Map param);
+	
+	// 로그인한 회원이 이미 지원했는지 안했는지 확인
+	int checkApply(Map param);
 }

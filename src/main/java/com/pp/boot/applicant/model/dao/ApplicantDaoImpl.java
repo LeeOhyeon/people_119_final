@@ -34,4 +34,10 @@ public class ApplicantDaoImpl implements ApplicantDao {
 	public int deleteApply(SqlSessionTemplate session, Map param) {
 		return session.delete("applicant.deleteApply", param);
 	}
+	
+	// 로그인한 회원이 이미 지원했는지 안했는지 확인
+	@Override
+	public int checkApply(SqlSessionTemplate session, Map param) {
+		return session.selectOne("applicant.checkApply", param);
+	}
 }

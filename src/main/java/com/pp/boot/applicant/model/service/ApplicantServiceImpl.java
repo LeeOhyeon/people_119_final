@@ -45,4 +45,10 @@ public class ApplicantServiceImpl implements ApplicantService {
 	public int deleteApply(Map param) {
 		return dao.deleteApply(session, param);
 	}
+	
+	// 로그인한 회원이 이미 지원했는지 안했는지 확인
+	@Override
+	public int checkApply(Map param) {
+		return dao.checkApply(session, param);
+	}
 }
