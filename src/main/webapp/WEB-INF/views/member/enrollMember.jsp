@@ -120,11 +120,11 @@
 <script>
 	const checkId=()=>{
 		
-		const memberId = $("#memberId").val().trim();
+		let memberId = $("#memberId").val().trim();
 		let idReg = /^[A-Za-z0-9][A-Za-z0-9_-]{4,15}/;
-		
+		memberId = memberId.replace(/ /gi, "");
 		if(!idReg.test($("input[name=memberId]").val())){
-			$(".checkIdResult").html("<span style='color:red;'>영문 대문자/소문자/숫자로 시작(5~15자).</span>");
+			$(".checkIdResult").html("<span style='color:red;'>영문 대문자/소문자/숫자로 시작(5~15자).공백은 자동으로 제거됩니다.</span>");
 		}else{
 			$.ajax({
 				url : "${path}/member/enrollCheckId.do",
