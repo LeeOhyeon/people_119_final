@@ -128,7 +128,7 @@ $(document).ready(()=>{
   			alert("로그인 후 이용해주세요");
   			location.assign("${path}/member/memberLoginView.do");
   		}else if(commentContent=="") {
-  			alert("댓글 입력좀 ㅋ");
+  			alert("댓글 내용을 입력해 주세요!");
   		}
   	}
   	
@@ -277,7 +277,7 @@ $(document).ready(()=>{
   		if(memberIdVal=="") {
   			alert("로그인 후 이용하세요");
   		}else if(commentContent=="") {
-  			alert("대댓글을 일정 글자 이상 작성해주세요");
+  			alert("내용을 작성해 주세요!");
   		}else if(memberIdVal!=""&&commentContent!="") {
   			$.ajax({
   	  			url:"${path}/board/commentReply.do",
