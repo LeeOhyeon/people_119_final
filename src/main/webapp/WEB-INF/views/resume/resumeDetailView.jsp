@@ -63,7 +63,8 @@
             					<th scope="col">학력사항</th>
             					<th scope="col">경력사항</th>
             					<th scope="col">희망연봉</th>
-            					<th scope="col">희망근무지/근무형태</th>
+            					<th scope="col">희망근무지</th>
+            					<th scope="col">근무형태</th>
             				</tr>
 	            			<tr class="table-light">
 	            				<td class="basicTd" ><c:out value="${r.academic }"/></td>
@@ -71,7 +72,8 @@
 	            				<td class="basicTd" ><c:out value="${c.career }"/></td>
 	            				</c:forEach>
 	            				<td class="basicTd" ><c:out value="${r.hopeSalary }"/> 만원</td>
-	            				<td class="basicTd" ><c:out value="${r.workingArea }"/><br><c:out value="${r.workType }"/></td>
+	            				<td class="basicTd" ><c:out value="${r.workingArea }"/><c:out value="${r.workType }"/></td>
+	            				<td class="basicTd" ><c:out value="${r.workType }"/></td>
 	            			</tr>
 	            		</table>
             	</div>
