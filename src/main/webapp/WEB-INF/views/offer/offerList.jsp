@@ -48,8 +48,46 @@
 		          <h2>지금 뜨는 채용공고</h2>
 		          <p>* 가장 조회가 많이 된 TOP3 공고를 확인하세요</p>
 		    </div>
+		    
+		<div class="row">
+			<c:forEach var="hl" items="${hotList }" varStatus="i">
+					<c:choose>
+						<c:when test="${not empty loginMember }">
+							<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" style="margin-left:30px; width: 400px;">
+								<div class="icon-box" data-aos="fade-up" data-aos-delay="${i.index+1}00" style="cursor: pointer;" onclick="location.assign('${path }/offer/loginOfferView.do?offerNo=${hl.offerNo}&&memberId=${loginMember.memberId }')">
+									<div class="" style="width: 250px; height: 150px">
+										<img src="${path}/resources/upload/offer/${hl.image }" style="width: 250px; height: 150px">
+									</div>
+									<br>
+									<h4 class="title"><c:out value="${hl.companyName }"/></h4>
+									<p class="description"><c:out value="${hl.offerTitle }"/></p>
+									<p class="description">${fn:replace(hl.tech, ',', ' · ') }</p>
+									<p class="description"><c:out value="${hl.location }"/> / <c:out value="${hl.carrer }"/></p>
+									<p class="description">마감일 : <c:out value="${hl.endDate }"/></p>
+							  	</div>
+						  	</div>
+							</c:when>
+							<c:when test="${empty loginMember }">
+								<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" style="margin-left:30px; width: 400px;">
+									<div class="icon-box" data-aos="fade-up" data-aos-delay="${i.index+1}00" style="cursor: pointer;" onclick="location.assign('${path }/offer/offerView.do?offerNo=${hl.offerNo}')">
+										<div class="" style="width: 250px; height: 150px">
+											<img src="${path}/resources/upload/offer/${hl.image }" style="width: 250px; height: 150px">
+										</div>
+										<br>
+										<h4 class="title"><c:out value="${hl.companyName }"/></h4>
+										<p class="description"><c:out value="${hl.offerTitle }"/></p>
+										<p class="description">${fn:replace(hl.tech, ',', ' · ') }</p>
+										<p class="description"><c:out value="${hl.location }"/> / <c:out value="${hl.carrer }"/></p>
+										<p class="description">마감일 : <c:out value="${hl.endDate }"/></p>
+								  	</div>
+							  	</div>
+							</c:when>
+						</c:choose>
+				</c:forEach>
+			</div>
+        </div>
    
-		  <div class="row">
+	<%-- 	  <div class="row">
 		      <c:forEach var="hl" items="${hotList }" varStatus="i">
 			          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" style="margin-left:30px; width: 400px;">
 			            <div class="icon-box" data-aos="fade-up" data-aos-delay="${i.index+1}00" style="width: 100%; cursor: pointer;" onclick="location.assign('${path }/offer/offerView.do?offerNo=${hl.offerNo}')">
@@ -65,7 +103,7 @@
 			            </div>
 			          </div>
 		      </c:forEach>
-		      </div>
+		      </div> --%>
 		   </div>
 		   <%-- <a style="font-size: 20px;" class="description" href="${path }/offer/offerView.do?offerNo=${hl.offerNo}"></a> --%>
 		
