@@ -28,17 +28,23 @@
       <div class="container">
         <form action="${path }/review/enrollCompanyReviewEnd.do">
           <div>
-          	<input type="hidden" name="memberId" value="${loginMember.memberId }"/>
+          	<input id="loginMemberId" type="hidden" name="memberId" value="${loginMember.memberId }"/>
           </div>
-          <div>
-          	<h2>회사 선택</h2>
-          	<input type="text" list="list" id="companyName" name="companyName"/>
+       	  <h2>회사 선택</h2>
+          <div style="display: flex;">
+          	<input class="form-control" type="text" list="list" 
+          		id="companyName" name="companyName" style="width: 800px;"
+          		aria-label="Recipient's username" aria-describedby="button-addon2" required/>
           	<datalist id="list">
           		<c:forEach var="cl" items="${companyList }">
           			<option value="${cl.companyName }"/>
           		</c:forEach>
           	</datalist>
+          	<button class="btn btn-outline-secondary" 
+          		type="button" id="checkButton" style="width: 100px; height: 54px; margin-top: 0;"
+          			onclick="checkCompany();">중복확인</button>
           </div>
+	   	  <div class="checkComapnyNameResult"></div>
           <div class="company-review">
             <div>
               <h3>회의는 얼마나 자주하나요?</h3>
@@ -496,7 +502,24 @@
       </div>
     </section>
     <script>
-
+    	// 기업리뷰 중복 확인
+		const checkCompany=()=>{
+			const companyName = $("#companyName").val();
+			const loginMemberId = "${loginMemberId.memberId}";
+			$.ajax({
+				url: "${path}/review/enrollCheckCompanyName.do",
+				data: {companyName:$("#companyName").val(), memberId:"${loginMember.memberId}"},
+				dataType:"json",
+				success : data=>{
+					console.log(data);
+					if(data){
+						$(".checkComapnyNameResult").html("<span style='color:green;'>리뷰 등록이 가능한 기업입니다.</span>");
+					}else{
+						$(".checkComapnyNameResult").html("<span style='color:red;'>이미 리뷰가 등록된 기업입니다.</span>");
+					}
+				}
+			});
+		}
     </script>
   </main><!-- End #main -->
   <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

@@ -15,8 +15,8 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>커뮤니티</h2>
           <ol>
-            <li><a href="/">커뮤니티 홈</a></li>
-            <li><a href="/">전체 게시글</a></li>
+            <li><a href="${path}/board/boardList.do">커뮤니티 홈</a></li>
+            <li>게시글 등록</li>
           </ol>
         </div>
 
