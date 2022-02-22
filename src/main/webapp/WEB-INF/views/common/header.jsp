@@ -69,13 +69,13 @@
           </c:if>
           <c:if test="${loginMember != null }">
           	<c:if test="${loginMember.memberName eq null }">
-				<li class="dropdown"><a href="#"><span><c:out value="${loginMember.memberId }"/></span> <i class="bi bi-chevron-down"></i></a>
+				<li class="dropdown"><a data-bs-toggle="tooltip" data-bs-placement="right" title="내 정보를 수정해 주세요!" href="#"><span><c:out value="${loginMember.memberId }"/></span> <i class="bi bi-chevron-down"></i></a>
 			</c:if>
 			<c:if test="${loginMember.memberName ne null }">
 				<li class="dropdown"><a href="#"><span><c:out value="${loginMember.memberName }"/></span> <i class="bi bi-chevron-down"></i></a>
 			</c:if>
 				<ul>
-					<li><a href="${path }/member/memberInfoView.do?memberId=${loginMember.memberId }">마이페이지</a></li>
+					<li><a  href="${path }/member/memberInfoView.do?memberId=${loginMember.memberId }">마이페이지</a></li>
 					<li><a href="${path }/resume/memberResumeList.do?memberId=${loginMember.memberId }">이력서 관리</a></li>
 					<li><a href="${path}/member/memberScrapList.do?memberId=${loginMember.memberId}">스크랩</a></li>
 					<li><a href="${path}/member/memberlikeCompanyList.do?memberId=${loginMember.memberId}">관심기업</a></li>
