@@ -49,6 +49,9 @@
         <c:if test="${empty list}">
         	<div class="warn">
         		<strong>해당하는 이름을 가진 회사명의 리뷰가 존재하지 않습니다.</strong>
+        		<div>
+					<button type="button" class="btn btn-light" style="width:100px; margin-top:20px;" onclick="location.assign('${path}/interview/interviewList.do')">뒤로가기</button>
+				</div>
         	</div>
         </c:if>
         <c:if test="${not empty list}"> 
