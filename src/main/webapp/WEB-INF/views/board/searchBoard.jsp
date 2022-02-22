@@ -55,6 +55,14 @@
           </div>
         </div>
         <div class="boardContainer">
+         <c:if test="${empty list}">
+        	<div class="warn">
+        		<strong>해당하는 검색결과가 존재하지 않습니다.</strong>
+				<div>
+					<button type="button" class="btn btn-light" style="width:100px; margin-top:20px;" onclick="back();">뒤로가기</button>
+				</div>      		
+        	</div>
+        </c:if>
         <c:forEach var="l" items="${list}">  
          	<div class="board">
          		<div class="boardTitle">
@@ -116,7 +124,9 @@
 		const myInfo=()=>{
 			location.assign("${path}/board/myInfoBoard.do?memberId=${loginMember.memberId}");
 		}
-		
+		const back=()=>{
+			history.back();
+		}
     </script>
   </main><!-- End #main -->
 	

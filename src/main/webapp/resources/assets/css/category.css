@@ -103,4 +103,12 @@
 .search-button{
 	display:inline-block;
 }
-
+.warn{
+	border:1px solid lightgray;
+	border-radius:5px;
+	margin-top:20px;
+	padding:20px;
+	margin-bottom:20px;
+	width:1000px;
+	text-align:center;
+}
