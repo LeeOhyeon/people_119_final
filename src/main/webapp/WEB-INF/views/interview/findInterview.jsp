@@ -46,127 +46,134 @@
           	 <input type="button" class="findbtn" value="검색" onclick="findStr();">
          </div>
         </div>
-        <c:forEach var="l" items="${list}">
-        <div class="company-container" id="${l.interviewReviewNo}">
-          <div class="enroll-date">
-            <div class="date-info">
-              <span onclick="toggle(this);"><i class="fas fa-arrow-alt-circle-down"></i></span>
-            </div>
-          </div>
-          <div class="company-info">
-            <div class="company-info-title">
-              <div>
-                <h3 class="companyName" onclick="detailInfo(this);">${l.companyName}</h3>
-              </div>
-            </div>
-            <div class="info">
-              <div class="team-name">
-                <p>${l.workType} |</p>
-              </div>
-              <div class="hire-date">
-                <p>${l.interviewDate} |</p>
-              </div>
-              <div class="carrer-years">
-                <p>경력 ${l.career}</p>
-              </div>
-            </div>
-          </div>
-          <div class="interview-result">
-            <div class="eval">
-              <div>
-                <span class="smile"><i class="far fa-smile"></i></span>
-              </div>
-              <div class="review">
-                <span>전반적 평가<br></span>
-                <c:if test="${l.evaluation eq '긍정적'}">
-                  <span style="color:green"><strong>${l.evaluation}</strong></span>
-                </c:if>
-                <c:if test="${l.evaluation eq '부정적'}">
-                  <span style="color:red"><strong>${l.evaluation}</strong></span>
-                </c:if>
-                <c:if test="${l.evaluation eq '보통'}">
-                  <span><strong>${l.evaluation}</strong></span>
-                </c:if>
-              </div>
-            </div>
-            <div class="difficulty">
-              <div>
-                <span class="smile"><i class="fas fa-file-alt"></i></span>
-              </div>
-              <div class="review">
-                <span>난이도<br></span>
-               <c:if test="${l.difficulty eq '어려움'}">
-               	  <span style="color:red"><strong>${l.difficulty}</strong></span>
-               </c:if>
-               <c:if test="${l.difficulty eq '쉬움'}">
-               	  <span style="color:green"><strong>${l.difficulty}</strong></span>
-               </c:if>
-               <c:if test="${l.difficulty eq '보통'}">
-               		<span><strong>${l.difficulty}</strong></span>
-               </c:if>
-              </div>
-            </div>
-            <div class="result">
-              <div>
-                <span class="smile"><i class="fas fa-id-card"></i></span>
-              </div>
-              <div class="review">
-                <span>합격여부<br></span>
-                <c:if test="${l.passOrNot eq '불합격'}">
-                	<span class="passorNot" style="color:red"><strong>${l.passOrNot}</strong></span>
-                </c:if>
-                <c:if test="${l.passOrNot eq '합격'}">
-                	<span class="passorNot" style="color:green"><strong>${l.passOrNot}</strong></span>
-                </c:if>
-              </div>
-            </div>
-          </div>
-          <div class="way-of-interview" style="display:none;">
-            <div class="interview-type">
-              <div>
-                <p>면접 유형&nbsp;&nbsp;</p>
-              </div>
-              <div>
-                <span><strong>${l.interviewType}</strong></span>
-              </div>
-            </div>
-            <div class="interviewee-count">
-              <div>
-                <p>면접 인원&nbsp;&nbsp;</p>
-              </div>
-              <div>
-                <span><strong>${l.interviewees}</strong></span>
-              </div>
-            </div>
-            <div class="interview-process">
-              <div>
-                <p>전형 및 면접 진행방식&nbsp;&nbsp;</p>
-              </div>
-              <div>
-                <span><strong>${l.interviewProcess}</strong></span>
-              </div>
-            </div>
-            <div class="interview-question">
-              <div>
-                <p>면접 질문</p>
-              </div>        
-              <div class="question-container">
-                <c:set var="qaArr" value="${fn:split(l.interviewQuestion,',')}"></c:set>
-                <c:forEach var="word" items="${qaArr}">
-	                <div class="question">
-	                  <div>
-	                    <i class="fas fa-search"></i>
-	                  </div>
-	                  <div class="question-input">
-	                     <strong>${word}</strong>
-	                  </div>
-	                </div>
-                </c:forEach>
-              </div>
-            </div>
-          </div>
-         </div>
-        </c:forEach>
+        <c:if test="${empty list}">
+        	<div class="warn">
+        		<strong>해당하는 이름을 가진 회사명의 리뷰가 존재하지 않습니다.</strong>
+        	</div>
+        </c:if>
+        <c:if test="${not empty list}"> 
+	        <c:forEach var="l" items="${list}">
+	        <div class="company-container" id="${l.interviewReviewNo}">
+	          <div class="enroll-date">
+	            <div class="date-info">
+	              <span onclick="toggle(this);"><i class="fas fa-arrow-alt-circle-down"></i></span>
+	            </div>
+	          </div>
+	          <div class="company-info">
+	            <div class="company-info-title">
+	              <div>
+	                <h3 class="companyName" onclick="detailInfo(this);">${l.companyName}</h3>
+	              </div>
+	            </div>
+	            <div class="info">
+	              <div class="team-name">
+	                <p>${l.workType} |</p>
+	              </div>
+	              <div class="hire-date">
+	                <p>${l.interviewDate} |</p>
+	              </div>
+	              <div class="carrer-years">
+	                <p>경력 ${l.career}</p>
+	              </div>
+	            </div>
+	          </div>
+	          <div class="interview-result">
+	            <div class="eval">
+	              <div>
+	                <span class="smile"><i class="far fa-smile"></i></span>
+	              </div>
+	              <div class="review">
+	                <span>전반적 평가<br></span>
+	                <c:if test="${l.evaluation eq '긍정적'}">
+	                  <span style="color:green"><strong>${l.evaluation}</strong></span>
+	                </c:if>
+	                <c:if test="${l.evaluation eq '부정적'}">
+	                  <span style="color:red"><strong>${l.evaluation}</strong></span>
+	                </c:if>
+	                <c:if test="${l.evaluation eq '보통'}">
+	                  <span><strong>${l.evaluation}</strong></span>
+	                </c:if>
+	              </div>
+	            </div>
+	            <div class="difficulty">
+	              <div>
+	                <span class="smile"><i class="fas fa-file-alt"></i></span>
+	              </div>
+	              <div class="review">
+	                <span>난이도<br></span>
+	               <c:if test="${l.difficulty eq '어려움'}">
+	               	  <span style="color:red"><strong>${l.difficulty}</strong></span>
+	               </c:if>
+	               <c:if test="${l.difficulty eq '쉬움'}">
+	               	  <span style="color:green"><strong>${l.difficulty}</strong></span>
+	               </c:if>
+	               <c:if test="${l.difficulty eq '보통'}">
+	               		<span><strong>${l.difficulty}</strong></span>
+	               </c:if>
+	              </div>
+	            </div>
+	            <div class="result">
+	              <div>
+	                <span class="smile"><i class="fas fa-id-card"></i></span>
+	              </div>
+	              <div class="review">
+	                <span>합격여부<br></span>
+	                <c:if test="${l.passOrNot eq '불합격'}">
+	                	<span class="passorNot" style="color:red"><strong>${l.passOrNot}</strong></span>
+	                </c:if>
+	                <c:if test="${l.passOrNot eq '합격'}">
+	                	<span class="passorNot" style="color:green"><strong>${l.passOrNot}</strong></span>
+	                </c:if>
+	              </div>
+	            </div>
+	          </div>
+	          <div class="way-of-interview" style="display:none;">
+	            <div class="interview-type">
+	              <div>
+	                <p>면접 유형&nbsp;&nbsp;</p>
+	              </div>
+	              <div>
+	                <span><strong>${l.interviewType}</strong></span>
+	              </div>
+	            </div>
+	            <div class="interviewee-count">
+	              <div>
+	                <p>면접 인원&nbsp;&nbsp;</p>
+	              </div>
+	              <div>
+	                <span><strong>${l.interviewees}</strong></span>
+	              </div>
+	            </div>
+	            <div class="interview-process">
+	              <div>
+	                <p>전형 및 면접 진행방식&nbsp;&nbsp;</p>
+	              </div>
+	              <div>
+	                <span><strong>${l.interviewProcess}</strong></span>
+	              </div>
+	            </div>
+	            <div class="interview-question">
+	              <div>
+	                <p>면접 질문</p>
+	              </div>        
+	              <div class="question-container">
+	                <c:set var="qaArr" value="${fn:split(l.interviewQuestion,',')}"></c:set>
+	                <c:forEach var="word" items="${qaArr}">
+		                <div class="question">
+		                  <div>
+		                    <i class="fas fa-search"></i>
+		                  </div>
+		                  <div class="question-input">
+		                     <strong>${word}</strong>
+		                  </div>
+		                </div>
+	                </c:forEach>
+	              </div>
+	            </div>
+	          </div>
+	         </div>
+	        </c:forEach>
+        </c:if>
       </div>
       <div>
          ${pageBar}

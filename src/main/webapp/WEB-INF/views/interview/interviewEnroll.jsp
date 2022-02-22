@@ -55,7 +55,7 @@
 								<c:forEach var="l" items="${list}">
               						<option value="${l.companyName}">${l.companyName}</option>
               					</c:forEach>
-              				</select> 
+              				</select>      
 							</c:otherwise> 
 					</c:choose>  	              	            
               	 	<%-- <c:forEach var="l" items="${list}">
