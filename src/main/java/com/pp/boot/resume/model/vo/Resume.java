@@ -29,6 +29,7 @@ public class Resume {
 	private String openYn;
 	private String hopePosition;
 	private String profile;
+	private String oriProfile;
 	private String selfTitle;
 	private String selfContent;
 	private String careerTitle;

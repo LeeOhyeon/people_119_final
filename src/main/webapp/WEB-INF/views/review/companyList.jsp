@@ -118,7 +118,6 @@
 					var interestDiv = $("<div class='interest'>");
 					
 					if(data.length == 0) {
-						console.log("없어");
 						const span = $("<span>").html("검색어에 해당하는 기업이 존재하지 않습니다.");
 						totalDiv.append(span);
 						wrapDiv.append(totalDiv);
@@ -126,8 +125,14 @@
 					}
 					
 					if(data.length > 0) {
-						console.log("있어");
 						data.forEach(function(d){
+							var wrapDiv = $("<div class='info-wrap'>");
+							var totalDiv = $("<div class='total-review-info'>");
+							var imageDiv = $("<div class='company-image'>");
+							var nameDiv = $("<div class='company-name'>");
+							var infoDiv = $("<div class='review-info'>");
+							var viewCountDiv = $("<div class='review-view-count'>");
+							var interestDiv = $("<div class='interest'>");
 							// 이미지
 							var companyImage = d["companyImage"];
 							var image = $("<img style='width: 100px; height: 100px;'>");

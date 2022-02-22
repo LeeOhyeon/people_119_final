@@ -83,7 +83,7 @@
 	                	<input type="hidden" value="${s.scrapNo }" name="scrapNo">
 	                    <div class="company-title"><c:out value="${s.offer.companyName}"/></div>
 	                    <div class="offer-title">
-	                   	  <div><a href="${path }/offer/offerView.do?offerNo=${s.offer.offerNo}"><c:out value="${s.offer.offerTitle}"/></a></div>
+	                   	  <div><a href="${path }/offer/loginOfferView.do?offerNo=${s.offer.offerNo}&&memberId=${loginMember.memberId}"><c:out value="${s.offer.offerTitle}"/></a></div>
 	                   	  <div>
 	                   	  	<span class="offerContent"><c:out value="${s.offer.carrer}"/></span>
 	                   	  	<span class="offerContent"><c:out value="${s.offer.education}"/></span>

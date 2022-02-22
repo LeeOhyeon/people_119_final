@@ -282,8 +282,8 @@
 				dataType:"json",
 				success:data=>{
 					if(data != null){
-						console.log(data);
 						alert("변경성공");
+						location.reload();
 					}else{
 						alert("변경실패");
 					}
@@ -304,7 +304,6 @@
 			dataType:"json",
 			success:data=>{
 				if(data != null){
-					console.log(data);
 					alert("변경성공");
 				}else{
 					alert("변경실패");
@@ -371,7 +370,6 @@
 				dataType:"json",
 				success:data=>{
 					if(data != null){
-						console.log(data);
 						alert("변경성공");
 					}else{
 						alert("변경실패");
@@ -399,7 +397,6 @@
 				dataType:"json",
 				success:data=>{
 					if(data != null){
-						console.log(data);
 						alert("변경성공");
 					}else{
 						alert("변경실패");
@@ -474,7 +471,6 @@
 				dataType:"json",
 				success:data=>{
 					if(data != null){
-						console.log(data);
 						alert("변경성공");
 					}else{
 						alert("변경실패");

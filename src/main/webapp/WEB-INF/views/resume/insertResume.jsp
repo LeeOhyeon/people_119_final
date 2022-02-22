@@ -103,7 +103,7 @@
 	            			<tr class="university-container">
 	            				<td>학점<span> (필수)</span></td>
 	            				<td>
-	            				<input class="form-control university-input" type="text" name="grades" aria-label="default input example" required="required">
+	            				<input class="form-control university-input" type="text" name="grades" placeholder="4.5기준" aria-label="default input example">
 	            				</td>
 	            			</tr>
 		            			
@@ -299,7 +299,7 @@
                   </td>
                   <tr>
                     <td>희망연봉</td>
-                    <td><input name="hopeSalary" style="width: 500px;" class="form-control" placeholder="만원(숫자만 입력 하세요)" aria-label="default input example"></td>
+                    <td><input name="hopeSalary" style="width: 500px;" class="form-control" placeholder="만원" value="회사 내규에 따름" aria-label="default input example"></td>
                   </tr>
                   <tr>
                     <td>근무지역</td>
@@ -898,7 +898,7 @@ function DropFile(dropAreaId, fileListId) {
 		if(tech == ''||tech == null){alert("보유기술을 선택해 주세요."); $("select[name=tech]").focus(); return}
 		if(selfTitle == ''){alert("자기소개서 제목을 입력해 주세요."); $("input[name=selfTitle]").focus(); return}
 		if(selfContent == ''){alert("자기소개서를 입력해 주세요."); $("input[name=selfContent]").focus(); return}
-		
+		if(grades>4.5){alert("학점은 최대 4.5를 넘길 수 없습니다."); $("input[name=grades]").fucus(); return}
 		if(careerCount == 0 ){alert("경력사항을 저장해 주세요."); return}
 		if(certificationCount>0 && certificationCount<=1){alert("자격증 정보를 저장해 주세요."); return}
 		if(languageCount>0 && languageCount<=1 ){alert("어학시험 정보를 저장해 주세요."); return}
@@ -973,6 +973,7 @@ function DropFile(dropAreaId, fileListId) {
 	 }
 	
 	  //경력사항 등록
+	  $("#addCareerformBtn").hide();
 	  let resumeNo = "${resumeNo}";
       
     	$(".career-info").hide();
@@ -1016,14 +1017,13 @@ function DropFile(dropAreaId, fileListId) {
         				career:career,
         			},
         			success:data=>{
-        				console.log("성공잉");
         				alert("등록 완료");
         				$(btn.parents('.resume-basic-container-career')).find('.career_p').html("등록완료");
         				$(btn.parents('.resume-basic-container-career')).find('.career_p').css("color","green");
+        				$("#addCareerformBtn").hide();
         				careerCount++;
         			},error:data=>{
         				alert("등록 실패! 관리자에게 문의하세요 :(");
-        				console.log("실팽팽이");
         			}
         		});
     		}else{
@@ -1046,14 +1046,12 @@ function DropFile(dropAreaId, fileListId) {
         				assignedTask:assignedTask
         			},
         			success:data=>{
-        				console.log("성공잉");
         				alert("등록 완료");
         				$(btn.parents('.resume-basic-container-career')).find('.career_p').html("등록완료");
         				$(btn.parents('.resume-basic-container-career')).find('.career_p').css("color","green");
         				careerCount++;
         			},error:data=>{
         				alert("등록 실패! 관리자에게 문의하세요 :(");
-        				console.log("실팽팽이");
         			}
         		});
     			

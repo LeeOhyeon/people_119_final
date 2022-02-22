@@ -53,7 +53,7 @@
                     		<c:choose>
                     			<c:when test="${check eq 0 }">
 				                    <div class="applyBtnContainer">
-										 <button class="apply" type="button" onclick="location.assign('${path }/applicant/apply.do?offerNo=${offer.offerNo}&memberId=${loginMember.memberId}')" class="btn btn-primary">지원하기</button>
+										 <button class="apply" type="button" onclick="if(confirm('정말 지원하시겠습니까?')){location.assign('${path }/applicant/apply.do?offerNo=${offer.offerNo}&memberId=${loginMember.memberId}')};" class="btn btn-primary">지원하기</button>
 									</div>
                     			</c:when>
                     			<c:when test="${check eq 1 }">

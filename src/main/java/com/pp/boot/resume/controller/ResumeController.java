@@ -116,7 +116,10 @@ public class ResumeController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		}else {
+			resume.setProfile(resume.getOriProfile());
 		}
+		
 		resumeService.insertBasicResume(resume);
 	}
 	//경력 사항 등록

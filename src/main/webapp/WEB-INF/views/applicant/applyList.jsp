@@ -75,7 +75,7 @@
                 <option value="">미열람</option>
               </select>
             </div> -->
-						<div class=apply-input>
+					<!-- 	<div class=apply-input>
 							<div class="input-group mb-3">
 								<input type="text" class="form-control" placeholder="search"
 									aria-label="Recipient's username"
@@ -83,7 +83,7 @@
 									class="input-group-text" id="basic-addon2"><i
 									class="fas fa-search"></i></span>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 				<c:if test="${empty applyList }">
@@ -110,7 +110,7 @@
 									<div class="content">
 										<h2>
 											<strong><a
-												href="${path }/offer/offerView.do?offerNo=${o.offerNo}"><c:out
+												href="${path }/offer/loginOfferView.do?offerNo=${o.offerNo}&&memberId=${loginMember.memberId}"><c:out
 														value="${o.offerTitle }" /></a></strong>
 										</h2>
 									</div>

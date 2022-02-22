@@ -55,23 +55,55 @@
           <div class="resume-basic-container">
           <p style="font-size: 24px; font-weight: bolder;">기본정보</p>
             <div class="resume-basic-info">
-              <div class="profileImg">
-              	<div class="upload-box">
-				  <div id="drop-file" class="drag-file">
-				   <c:if test="${r.profile ne null }">
-				    <img src="${path }/resources/upload/resume/${r.profile}" width="100%" height="100%" alt="이미지 없음">
-				  	<img src="" alt="미리보기 이미지" class="preview">
-				  	</c:if>
-				  	<c:if test="${r.profile eq null }">
-				   		등록된 사진이<br>없습니다.
-				  	</c:if>
-				  </div>
-				</div>
-              	<div class="file-container">
-	              <label class="file-label" for="chooseFile">사진 선택</label>
-					<input value="${r.profile }" class="file" id="chooseFile" name="upfile" type="file"  onchange="dropFile.handleFiles(this.files)"accept="image/png, image/jpeg, image/gif">
-              	</div>
+             <div class="profileImg">
+                 <div class="upload-box">
+              <div id="drop-file" class="drag-file">
+               <c:if test="${r.profile ne null }">
+                <img src="${path }/resources/upload/resume/${r.profile}" width="100%" height="100%" alt="이미지 없음">
+                 <img src="" alt="미리보기 이미지" class="preview">
+                 </c:if>
+                 <c:if test="${r.profile eq null }">
+                     <span class="nonImg">등록된 사진이<br>없습니다.</span>
+                 </c:if>
               </div>
+            </div>
+                 <div class="file-container">
+                 <label class="file-label" for="chooseFile">사진 선택</label>
+<!--                <input  class="file" id="chooseFile" name="upfile" type="file"  onchange="dropFile.handleFiles(this.files)"accept="image/png, image/jpeg, image/gif"> -->
+               		<input  class="file" id="chooseFile" name="upfile" type="file"accept="image/png, image/jpeg, image/gif">
+                 	<input type="hidden" value="${r.profile }" name="orifile"/>
+                 </div>
+              </div>
+              
+              <script type="text/javascript">
+              
+            //이미지 미리보기
+      		
+      	   	$("input[name=upfile]").change(e=>{
+      	   		$(".drag-file").html("");
+      	   		if(e.target.files[0].type.includes("image")){
+      	   			let reader=new FileReader();
+      	   			reader.onload=(e)=>{
+      	   				const img=$("<img>").attr({
+      	   					src:e.target.result,
+      	   					width:"100%",
+      	   					height:"100%"
+      	   				});
+      	   				$(".drag-file").append(img);
+      	   				$(".nonImg").hide();
+      	   				$(".preview").attr("src",e.target.result);
+      	   			}
+      	   			reader.readAsDataURL(e.target.files[0]);
+      	   		}
+      	   	})
+              
+              
+              </script>
+              
+              
+              
+              
+              
               <div class="basic-info-container">
               <input type="hidden" value="${loginMember.memberId }"/>
                <div class="info-span">이름 : </div><div class="info-name">${loginMember.memberName }</div><span class="info-gender"> (${loginMember.gender =='M'?"남":"여"})</span><br>
@@ -804,6 +836,7 @@ $(document).ready(function(){
 	
 	if(career != '경력' ){
 		$("#careerTable").hide();		
+		$("#addCareerformBtn").hide();
 	} 
 	$("input[name=academic]").click(function(){
 		var val = $(this).val();
@@ -823,14 +856,16 @@ $(document).ready(function(){
 		var val = $(this).val();
 		
 		if(val == '경력'){
-			$("#careerTable").show();   		
+			$("#careerTable").show();   	
+			$("#addCareerformBtn").show();	
 		}else{
 			$("#careerTable").hide();
+			$("#addCareerformBtn").hide();
 		}
 	});
 });
 
-function DropFile(dropAreaId, fileListId) {
+/* function DropFile(dropAreaId, fileListId) {
 	
 	  let dropArea = document.getElementById(dropAreaId);
 	  let fileList = document.getElementById(fileListId);
@@ -895,7 +930,7 @@ function DropFile(dropAreaId, fileListId) {
 	}
 
 	const dropFile = new DropFile("drop-file", "files");
-	
+ */	
 	//제목 글자수 초과 100자
 	$("#resumeTitle").keyup(e=>{
 		const length = $(e.target).val().length;
@@ -1092,8 +1127,16 @@ function DropFile(dropAreaId, fileListId) {
 		 
 		let formdata = new FormData();
 		//사진
-		let upfile = $("input[name=upfile]")[0].files[0];
-		 
+		let upfile;
+		let oriProfile;
+		if($("input[name=upfile]")[0].files[0] == null || $("input[name=upfile]")[0].files[0] == 'undefined'){
+			oriProfile = $("input[name=orifile]").val();
+			formdata.append("oriProfile",oriProfile);
+		}else{
+			upfile = $("input[name=upfile]")[0].files[0];
+			formdata.append("upfile",upfile);
+		}
+		
 		//학교 정보
 		let academic = $("input[name=academic]:checked").val();
 		let schoolName = $("input[name=schoolName]").val();
@@ -1140,7 +1183,7 @@ function DropFile(dropAreaId, fileListId) {
 		let careerContent = $("#careerContent").val();
 		
 
-		if(upfile == null){alert("이력서 사진은 반드시 등록해야 합니다."); return}
+		
 		if(resumeTitle == ''){alert("이력서 제목을 입력해 주세요."); $("input[name=resumeTitle]").focus(); return}
 		if(academic == ''){alert("최종학력을 선택해 주세요."); return}
 		if(schoolName == ''){alert("학교명을 입력해 주세요.");$("input[name=schoolName]").focus(); return}
@@ -1154,6 +1197,7 @@ function DropFile(dropAreaId, fileListId) {
 		if(selfTitle == ''){alert("자기소개서 제목을 입력해 주세요."); $("input[name=selfTitle]").focus(); return}
 		if(selfContent == ''){alert("자기소개서를 입력해 주세요."); $("input[name=selfContent]").focus(); return}
 		else{
+			
 		
 		formdata.append("resumeNo",resumeNo);
 		formdata.append("memberId",memberId);
@@ -1170,7 +1214,7 @@ function DropFile(dropAreaId, fileListId) {
 		formdata.append("selfContent",selfContent);
 		formdata.append("careerTitle",careerTitle);
 		formdata.append("careerContent",careerContent);
-		formdata.append("upfile",upfile);
+		
 		formdata.append("academic",academic); 
 		formdata.append("schoolName",schoolName); 
 		formdata.append("schoolArea",schoolArea); 
@@ -1201,7 +1245,7 @@ function DropFile(dropAreaId, fileListId) {
 	 }
 	 
 	 function memberResumeList(){
-		 location.assign("/resume/memberResumeList.do?memberId="+memberId);
+		 location.assign("${path}/resume/memberResumeList.do?memberId="+memberId);
 	 }
 	  
 	 
