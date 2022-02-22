@@ -31,15 +31,9 @@
 				<p class="find_title2">회원정보에 등록된 이메일 정보로 아이디를 찾을 수 있습니다.</p>
 			</div>
 			<br> <br>
-			<div class="find_container" style="height: 380px;">
+			<div class="find_container" style="height: 250px;">
 				<div class="find_outer">
-					<div class="find_info name_info">
-						<div class="find_info_name">이름</div>
-						<div class="find_info_input">
-							<input class="form-control" type="text"
-								aria-label="default input example" name="memberName" id="memberName">
-						</div>
-					</div>
+					
 					<div class="find_info">
 						<div class="find_info_name">이메일 주소</div>
 						<div class="find_info_input">
@@ -122,7 +116,7 @@ const searchId=()=>{
 	if(compareResult){
 		$.ajax({
 			url:"${path}/member/searchId.do",
-			data:{memberName:$("#memberName").val(),email:$("#email").val()},
+			data:{email:$("#email").val()},
 			dataType:"json",
 			success:data=>{
 				if(data != null){

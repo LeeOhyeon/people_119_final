@@ -9,7 +9,7 @@
 .find_container{
     border: 1px solid lightgray;
     border-radius: 10px;
-    width: 100%;
+    width: 80%;
     height: auto;
     display: flex;
     justify-content: center;
