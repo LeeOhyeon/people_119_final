@@ -37,9 +37,7 @@
 								<div class="logo">
 									<img class="logoimg" alt="사진드러갈거야" src="${path}/resources/upload/company/${company.companyImage }">
 								<div class="title">
-									<a class="companyName" href=""><c:out value="${company.companyName }"/></a>
-									<a href=""><span>채용중</span><span><c:out value=""/></span></a>
-									<a href="">인터뷰 몇개</a>
+									<p class="companyName"><c:out value="${company.companyName }"/></p>
 								</div>
 								<div class="subTitle">
 									<div class="sub"><c:out value="${company.service }"/></div>
@@ -58,7 +56,9 @@
 							
 							<div class="review_box"></div>
 								<div class="review_content"></div>
+								<br>
 									<h4 class="title">전체 리뷰 통계</h4>
+								<br>
 									<div class="wrap_card">
 										<div class="card">
 											<span class="title"><strong>아직 등록된 기업 리뷰가 없어요</strong></span>
