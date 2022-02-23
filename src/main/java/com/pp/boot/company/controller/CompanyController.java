@@ -175,6 +175,8 @@ public class CompanyController {
 			List<Company> list = service.selectCompanyList();
 			List<Offer> offerCounts = offerService.countOffer();
 			
+			log.debug("{companyController}" + list);
+			
 			
 			model.addAttribute("companyList", list);
 			model.addAttribute("offerCounts", offerCounts);

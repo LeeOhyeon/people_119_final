@@ -34,7 +34,7 @@
           <div style="display: flex;">
           	<input class="form-control" type="text" list="list" 
           		id="companyName" name="companyName" style="width: 800px;"
-          		aria-label="Recipient's username" aria-describedby="button-addon2" required/>
+          		aria-label="Recipient's username" aria-describedby="button-addon2" required autocomplete="off"/>
           	<datalist id="list">
           		<c:forEach var="cl" items="${companyList }">
           			<option value="${cl.companyName }"/>

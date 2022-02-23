@@ -10,7 +10,10 @@ import org.springframework.stereotype.Service;
 import com.pp.boot.company.model.dao.CompanyDao;
 import com.pp.boot.company.model.vo.Company;
 import com.pp.boot.review.model.vo.CompanyReview;
+
+import lombok.extern.slf4j.Slf4j;
 @Service
+@Slf4j
 public class CompanyServiceImpl implements CompanyService {
 	
 	@Autowired
@@ -43,6 +46,7 @@ public class CompanyServiceImpl implements CompanyService {
 	// 한개 기업 정보 가져오기
 	@Override
 	public Company selectCompany(String companyName) {
+//		log.debug("{}" + companyName);
 		return dao.selectCompany(session, companyName);
 	}
 	

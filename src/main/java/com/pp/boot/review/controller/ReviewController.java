@@ -70,6 +70,9 @@ public class ReviewController {
 	// 기업 리뷰 보기
 	@RequestMapping("companyReview.do")
 	public String companyReview(@RequestParam String companyName, Model m) {
+		log.debug("{}" + companyName);
+		
+		
 		// 조회수 올리기
 		int updateCount = companyService.updateCompanyCount(companyName);
 		
@@ -92,6 +95,7 @@ public class ReviewController {
 		
 		// 기업 정보 가져오기
 		Company c = companyService.selectCompany(companyName);
+		log.debug("{reviewController}" + c);
 		
 		m.addAttribute("totalCount", totalCount);
 		m.addAttribute("percentCounts", percentCounts);
