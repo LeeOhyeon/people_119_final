@@ -92,8 +92,7 @@
 								</div>
 								<div class="title">
 									<a class="companyName" href=""><c:out value="${company.companyName }"/></a>
-									<a href=""><span>채용중</span><span><c:out value=""/></span></a>
-									<a href="">인터뷰 몇개</a>
+									
 								</div>
 								<div class="subTitle">
 									<div class="sub"><c:out value="${company.service }"/></div>
