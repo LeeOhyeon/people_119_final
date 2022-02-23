@@ -127,13 +127,11 @@
                   </div>
             </div>
 
-            <div class="content_container"></div>
-				<img alt="회사사진" src="${path}/resources/upload/offer/${offer.image }">
+            <div class="content_container">
+           	 	<img alt="회사사진" src="${path}/resources/upload/offer/${offer.image }">
 				<c:out value="${offer.offerContent }"/>
+            </div>
           </div>
-        
-
-
       </div>
     </section>
 
