@@ -56,7 +56,7 @@
 							<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" style="margin-left:30px; width: 400px;">
 								<div class="icon-box" data-aos="fade-up" data-aos-delay="${i.index+1}00" style="cursor: pointer;" onclick="location.assign('${path }/offer/loginOfferView.do?offerNo=${hl.offerNo}&&memberId=${loginMember.memberId }')">
 									<div class="" style="width: 250px; height: 150px">
-										<img src="${path}/resources/upload/offer/${hl.image }" style="width: 250px; height: 150px">
+										<img src="${path}/resources/upload/company/${hl.favicon }" style="width: 250px; height: 150px">
 									</div>
 									<br>
 									<h4 class="title"><c:out value="${hl.companyName }"/></h4>
@@ -71,7 +71,7 @@
 								<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" style="margin-left:30px; width: 400px;">
 									<div class="icon-box" data-aos="fade-up" data-aos-delay="${i.index+1}00" style="cursor: pointer;" onclick="location.assign('${path }/offer/offerView.do?offerNo=${hl.offerNo}')">
 										<div class="" style="width: 250px; height: 150px">
-											<img src="${path}/resources/upload/offer/${hl.image }" style="width: 250px; height: 150px">
+											<img src="${path}/resources/upload/company/${hl.favicon }" style="width: 250px; height: 150px">
 										</div>
 										<br>
 										<h4 class="title"><c:out value="${hl.companyName }"/></h4>
@@ -134,7 +134,7 @@
 		      			<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" style="margin-top:20px;">
 							<div class="icon-box" data-aos="fade-up" data-aos-delay="${i.index+1}00" style="cursor: pointer;" onclick="location.assign('${path }/offer/offerView.do?offerNo=${o.offerNo}')">
 								<div class="" style="width: 250px; height: 150px">
-									<img src="${path}/resources/upload/offer/${o.image }" style="width: 250px; height: 150px">
+									<img src="${path}/resources/upload/company/${o.favicon }" style="width: 250px; height: 150px">
 								</div>
 								<br>
 								<h4 class="title"><c:out value="${o.companyName }"/></h4>
@@ -151,7 +151,7 @@
 							<c:when test="${not empty loginMember }">
 								<div class="icon-box" data-aos="fade-up" data-aos-delay="${i.index+1}00" style="cursor: pointer;" onclick="location.assign('${path }/offer/loginOfferView.do?offerNo=${o.offerNo}&&memberId=${loginMember.memberId }')">
 									<div class="" style="width: 250px; height: 150px">
-										<img src="${path}/resources/upload/offer/${o.image }" style="width: 250px; height: 150px">
+										<img src="${path}/resources/upload/company/${o.favicon }" style="width: 250px; height: 150px">
 									</div>
 									<br>
 									<h4 class="title"><c:out value="${o.companyName }"/></h4>
@@ -164,7 +164,7 @@
 							<c:when test="${empty loginMember }">
 								<div class="icon-box" data-aos="fade-up" data-aos-delay="${i.index+1}00" style="cursor: pointer;" onclick="location.assign('${path }/offer/offerView.do?offerNo=${o.offerNo}')">
 									<div class="" style="width: 250px; height: 150px">
-										<img src="${path}/resources/upload/offer/${o.image }" style="width: 250px; height: 150px">
+										<img src="${path}/resources/upload/company/${o.favicon }" style="width: 250px; height: 150px">
 									</div>
 									<br>
 									<h4 class="title"><c:out value="${o.companyName }"/></h4>

@@ -50,5 +50,7 @@ public class Offer {
 	
 	private int status; // 0:비승인 1:승인
 	
+	private String favicon;
+	
 	
 }
