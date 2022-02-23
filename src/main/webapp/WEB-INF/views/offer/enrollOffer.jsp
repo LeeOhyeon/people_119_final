@@ -139,7 +139,7 @@
 			const techSelect = $("<select>").append("<option vlaue='java'>JAVA</option>");
 			const techInputButton = $("<input type='button' value='삭제' onclick='tech_remove(this)'>");
 			techLi.append(techSelect).append(techInputButton);
-			techUl.append(techLi)
+			techUl.append(techLi);
 		}
 		// 삭제버튼 누르면 input 삭제
 		const tech_remove=(obj)=>{
