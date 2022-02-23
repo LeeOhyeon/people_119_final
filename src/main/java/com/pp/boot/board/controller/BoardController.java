@@ -17,6 +17,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -464,7 +465,8 @@ public class BoardController {
 			out.flush();
 			String callback=req.getParameter("CKEditorFuncNum");
 			printWriter=res.getWriter();
-			String fileUrl="/board/ckImgSubmit.do?uid="+uid+"&fileName="+fileName;
+			
+			String fileUrl="ckImgSubmit.do?uid="+uid+"&fileName="+fileName;
 			
 			printWriter.println("{\"filename\" : \""+fileName+"\", \"uploaded\" : 1, \"url\":\""+fileUrl+"\"}");
 			printWriter.flush();
