@@ -82,7 +82,9 @@
 	                <div class="searchList-container">
 	                	<input type="hidden" value="${s.scrapNo }" name="scrapNo">
 	                    <div class="company-title">
-	                    <img src="${path }/resources/upload/company/${s.favicon}" class="favicon" style="border-radius: 50%">
+	                    
+	                    <img src="${path }/resources/upload/company/${s.favicon}" class="favicon">
+	                    <br>
 	                    <c:out value="${s.offer.companyName}"/>
 	                    </div>
 	                    <div class="offer-title">
