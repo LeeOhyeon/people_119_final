@@ -50,7 +50,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="${path}">Home</a></li>
-          <li><a class="nav-link scrollto active" href="${path}/company/companyIndex.do">기업메인</a></li>
+         <%--  <li><a class="nav-link scrollto active" href="${path}/company/companyIndex.do">기업메인</a></li> --%>
           <li class="dropdown"><a href="${path }/offer/offerList.do"><span>채용정보</span></a>
           </li>
           <li class="dropdown"><a href="#"><span>기업 정보</span> <i class="bi bi-chevron-down"></i></a>
