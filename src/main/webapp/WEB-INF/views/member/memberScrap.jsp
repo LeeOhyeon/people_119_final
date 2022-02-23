@@ -140,7 +140,7 @@
 							const searchListContainer = $("<div class='searchList-container'>");
 							const companyTitle = $("<div class='company-title'><img src='${path }/resources/upload/company/"+data["scrap"][i]["favicon"]+"' class='favicon'><br>"+data["scrap"][i]["offer"]["companyName"]+"</div>");
 							const companyTitleAfter=$("<div><span class='offerContent'>"+data["scrap"][i]["offer"]["carrer"]+"</span><span class='offerContent'>"+data["scrap"][i]["offer"]["education"]+"</span><span class='offerContent'>"+data["scrap"][i]["offer"]["location"]+"</span><span class='offerContent'>"+data["scrap"][i]["offer"]["tech"]+"</span></div>");
-							const offerTitle = $("<div class='offer-title'>"+data["scrap"][i]["offer"]["offerTitle"]+"</div>");
+							const offerTitle = $("<div class='offer-title'><a href='${path }/offer/loginOfferView.do?offerNo="+data["scrap"][i]["offerNo"]+"&&memberId=${loginMember.memberId}'>"+data["scrap"][i]["offer"]["offerTitle"]+"</a></div>");
 							const finishDateContainer = $("<div class='finishDate-container'><p>공고마감일</p>"+data["scrap"][i]["offer"]["endDate"]+"</div>");
 							const deleteBtnContainer = $("<div class='deleteBtn-container'><button type='button' class='delBtn' onclick='deleteScrap(this);'><i class='fas fa-trash-alt'></i></button></div>");
 							offerTitle.append(companyTitleAfter);

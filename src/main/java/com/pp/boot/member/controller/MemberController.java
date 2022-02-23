@@ -422,6 +422,9 @@ public class MemberController {
 			param.put("keyword", keyword);
 			param.put("searchCol", searchCol);
 			param.put("memberId", memberId);
+			
+			log.debug("{}"+param.get("searchCol"));
+			
 			int count = service.searchScrapCount(param);
 			
 			param.put("cPage", cPage);
