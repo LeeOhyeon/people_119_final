@@ -78,7 +78,7 @@ public class InterviewController {
 		 String loc = "";
 		 if(result>0) {
 			 msg ="면접후기 등록이 완료되었습니다.";
-			  loc ="/interview/selectInterview.do";	 
+			  loc ="/interview/interviewList.do";	 
 		 }else{
 			 msg="이미 해당기업의 후기를 등록하셨습니다. 메인으로 돌아갑니다.";
 			 loc="/interview/interviewList.do";
