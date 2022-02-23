@@ -84,6 +84,10 @@
           <c:if test="${loginCompany != null }">
           	<c:if test="${loginCompany.companyName eq null }">
 				<li class="dropdown"><a href="#"><span><c:out value="${loginCompany.companyId }님"/></span> <i class="bi bi-chevron-down"></i></a>
+				<ul>
+					<li><a href="${path }/company/companyMypage.do?companyId=${loginCompany.companyId}">마이페이지</a></li>
+					<li><a href="${path}/company/companyLogout.do">로그아웃</a></li>
+				</ul>
 			</c:if>
 			</c:if>
 			<c:if test="${loginCompany.companyName ne null }">
