@@ -82,7 +82,7 @@
                          
                           <tr>
                           	<td>기술</td>
-                          	<td><c:forEach var="tech" items="${techArr }">
+                          	<td><c:forEach var="tech" items="${techArr }" >
 								<c:out value="${tech }" />
 								</c:forEach></td>
                           </tr>
@@ -97,28 +97,28 @@
                       <table class="table table-borderless align-middle tableTd">
  						<tr>
                           	<td class="firstTd">주요업무</td>
-                          	<td><c:forEach var="business" items="${businessArr }">
+                          	<td><c:forEach var="business" items="${businessArr }" varStatus="i" begin="0" end="0">
 									<c:out value="${business }"/>
 								</c:forEach></td>
                           </tr>
                           <tr>
                           	<td>자격요건</td>
                           	<td>
-                          	<c:forEach var="qualification" items="${qualificationArr }">
+                          	<c:forEach var="qualification" items="${qualificationArr }" varStatus="i" begin="0" end="0">
 								<c:out value="${qualification }"/>
 							</c:forEach>
                           	</td>
                           </tr>
                           <tr>
                           	<td>우대사항</td>
-                          	<td><c:forEach var="treatment" items="${treatmentArr }">
+                          	<td><c:forEach var="treatment" items="${treatmentArr }" varStatus="i" begin="0" end="0">
 									<c:out value="${treatment }"/>
 								</c:forEach></td>
                           </tr>
                           <tr>
                           	<td>복지/혜택</td>
                           	<td>
-                          	<c:forEach var="welfare" items="${welfareArr }">
+                          	<c:forEach var="welfare" items="${welfareArr }" varStatus="i" begin="0" end="0">
 								<c:out value="${welfare }"/>
 							</c:forEach>
                           	</td>
@@ -129,7 +129,39 @@
 
             <div class="content_container">
            	 	<img alt="회사사진" src="${path}/resources/upload/offer/${offer.image }">
-				<c:out value="${offer.offerContent }"/>
+           	 	<div class="content_inner">
+					<h3 style="font-weight: bold;">우대사항</h3>
+					<ul>
+						<c:forEach var="treatment" items="${treatmentArr }">
+							<li style="font-size: 20px;"><c:out value="${treatment }"/></li>
+						</c:forEach>
+					</ul>
+					<br>
+					<h3 style="font-weight: bold;">주요업무</h3>
+					<ul>
+						<c:forEach var="business" items="${businessArr }">
+						<li style="font-size: 20px;"><c:out value="${business }"/></li>
+						</c:forEach>
+					</ul>
+					<br>
+					<h3 style="font-weight: bold;">자격요건</h3>
+					<ul>
+						<c:forEach var="qualification" items="${qualificationArr }">
+							<li style="font-size: 20px;"><c:out value="${qualification }"/></li>
+						</c:forEach>
+					</ul>
+					<br>
+					<h3 style="font-weight: bold;">복지/혜택</h3>
+					<ul>
+						<c:forEach var="welfare" items="${welfareArr }">
+							<li style="font-size: 20px;"><c:out value="${welfare }"/></li>
+						</c:forEach>
+					</ul>
+				<br><br>
+				
+           	 	<c:out value="${offer.offerContent }"/>
+           	 	</div>
+				
             </div>
           </div>
       </div>
