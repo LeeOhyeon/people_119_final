@@ -168,47 +168,52 @@ function checkScrap(){
 
 const insertScrap=()=>{
 	
-	$.ajax({
-		url:"${path}/member/checkScrap.do",
-		type:"post",
-		data:{memberId:"${loginMember.memberId}",
-				offerNo:"${offer.offerNo}"},
-		success:data=>{
-				if(data){
-					$.ajax({
-						url:"${path }/member/insertScrap.do",
-						type:"post",
-						data:{memberId:"${loginMember.memberId}",
-								offerNo:"${offer.offerNo}"	
-						},
-						success:data=>{
-							alert("스크랩이 완료 되었습니다.");
-							$(".star").css("color","yellow");		
-						},
-						error:e=>{
-							alert("스크랩실패");
-						}
-					});		
-				}else{
-					$.ajax({
-						url:"${path }/member/deleteScrapStar.do",
-						type:"post",
-						data:{memberId:"${loginMember.memberId}",
-								offerNo:"${offer.offerNo}"	
-						},
-						success:data=>{
-							alert("스크랩 삭제 완료.");
-							$(".star").css("color","black");	
-						},
-						error:e=>{
-							console.log("취소실패");
-						}
-					});		
-				}
-							
-			}
-	});
 	
+	if("${loginMember.memberId}" == '' || "${loginMember.memberId}" =='undefined'){
+		alert("로그인 후 이용 가능한 서비스 입니다.")
+	}else{
+		$.ajax({
+			url:"${path}/member/checkScrap.do",
+			type:"post",
+			data:{memberId:"${loginMember.memberId}",
+					offerNo:"${offer.offerNo}"},
+			success:data=>{
+					if(data){
+						$.ajax({
+							url:"${path }/member/insertScrap.do",
+							type:"post",
+							data:{memberId:"${loginMember.memberId}",
+									offerNo:"${offer.offerNo}"	
+							},
+							success:data=>{
+								alert("스크랩이 완료 되었습니다.");
+								$(".star").css("color","yellow");		
+							},
+							error:e=>{
+								alert("스크랩실패");
+							}
+						});		
+					}else{
+						$.ajax({
+							url:"${path }/member/deleteScrapStar.do",
+							type:"post",
+							data:{memberId:"${loginMember.memberId}",
+									offerNo:"${offer.offerNo}"	
+							},
+							success:data=>{
+								alert("스크랩 삭제 완료.");
+								$(".star").css("color","black");	
+							},
+							error:e=>{
+								console.log("취소실패");
+							}
+						});		
+					}
+								
+				}
+		});
+
+	}
 }
 
 
@@ -233,49 +238,53 @@ function checkCompany(){
 
 //관심기업
 const insertLikeCompany=()=>{
-	$.ajax({
-		url:"${path}/member/checkLikeCompany.do",
-		type:"post",
-		data:{memberId:"${loginMember.memberId}",
-				companyId:"${offer.companyId}"},
-		success:data=>{
-				if(data){
-					$.ajax({
-						url:"${path }/member/insertLikeCompany.do",
-						type:"post",
-						data:{memberId:"${loginMember.memberId}",
-							companyId:"${offer.companyId}"	
-						},
-						success:data=>{
-							alert("관심기업 등록 완료");				
-							$(".likeHeart").css("color","red");
-						},
-						error:e=>{
-							alert("관심기업 등록 실패");
-							$(".likeHeart").css("color","black");
-						}
-					});		
-				}else{
-					$.ajax({
-						url:"${path }/member/deleteLikeCompany.do",
-						type:"post",
-						data:{memberId:"${loginMember.memberId}",
-							companyId:"${offer.companyId}"	
-						},
-						success:data=>{
-							alert("관심기업 삭제 완료");		
-							$(".likeHeart").css("color","black");
-						},
-						error:e=>{
-							alert("관심기업 취소 실패");		
-							$(".likeHeart").css("color","red");
-						}
-					});		
-				}
-							
-			}
-	});
 	
+	if("${loginMember.memberId}" == '' || "${loginMember.memberId}" =='undefined'){
+		alert("로그인 후 이용 가능한 서비스 입니다.")
+	}else{
+		$.ajax({
+			url:"${path}/member/checkLikeCompany.do",
+			type:"post",
+			data:{memberId:"${loginMember.memberId}",
+					companyId:"${offer.companyId}"},
+			success:data=>{
+					if(data){
+						$.ajax({
+							url:"${path }/member/insertLikeCompany.do",
+							type:"post",
+							data:{memberId:"${loginMember.memberId}",
+								companyId:"${offer.companyId}"	
+							},
+							success:data=>{
+								alert("관심기업 등록 완료");				
+								$(".likeHeart").css("color","red");
+							},
+							error:e=>{
+								alert("관심기업 등록 실패");
+								$(".likeHeart").css("color","black");
+							}
+						});		
+					}else{
+						$.ajax({
+							url:"${path }/member/deleteLikeCompany.do",
+							type:"post",
+							data:{memberId:"${loginMember.memberId}",
+								companyId:"${offer.companyId}"	
+							},
+							success:data=>{
+								alert("관심기업 삭제 완료");		
+								$(".likeHeart").css("color","black");
+							},
+							error:e=>{
+								alert("관심기업 취소 실패");		
+								$(".likeHeart").css("color","red");
+							}
+						});		
+					}
+								
+				}
+		});
+	}
 }
 	// 퀵 메뉴
 	$(document).ready(function(){
