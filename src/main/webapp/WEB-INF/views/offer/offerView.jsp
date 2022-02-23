@@ -128,7 +128,7 @@
             </div>
 
             <div class="content_container">
-           	 	<img alt="회사사진" src="${path}/resources/upload/offer/${offer.image }">
+           	 	<img src="${path}/resources/upload/offer/${offer.image }">
            	 	<br><br>
            	 	<div class="content_inner">
 					<h3 style="font-weight: bold;">우대사항</h3>
