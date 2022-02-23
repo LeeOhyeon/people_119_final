@@ -128,7 +128,9 @@
             </div>
 
             <div class="content_container">
+            	<c:if test="${offer.image ne null}">
            	 	<img src="${path}/resources/upload/offer/${offer.image }">
+           	 	</c:if>
            	 	<br><br>
            	 	<div class="content_inner">
 					<h3 style="font-weight: bold;">우대사항</h3>
