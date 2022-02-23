@@ -51,7 +51,7 @@
             </div>
             <div class="meeting-count">
               <div>
-                <input type="radio" id="meeting1" name="meetingCount" value="1">
+                <input type="radio" id="meeting1" name="meetingCount" value="1" required>
                 <label label for="meeting1">필요할때만 진행</label>
               </div>
               <div>
@@ -74,7 +74,7 @@
             </div>
             <div class="membership">
               <div>
-                <input type="radio" id="membership1" name="drinkingCycle" value="1">
+                <input type="radio" id="membership1" name="drinkingCycle" value="1" required>
                 <label label for="membership1">연 1~2번</label>
               </div>
               <div>
@@ -97,7 +97,7 @@
             </div>
             <div class="membership-process">
               <div>
-                <input type="radio" id="membership-process1" name="wayOfDringking" value="1">
+                <input type="radio" id="membership-process1" name="wayOfDringking" value="1" required>
                 <label label for="membership-process1">간단하게 식사만</label>
               </div>
               <div>
@@ -116,7 +116,7 @@
             </div>
             <div class="vacation">
               <div>
-                <input type="radio" id="vacation1" name="wayOfVacation" value="1">
+                <input type="radio" id="vacation1" name="wayOfVacation" value="1" required>
                 <label label for="vacation1">자유롭게 사용</label>
               </div>
               <div>
@@ -135,7 +135,7 @@
             </div>
             <div class="vacation-count">
               <div>
-                <input type="radio" id="vacation-count1" name="numberOfAvgVacation" value="1">
+                <input type="radio" id="vacation-count1" name="numberOfAvgVacation" value="1" required>
                 <label label for="vacation-count1">15일 이상</label>
               </div>
               <div>
@@ -158,7 +158,7 @@
             </div>
             <div class="gender-ratio">
               <div>
-                <input type="radio" id="gender-ratio1" name="genderRatio" value="1">
+                <input type="radio" id="gender-ratio1" name="genderRatio" value="1" required>
                 <label label for="gender-ratio1">남자가 많아요</label>
               </div>
               <div>
@@ -177,7 +177,7 @@
             </div>
             <div class="attendance">
               <div>
-                <input type="radio" id="attendance1" name="freeAttendance" value="1">
+                <input type="radio" id="attendance1" name="freeAttendance" value="1" required>
                 <label label for="attendance1">유연근무제 시행</label>
               </div>
               <div>
@@ -196,7 +196,7 @@
             </div>
             <div class="avarage-age">
               <div>
-                <input type="radio" id="avarage-age1" name="avarageOfAge" value="1">
+                <input type="radio" id="avarage-age1" name="avarageOfAge" value="1" required>
                 <label label for="avarage-age1">20대</label>
               </div>
               <div>
@@ -215,7 +215,7 @@
             </div>
             <div class="clothes">
               <div>
-                <input type="radio" id="clothes1" name="clothes" value="1">
+                <input type="radio" id="clothes1" name="clothes" value="1" required>
                 <label label for="clothes1">칼정장</label>
               </div>
               <div>
@@ -234,7 +234,7 @@
             </div>
             <div class="work-life-balance">
               <div>
-                <input type="radio" id="wlb1" name="workLifeBalance" value="1">
+                <input type="radio" id="wlb1" name="workLifeBalance" value="1" required>
                 <label label for="wlb1">그럼요! 항상 칼퇴합니다 :) </label>
               </div>
               <div>
@@ -253,7 +253,7 @@
             </div>
             <div class="night-shift">
               <div>
-                <input type="radio" id="night-shift1" name="nightShift" value="1">
+                <input type="radio" id="night-shift1" name="nightShift" value="1" required>
                 <label label for="night-shift1">야근없음</label>
               </div>
               <div>
@@ -276,7 +276,7 @@
             </div>
             <div class="salary-increase">
               <div>
-                <input type="radio" id="salary-increase1" name="salaryIncreaseratio" value="1">
+                <input type="radio" id="salary-increase1" name="salaryIncreaseratio" value="1" required>
                 <label label for="salary-increase1">4% 이하</label>
               </div>
               <div>
@@ -299,7 +299,7 @@
             </div>
             <div class="incentive">
               <div>
-                <input type="radio" id="incentive1" name="incentive" value="1">
+                <input type="radio" id="incentive1" name="incentive" value="1" required>
                 <label label for="incentive1">100% 미만</label>
               </div>
               <div>
@@ -322,7 +322,7 @@
             </div>
             <div class="baby-vacation">
               <div>
-                <input type="radio" id="baby-vacation1" name="babyVacation" value="1">
+                <input type="radio" id="baby-vacation1" name="babyVacation" value="1" required>
                 <label label for="baby-vacation1">자유롭게 사용</label>
               </div>
               <div>
@@ -341,7 +341,7 @@
             </div>
             <div class="grow-up">
               <div>
-                <input type="radio" id="grow-up1" name="growUp" value="1">
+                <input type="radio" id="grow-up1" name="growUp" value="1" required>
                 <label label for="grow-up1">네, 성장하고 있어요</label>
               </div>
               <div>
@@ -360,7 +360,7 @@
             </div>
             <div class="carrer">
               <div>
-                <input type="radio" id="carrer1" name="carrer" value="1">
+                <input type="radio" id="carrer1" name="carrer" value="1" required>
                 <label label for="carrer1">도움이 돼요</label>
               </div>
               <div>
@@ -375,7 +375,7 @@
             </div>
             <div class="self-dev">
               <div>
-                <input type="radio" id="self-dev1" name="selfDev" value="1">
+                <input type="radio" id="self-dev1" name="selfDev" value="1" required>
                 <label label for="self-dev1">네</label>
               </div>
               <div>
@@ -390,7 +390,7 @@
             </div>
             <div class="mento">
               <div>
-                <input type="radio" id="mento1" name="mento" value="1">
+                <input type="radio" id="mento1" name="mento" value="1" required>
                 <label label for="mento1">나를 이끌어주는 상사</label>
               </div>
               <div>
@@ -413,7 +413,7 @@
             </div>
             <div class="avarage-years">
               <div>
-                <input type="radio" id="avarage-years1" name="avarageOfYears" value="1">
+                <input type="radio" id="avarage-years1" name="avarageOfYears" value="1" required>
                 <label label for="avarage-years1">2년 미만</label>
               </div>
               <div>
@@ -436,7 +436,7 @@
             </div>
             <div class="leadership">
               <div>
-                <input type="radio" id="leadership1" name="leadershipStyle" value="1">
+                <input type="radio" id="leadership1" name="leadershipStyle" value="1" required>
                 <label label for="leadership1">의견존중형</label>
               </div>
               <div>
@@ -459,7 +459,7 @@
             </div>
             <div class="mb-3" disabled>
               <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="좋은점을 알려주세요"
-                rows="3" style="resize:none;" name="advantages"></textarea>
+                rows="3" style="resize:none;" name="advantages" required></textarea>
             </div>
 			<div>
 			 <h3>별점으로 회사를 표현해주세요</h3>
@@ -476,7 +476,7 @@
 			    <label for="starpoint_8" class="label_star" title="4"><span class="blind">4점</span></label>
 			    <label for="starpoint_9" class="label_star" title="4.5"><span class="blind">4.5점</span></label>
 			    <label for="starpoint_10" class="label_star" title="5"><span class="blind">5점</span></label>
-			    <input type="radio" name="avgScore" id="starpoint_1" class="star_radio" value="0.5">
+			    <input type="radio" name="avgScore" id="starpoint_1" class="star_radio" value="0.5" required>
 			    <input type="radio" name="avgScore" id="starpoint_2" class="star_radio" value="1">
 			    <input type="radio" name="avgScore" id="starpoint_3" class="star_radio" value="1.5">
 			    <input type="radio" name="avgScore" id="starpoint_4" class="star_radio" value="2">
