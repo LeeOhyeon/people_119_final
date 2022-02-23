@@ -148,3 +148,6 @@
 .content_container img{
 	width: 100%;
 }
+.offerContentView{
+	word-break:break-all;
+}

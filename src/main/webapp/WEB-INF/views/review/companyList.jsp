@@ -154,7 +154,7 @@
 							var readCountP = $("<p>").text("조회수");
 							viewCountDiv.append(readCountP);
 							// 관심기업
-							var button = $("<button type='button' class='btn btn-light' style='width:100px'>").text("관심기업");
+							var button = $("<button type='button' class='btn btn-light' style='width:100px'onclick='insertLikeCompany(this);'>").text("관심기업");
 							interestDiv.append(button);
 							
 							totalDiv.append(imageDiv).append(nameDiv).append(infoDiv).append(viewCountDiv).append(interestDiv);

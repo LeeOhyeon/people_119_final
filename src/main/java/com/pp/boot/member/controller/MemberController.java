@@ -459,7 +459,7 @@ public class MemberController {
 		//관심기업 리스트 
 		@RequestMapping("/memberlikeCompanyList.do")
 		public ModelAndView memberlikeCompanyList(@RequestParam String memberId, ModelAndView mv,@RequestParam(value = "cPage", defaultValue = "1") int cPage,
-				@RequestParam(value = "numPerPage", defaultValue = "8") int numPerPage) {
+				@RequestParam(value = "numPerPage", defaultValue = "9") int numPerPage) {
 			
 			Map<String, Object> param = new HashMap<>();
 			param.put("memberId", memberId);

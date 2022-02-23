@@ -138,7 +138,7 @@
 					
 						for(let i=0; i<data["scrap"].length;i++){
 							const searchListContainer = $("<div class='searchList-container'>");
-							const companyTitle = $("<div class='company-title'>"+data["scrap"][i]["offer"]["companyName"]+"</div>");
+							const companyTitle = $("<div class='company-title'><img src='${path }/resources/upload/company/"+data["scrap"][i]["favicon"]+"' class='favicon'><br>"+data["scrap"][i]["offer"]["companyName"]+"</div>");
 							const companyTitleAfter=$("<div><span class='offerContent'>"+data["scrap"][i]["offer"]["carrer"]+"</span><span class='offerContent'>"+data["scrap"][i]["offer"]["education"]+"</span><span class='offerContent'>"+data["scrap"][i]["offer"]["location"]+"</span><span class='offerContent'>"+data["scrap"][i]["offer"]["tech"]+"</span></div>");
 							const offerTitle = $("<div class='offer-title'>"+data["scrap"][i]["offer"]["offerTitle"]+"</div>");
 							const finishDateContainer = $("<div class='finishDate-container'><p>공고마감일</p>"+data["scrap"][i]["offer"]["endDate"]+"</div>");

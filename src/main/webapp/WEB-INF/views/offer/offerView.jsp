@@ -161,8 +161,10 @@
 						</c:forEach>
 					</ul>
 				<br><br>
-				
-           	 	<c:out value="${offer.offerContent }"/>
+				<div class="offerContentView">
+					<c:out value="${offer.offerContent }"/>
+				</div>
+           	 	
            	 	</div>
 				
             </div>
