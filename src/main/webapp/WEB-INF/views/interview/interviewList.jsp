@@ -75,9 +75,21 @@
           </div>
           <div class="interview-result">
             <div class="eval">
-              <div>
-                <span class="smile"><i class="far fa-smile"></i></span>
-              </div>
+              <c:if test="${l.evaluation eq '부정적'}">
+	              <div>	
+	             	 <span class="smile"><i class="far fa-frown"></i></span>
+	              </div>	
+              </c:if>
+              <c:if test="${l.evaluation eq '긍정적' }">
+	              	<div>
+	                	<span class="smile"><i class="far fa-smile"></i></span>
+	              	</div>
+              </c:if>         
+              <c:if test="${l.evaluation eq '보통'}">
+	              	 <div>
+		                <span class="smile"><i class="far fa-meh"></i></span>
+		             </div>     
+              </c:if>              
               <div class="review">
                 <span>전반적 평가<br></span>
                 <c:if test="${l.evaluation eq '긍정적'}">
