@@ -115,6 +115,7 @@
      
      <div class="section-title" data-aos="fade-up" style="margin-top: 30px;">
           <h2>전체 채용공고</h2>
+          <p>* people119에 있는 모든 공고를 확인하세요</p>
     </div>
       <!-- 채용공고 리스트 부분 -->
       <section id="featured-services" class="featured-services">
@@ -189,9 +190,9 @@
       </div>
     </section><!-- End Featured Services Section -->
       <!-- 페이징 바 -->
-      <div id="pageBar">
+      <%-- <div id="pageBar">
          ${pageBar }
-      </div>
+      </div> --%>
       
    </div>
    <!-- End 채용공고 리스트 -->
