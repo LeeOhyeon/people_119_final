@@ -42,8 +42,10 @@
              <button type="button" class="btn btn-primary" onclick="insertBtn();" style="width:150px">후기 등록하기</button>
          </div>
          <div class="findInterview">
-         	 <input type="text" class="find" placeholder="회사명으로 검색">
-          	 <input type="button" class="findbtn" value="검색" onclick="findStr();">
+        	 <div class="input-group mb-3">
+         		 <input type="text" class="form-control find" placeholder="회사명으로 검색">
+          		 <input type="button" class="btn btn-outline-secondary findbtn" value="검색" onclick="findStr();">
+          	 </div>
          </div>
         </div>
         <c:forEach var="l" items="${list}">
@@ -169,7 +171,7 @@
         </c:forEach>
       </div>
       <div>
-         ${pageBar}
+         	${pageBar}
      </div>
     </section>
     <script>
