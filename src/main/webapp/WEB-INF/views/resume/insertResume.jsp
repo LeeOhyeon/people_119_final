@@ -299,7 +299,7 @@
                   </td>
                   <tr>
                     <td>희망연봉</td>
-                    <td><input name="hopeSalary" style="width: 500px;" class="form-control" placeholder="만원" value="회사 내규에 따름" aria-label="default input example"></td>
+                    <td><input name="hopeSalary" style="width: 500px;" class="form-control" type="number" placeholder="만원" min="2400" step="100" aria-label="default input example"></td>
                   </tr>
                   <tr>
                     <td>근무지역</td>

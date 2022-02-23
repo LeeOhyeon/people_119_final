@@ -21,5 +21,5 @@ public class Scrap {
 	private String memberId;
 	private int offerNo;
 	private Offer offer;
-	
+	private String favicon;
 }

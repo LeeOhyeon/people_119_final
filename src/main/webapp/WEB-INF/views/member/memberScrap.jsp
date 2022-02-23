@@ -81,7 +81,10 @@
                
 	                <div class="searchList-container">
 	                	<input type="hidden" value="${s.scrapNo }" name="scrapNo">
-	                    <div class="company-title"><c:out value="${s.offer.companyName}"/></div>
+	                    <div class="company-title">
+	                    <img src="${path }/resources/upload/company/${s.favicon}" class="favicon" style="border-radius: 50%">
+	                    <c:out value="${s.offer.companyName}"/>
+	                    </div>
 	                    <div class="offer-title">
 	                   	  <div><a href="${path }/offer/loginOfferView.do?offerNo=${s.offer.offerNo}&&memberId=${loginMember.memberId}"><c:out value="${s.offer.offerTitle}"/></a></div>
 	                   	  <div>
